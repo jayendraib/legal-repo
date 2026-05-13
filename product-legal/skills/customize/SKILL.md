@@ -62,12 +62,12 @@ cold-start interview and without hand-editing YAML.
 
    Examples:
    - *Risk calibration tightening "fine" → "needs a real look" for a
-     pattern:* "`/triage` and `/launch-review` will start flagging this
+     pattern:* "`/is-this-a-problem` and `/launch-review` will start flagging this
      pattern. Existing reviews stay as written; re-run if you want the new
      posture applied."
    - *New launch-review category:* "`/launch-review` will add a section for
      this category. `/is-this-a-problem` will pattern-match it in triage."
-   - *Marketing claims posture tightening:* "`/check-claims` will flag more
+   - *Marketing claims posture tightening:* "`/marketing-claims-review` will flag more
      language as needing substantiation or reframing."
 
 5. **For shared-profile changes** (company name, industry, jurisdictions,
