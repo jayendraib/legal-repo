@@ -41,6 +41,12 @@
       "url": "https://api.solveintelligence.com/mcp/",
       "title": "Solve Intelligence",
       "description": "Patent workflows — search patent and non-patent literature, legal texts, SEP technical standards, prior art, claim analysis."
+    },
+    "Verdict": {
+      "type": "http",
+      "url": "https://verdict.systems/api/mcp",
+      "title": "Verdict",
+      "description": "Seals Claude legal AI outputs into court-preparable Sealed Evidence Records — payload hash, Merkle root, chain of custody, attorney review state, and FRE 902(14) custodian packet drafts."
     }
   },
   "recommendedCategories": [

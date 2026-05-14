@@ -41,6 +41,12 @@
       "url": "https://drivemcp.googleapis.com/mcp/v1",
       "title": "Google Drive",
       "description": "Search, read, and fetch documents from Google Drive."
+    },
+    "Verdict": {
+      "type": "http",
+      "url": "https://verdict.systems/api/mcp",
+      "title": "Verdict",
+      "description": "Seals Claude legal AI outputs into court-preparable Sealed Evidence Records — payload hash, Merkle root, chain of custody, attorney review state, and FRE 902(14) custodian packet drafts."
     }
   },
   "recommendedCategories": [

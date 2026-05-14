@@ -41,6 +41,12 @@
       "url": "https://mcp.trellis.law/anthropic",
       "title": "Trellis",
       "description": "The largest state trial court dataset in the U.S. — dockets, rulings, verdicts, filings, judge and opposing counsel analytics, expert witness vetting."
+    },
+    "Verdict": {
+      "type": "http",
+      "url": "https://verdict.systems/api/mcp",
+      "title": "Verdict",
+      "description": "Seals Claude legal AI outputs into court-preparable Sealed Evidence Records — payload hash, Merkle root, chain of custody, attorney review state, and FRE 902(14) custodian packet drafts."
     }
   },
   "recommendedCategories": [
