@@ -173,7 +173,7 @@ Two quick questions before we get into commercial-contracts specifics. These sha
 
 #### Who's using this?
 
-> Who'll be using this plugin day to day? (This feeds the work-product header on every /review, /amendment-history, and /renewals-due output — lawyer gets "PRIVILEGED & CONFIDENTIAL — ATTORNEY WORK PRODUCT"; non-lawyer gets "RESEARCH NOTES — NOT LEGAL ADVICE" plus research-framed outputs.)
+> Who'll be using this plugin day to day? (This feeds the work-product header on every /review, /amendment-history, and /renewal-tracker output — lawyer gets "PRIVILEGED & CONFIDENTIAL — ATTORNEY WORK PRODUCT"; non-lawyer gets "RESEARCH NOTES — NOT LEGAL ADVICE" plus research-framed outputs.)
 >
 > 1. **Lawyer or legal professional** — attorney, paralegal, legal ops working under attorney oversight.
 > 2. **Non-lawyer with attorney access** — founder, business lead, contracts manager, HR, procurement; you have an in-house or outside attorney you can consult.

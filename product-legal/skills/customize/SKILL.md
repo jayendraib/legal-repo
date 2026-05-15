@@ -93,6 +93,6 @@ cold-start interview and without hand-editing YAML.
   launch requires GC sign-off"), flag the tension.
 - **Flag guardrail degradation.** The `[review]` flag, source attribution
   tags, and `[verify]` tags on cited regulations are load-bearing — do not
-  remove. The substantiation requirement on claims is the thing `/check-
-  claims` exists for; weakening it defeats the skill.
+  remove. The substantiation requirement on claims is the thing
+  `/marketing-claims-review` exists for; weakening it defeats the skill.
 - **One change at a time.** Don't re-ask the whole interview.
