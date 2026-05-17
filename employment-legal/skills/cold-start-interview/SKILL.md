@@ -179,6 +179,116 @@ Then report findings in this form:
 
 Write `## Who's using this`, `## Available integrations`, and `## Outputs` sections immediately after the first section of the config-path CLAUDE.md (the plugin config) per the template in `${CLAUDE_PLUGIN_ROOT}/CLAUDE.md`. These drive work-product header choice and feature-fallback behavior across every skill in this plugin.
 
+### Jurisdiction check — South African overlay
+
+After writing the Part 0 sections, check the company profile for jurisdiction:
+
+- Read `~/.claude/plugins/config/claude-for-legal/company-profile.md` → `Primary jurisdiction`
+- If the primary jurisdiction is **South Africa** (or ZA, or the user's company is SA-based based on the company profile answers):
+
+**Fork to the SA interview path.** The rest of this interview (Parts 1-3) uses SA-specific questions. The output writes to the ZA practice profile template at `${CLAUDE_PLUGIN_ROOT}/../../../jurisdictions/za/employment-legal/practice-profile-template.md` instead of the US template at `${CLAUDE_PLUGIN_ROOT}/CLAUDE.md`.
+
+If the primary jurisdiction is NOT South Africa, continue with the US interview path below (Parts 1-3 as written).
+
+---
+
+#### SA Part 1: The statutory footprint (2-3 min)
+
+> South African employment law is national — there are no per-state variations like in the US. But there are three dimensions that shape how the law applies to your organisation: the BCEA earnings threshold, sectoral coverage, and bargaining council membership.
+
+**Statutory baseline:**
+
+> 1. **Do you have employees earning above AND below the BCEA earnings threshold?** (Currently R254,371.67/year. Employees below this threshold have full BCEA working-time and overtime protections. Employees above are excluded from some of those provisions but still covered by the LRA for dismissal, discrimination, etc.)
+>    - All above threshold
+>    - All below threshold
+>    - Both — approximately what split?
+
+> 2. **Is your organisation covered by any sectoral determination?** (Sectoral determinations set industry-specific minimum conditions that can override BCEA defaults. Common sectors: domestic work, hospitality, agriculture, forestry, retail.)
+>    - Yes — which sector(s)?
+>    - No
+>    - Not sure — I can help you check if you tell me your industry
+
+> 3. **Is your organisation covered by a bargaining council?** (Bargaining councils are industry-level bodies that set minimum terms and conditions and handle disputes. Coverage depends on the industry and whether the council's agreement has been extended to non-parties.)
+>    - Yes — which council(s) and which categories of employees?
+>    - No
+>    - Not sure
+
+**Employment equity / BEE posture:**
+
+> 4. **Are you a designated employer under the Employment Equity Act?** (Currently: 50 or more employees. The turnover threshold is being phased out.)
+>    - Yes — we have an active EE plan and reporting cycle
+>    - Yes — but our EE plan is in preparation / overdue
+>    - No — fewer than 50 employees
+>    - Not sure
+
+> 5. **Are you subject to any sector-specific BEE codes?** (e.g., ICT, financial services, mining, construction)
+>    - Yes — which code(s)?
+>    - No / generic codes apply
+>    - Not sure
+
+**Dispute resolution:**
+
+> 6. **When labour disputes arise, where do they go?**
+>    - CCMA (most common for employers without bargaining council coverage)
+>    - Bargaining council (if covered)
+>    - Both — CCMA for some categories, bargaining council for others
+>
+> Do you have a standing relationship with an external labour law firm or labour consultant? (Name, or "we handle it in-house")
+
+> 7. **Do you have recognised unions?**
+>    - Yes — which union(s) and which categories of employees?
+>    - No
+>    - We're in recognition negotiations
+
+**Leave and conditions:**
+
+> 8. **Are your leave entitlements at BCEA minimums or above?** (BCEA minimums: 21 days annual leave, 30 days sick leave per 3-year cycle, 3 days family responsibility leave, 4 months unpaid maternity leave.)
+>    - At BCEA minimums
+>    - Above minimums — briefly, what's different? (e.g., "25 days annual leave, full-pay maternity for 4 months")
+
+> 9. **Does your leave year run on the calendar year, employment anniversary, or something else?**
+
+**Retrenchment posture:**
+
+> 10. **With your employee count, are you typically above the s189A large-scale retrenchment thresholds?** (50+ employees means the more onerous consultation and facilitation requirements apply to large retrenchments.)
+>     - Yes — we assume large-scale process for any significant retrenchment
+>     - No — below 50 employees
+>     - Borderline — we're around 50
+
+#### SA Part 2: Seed documents
+
+> The two documents that make the biggest difference for SA employment law are your **disciplinary code** and a **standard employment contract template**. Everything else improves accuracy but isn't required to start.
+
+> **Must-have:**
+> 1. **Disciplinary code and procedure** — this is the backbone of fair dismissal in SA. I'll learn your offence categories, progressive discipline framework, hearing procedure, and sanction guidelines. Paste the contents, share a file path, or say 'skip for now.'
+>
+> 2. **Standard employment contract template** — SA contracts carry the real baseline on notice, hours, leave, probation, and restraints. Paste or share the path.
+
+> **Nice-to-have (skip if you don't have them handy):**
+> 3. **1-2 CCMA outcomes or settlement agreements** — these show me how you've handled disputes, your settlement posture, and common patterns.
+> 4. **Employment Equity Plan** — if you're a designated employer, this helps me understand your EE targets and reporting status.
+
+If they skip seed documents: flag every section built without seed documents with `[NO SEED — defaults used; accuracy improves with your disciplinary code and contract template]`.
+
+#### SA Part 3: Build the configuration
+
+Use the ZA practice profile template. Populate all sections from the interview answers and seed documents. Write to `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`, creating parent directories as needed.
+
+After writing, show the tailored capability list:
+
+> **Here's what I can help with in SA employment law:**
+>
+> - **Termination review with SA risk flags** — LRA s188 fairness check, Schedule 8 compliance, CCMA referral risk, 11 high-risk flags. Try: `/employment-legal:termination-review`
+> - **Hiring review for SA contracts** — restraint of trade analysis, probation clause review, EEA obligations at hire. Try: `/employment-legal:hiring-review`
+> - **Worker classification (SA tests)** — BCEA s213, s200A presumption, common law control test, TES/labour broker analysis. Try: `/employment-legal:worker-classification`
+> - **Wage and hour Q&A** — BCEA working-time rules, overtime, leave entitlements, earnings threshold implications. Try: `/employment-legal:wage-hour-qa`
+> - **Leave tracking** — BCEA statutory leave (annual, sick, family responsibility, maternity), deadline alerts. Try: `/employment-legal:leave-tracker`
+> - **Policy drafting** — disciplinary codes aligned to Schedule 8, grievance procedures, harassment policies per Code of Good Practice. Try: `/employment-legal:policy-drafting`
+
+Then continue with the standard close (configuration path, "you can change anything later," "your practice profile learns").
+
+---
+
 ### Part 1: The footprint (2-3 min)
 
 > **What does [your company] do?** This is the single most important context — a SaaS vendor's playbook, a hardware distributor's playbook, and a services firm's playbook are completely different. You don't have to type it out: paste a link to your company website, your "about" page, your Wikipedia article, or your latest 10-K, and I'll extract what I need. Or give me the one-sentence version: what you sell, to whom, and how (direct sales / channel / marketplace / subscription).
