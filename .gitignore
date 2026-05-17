@@ -3,5 +3,6 @@
 /logs/
 /outputs/
 /.claude/
+!/.claude/skills/
 __pycache__/
 *.pyc
