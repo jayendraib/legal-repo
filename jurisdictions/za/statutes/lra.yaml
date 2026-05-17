@@ -9,7 +9,7 @@ sections:
     value: "substantive and procedural fairness required"
     effective_from: null
     effective_until: null
-    effect: "A dismissal is unfair if the employer fails to prove that the reason for dismissal is a fair reason related to conduct, capacity, or operational requirements, and that a fair procedure was followed. South Africa does not recognise at-will employment."
+    effect: "A dismissal is unfair if the employer fails to prove that the reason for dismissal is a fair reason related to conduct, capacity, or operational requirements, and that a fair procedure was followed. Every dismissal in South Africa requires both a fair reason and a fair procedure."
 
   automatically_unfair_dismissal:
     ref: "LRA s187(1)"
