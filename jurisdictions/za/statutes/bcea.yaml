@@ -1,0 +1,127 @@
+statute: "Basic Conditions of Employment Act 75 of 1997"
+authority: "Department of Employment and Labour"
+last_confirmed: "2025-03-01"
+source_url: "https://www.labour.gov.za/DocumentCenter/Pages/Acts.aspx"
+
+sections:
+  earnings_threshold:
+    ref: "BCEA s6(3), GN R2316 GG 48928"
+    value: 254371.67
+    currency: ZAR
+    unit: "per year"
+    effective_from: "2024-03-01"
+    effective_until: null
+    effect: "Employees earning above this threshold are excluded from certain BCEA protections including overtime, meal intervals, and compressed working week provisions."
+    gazette_date: "2024-02-23"
+
+  ordinary_hours:
+    ref: "BCEA s9(1)"
+    value: 45
+    unit: "hours per week"
+    effective_from: null
+    effective_until: null
+    effect: "Maximum ordinary working hours may not exceed 45 hours per week for employees covered by the Act."
+
+  daily_hours_5_day:
+    ref: "BCEA s9(1)(a)"
+    value: 9
+    unit: "hours per day"
+    effective_from: null
+    effective_until: null
+    effect: "An employee who works on five or fewer days per week may not work more than nine ordinary hours per day."
+
+  daily_hours_6_day:
+    ref: "BCEA s9(1)(b)"
+    value: 8
+    unit: "hours per day"
+    effective_from: null
+    effective_until: null
+    effect: "An employee who works on more than five days per week may not work more than eight ordinary hours per day."
+
+  overtime_max:
+    ref: "BCEA s10(1)"
+    value: 10
+    unit: "hours per week"
+    effective_from: null
+    effective_until: null
+    effect: "An employer may not require or permit an employee to work more than 10 hours of overtime per week."
+
+  overtime_rate:
+    ref: "BCEA s10(2)"
+    value: 1.5
+    unit: "multiplier"
+    effective_from: null
+    effective_until: null
+    effect: "Overtime must be paid at not less than one and a half times the employee's normal wage rate."
+
+  sunday_rate:
+    ref: "BCEA s16(1)"
+    value: 2.0
+    unit: "multiplier"
+    effective_from: null
+    effective_until: null
+    effect: "An employee who works on a Sunday must be paid at double the normal wage rate, or 1.5 times if the employee ordinarily works on a Sunday."
+
+  annual_leave:
+    ref: "BCEA s20(2)"
+    value: 21
+    unit: "consecutive days per cycle"
+    effective_from: null
+    effective_until: null
+    effect: "An employee is entitled to 21 consecutive days of annual leave per annual leave cycle, or by agreement one day for every 17 days worked."
+
+  sick_leave:
+    ref: "BCEA s22(2)"
+    value: 30
+    unit: "days per 36-month cycle"
+    effective_from: null
+    effective_until: null
+    effect: "An employee is entitled to paid sick leave equal to the number of days the employee would normally work during a period of six weeks over a 36-month cycle."
+
+  family_responsibility_leave:
+    ref: "BCEA s27(2)"
+    value: 3
+    unit: "days per annual cycle"
+    effective_from: null
+    effective_until: null
+    effect: "An employee is entitled to three days of paid family responsibility leave per annual leave cycle for birth of a child, illness of a child, or death of specified family members."
+
+  maternity_leave:
+    ref: "BCEA s25(1)"
+    value: 4
+    unit: "months"
+    effective_from: null
+    effective_until: null
+    effect: "An employee is entitled to at least four consecutive months of unpaid maternity leave, commencing at any time from four weeks before the expected date of birth."
+
+  notice_period_less_than_6_months:
+    ref: "BCEA s37(1)(a)"
+    value: 1
+    unit: "week"
+    effective_from: null
+    effective_until: null
+    effect: "An employee employed for six months or less is entitled to at least one week's notice of termination of employment."
+
+  notice_period_6_to_12_months:
+    ref: "BCEA s37(1)(b)"
+    value: 2
+    unit: "weeks"
+    effective_from: null
+    effective_until: null
+    effect: "An employee employed for more than six months but not more than one year is entitled to at least two weeks' notice of termination."
+
+  notice_period_over_12_months:
+    ref: "BCEA s37(1)(c)"
+    value: 4
+    unit: "weeks"
+    effective_from: null
+    effective_until: null
+    effect: "An employee employed for one year or more is entitled to at least four weeks' notice of termination of employment."
+
+  meal_interval:
+    ref: "BCEA s14(1)"
+    value: 60
+    unit: "minutes after 5 hours"
+    effective_from: null
+    effective_until: null
+    effect: "An employer must give an employee who works continuously for more than five hours a meal interval of at least 60 minutes."
