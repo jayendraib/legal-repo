@@ -1,0 +1,37 @@
+name: "Dismissal with automatically unfair pregnancy ground"
+skill: termination-review
+input: |
+  A sales manager earning R400,000 per year announced her pregnancy last
+  month.  Over the preceding 6 months her sales performance has declined
+  significantly.  She was placed on a Performance Improvement Plan (PIP)
+  and received 2 written warnings for failing to meet targets.  The
+  employer now wants to dismiss her for poor performance.
+
+expected_flags:
+  - "Automatically unfair ground"
+  - "Discrimination / EEA-protected ground"
+
+expected_statutes:
+  - "LRA s187(1)"
+  - "LRA s188"
+  - "EEA"
+
+must_not_contain:
+  - "FMLA"
+  - "Title VII"
+  - "ADA"
+  - "EEOC"
+  - "at-will"
+
+notes: |
+  Dismissal for reasons related to pregnancy is automatically unfair under
+  LRA s187(1)(e).  Even though the employer has documented performance
+  concerns (PIP + 2 warnings over 6 months), the timing creates a strong
+  inference that pregnancy is a reason for, or is connected to, the
+  dismissal.  The burden shifts to the employer to prove that the dismissal
+  is wholly unrelated to pregnancy.  If any part of the reason is connected
+  to the pregnancy, the dismissal is automatically unfair and attracts
+  compensation of up to 24 months' remuneration.  The EEA also prohibits
+  discrimination on the ground of pregnancy.  The analysis must consider
+  both the substantive performance case and the automatically unfair
+  overlay.

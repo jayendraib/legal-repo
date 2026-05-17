@@ -1,0 +1,31 @@
+name: "Fixed-term contract non-renewal with reasonable expectation"
+skill: termination-review
+input: |
+  A project manager has been on consecutive 12-month fixed-term contracts
+  for 3 years (this is the 3rd renewal).  The project is ending and the
+  employer does not intend to renew.  The employee earns R220,000 per year.
+
+expected_flags:
+  - "Fixed-term contract — reasonable expectation"
+  - "Earnings below BCEA threshold"
+
+expected_statutes:
+  - "LRA s186(1)(b)"
+  - "BCEA"
+
+must_not_contain:
+  - "at-will"
+  - "FMLA"
+  - "FLSA"
+
+notes: |
+  Under LRA s186(1)(b), the non-renewal of a fixed-term contract
+  constitutes a dismissal if the employee had a reasonable expectation of
+  renewal on the same or similar terms.  Three consecutive 12-month
+  renewals over 3 years creates a strong reasonable expectation.  The
+  employer must show a fair reason (operational requirements — the project
+  ending) and follow a fair procedure.  The employee earns below the BCEA
+  threshold, so additional BCEA protections apply.  The employer should
+  also consider whether the employee can be placed in an alternative
+  position before terminating.  The 2014 LRA amendments strengthened
+  protections for fixed-term employees earning below the threshold.

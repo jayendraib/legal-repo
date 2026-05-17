@@ -1,0 +1,34 @@
+name: "Overtime for below-threshold retail employee"
+skill: wage-hour-qa
+input: |
+  A retail employee earns R160,000 per year.  For the past month, the
+  employee has been working 50 hours per week.  The standard contract
+  specifies 45 hours per week.  The employee wants to know their overtime
+  rights.
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s9(1)"
+  - "BCEA s10"
+
+must_not_contain:
+  - "FLSA"
+  - "exempt"
+  - "non-exempt"
+  - "salary basis test"
+  - "overtime exemption"
+
+notes: |
+  The employee earns below the BCEA threshold and is therefore covered by
+  BCEA Chapter Two (regulation of working time).  BCEA s9(1) sets the
+  maximum ordinary working time at 45 hours per week (9 hours for a
+  5-day week, 8 hours for a 6-day week).  BCEA s10 regulates overtime:
+  overtime may not exceed 10 hours per week (without a collective
+  agreement allowing more), must be by agreement, and must be paid at
+  1.5 times the employee's normal wage (or 2 times if the employee
+  ordinarily works on that day but has agreed to time off instead).
+  Working 50 hours means 5 hours of overtime per week, which is within
+  the 10-hour weekly cap but must be compensated at 1.5x.  The analysis
+  should calculate the overtime owed for the month and flag whether the
+  overtime was agreed to.

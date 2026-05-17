@@ -1,0 +1,32 @@
+name: "Annual leave entitlement calculation"
+skill: leave-tracker
+input: |
+  An employee started on 15 March 2024.  Today is 17 May 2026.  The
+  employee has taken 12 days of annual leave so far.  What is the
+  employee's remaining annual leave entitlement?
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s20"
+
+must_not_contain:
+  - "PTO"
+  - "FMLA"
+  - "vacation days"
+  - "accrual rate"
+
+notes: |
+  BCEA s20 grants an employee 21 consecutive days of annual leave per
+  annual leave cycle (which is 12 months from start of employment or as
+  agreed).  This is equivalent to 15 working days for a 5-day-week
+  employee or 18 working days for a 6-day-week employee.  The employee
+  has been employed for approximately 26 months (15 March 2024 to
+  17 May 2026), spanning two complete leave cycles (cycle 1: 15 March
+  2024 – 14 March 2025; cycle 2: 15 March 2025 – 14 March 2026) and a
+  partial third cycle.  Assuming a 5-day week, the employee accrued
+  15 working days per completed cycle (30 total for 2 cycles), has taken
+  12, leaving 18 working days.  Leave in the current partial cycle
+  depends on whether the employer grants proportional accrual.  BCEA s20(4)
+  requires leave to be granted within 6 months after the end of the cycle.
+  The analysis should calculate entitlement per cycle and remaining balance.

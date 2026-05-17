@@ -1,0 +1,35 @@
+name: "Sick leave entitlement across cycles"
+skill: leave-tracker
+input: |
+  An employee started on 1 January 2023.  The sick leave cycle runs from
+  1 January 2023 to 31 December 2025 (36 months).  The employee has used
+  25 sick days during this cycle.  The employee is now asking for 10 more
+  days off for a planned surgery in March 2026.
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s22"
+
+must_not_contain:
+  - "FMLA"
+  - "ADA"
+  - "STD"
+  - "short-term disability"
+
+notes: |
+  BCEA s22 provides that an employee is entitled to paid sick leave equal
+  to the number of days the employee would normally work in a 6-week
+  period over a 36-month sick leave cycle.  For a 5-day-week employee,
+  this is 30 days per 36-month cycle.  The employee has used 25 of 30
+  days, leaving 5 days remaining in the current cycle (ending
+  31 December 2025).  The surgery is in March 2026, which falls in a new
+  36-month cycle (1 January 2026 – 31 December 2028).  In the new cycle,
+  the employee starts with a fresh 30-day entitlement.  However, during
+  the first 6 months of employment (or the equivalent in a new cycle),
+  the employee is only entitled to 1 day for every 26 days worked.  Since
+  the employee is not new (started 2023), the full entitlement of the new
+  cycle should be available from 1 January 2026.  The 10 days for surgery
+  would come from the new cycle's 30-day allowance.  The employer may
+  require a medical certificate for absences longer than 2 consecutive
+  days (s23).

@@ -1,0 +1,33 @@
+name: "Probation clause with summary termination"
+skill: hiring-review
+input: |
+  A standard employment contract includes a clause stating: "The employee
+  will serve a 12-month probationary period during which the company may
+  terminate employment with 1 week's notice without reason."
+
+expected_flags: []
+
+expected_statutes:
+  - "LRA Schedule 8 Item 8"
+  - "BCEA s37"
+
+must_not_contain:
+  - "at-will"
+  - "employment-at-will"
+  - "right-to-work"
+
+notes: |
+  South African law does not recognise "at-will" employment.  Even during
+  probation, the LRA requires that dismissal be for a fair reason and
+  follow a fair procedure.  Schedule 8 Item 8 provides specific guidance
+  on probation: the employer must give the employee reasonable evaluation,
+  instruction, training, guidance, or counselling, and an opportunity to
+  improve before dismissal.  A clause allowing termination "without
+  reason" is inconsistent with s188 of the LRA and Schedule 8.  The
+  12-month duration is not prohibited but is on the long side — Item 8(1)(d)
+  says the probation period should be "determined in advance" and be
+  "reasonable."  BCEA s37 prescribes minimum notice periods (1 week during
+  the first 6 months, 2 weeks between 6 months and 1 year).  The contract
+  clause meets the minimum for the first 6 months but may be inadequate
+  after that.  The review should flag the "without reason" language as
+  unenforceable and recommend redrafting.

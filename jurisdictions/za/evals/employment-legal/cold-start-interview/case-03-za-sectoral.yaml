@@ -1,0 +1,29 @@
+name: "Cold start for hospitality employer under sectoral determination"
+skill: cold-start-interview
+input: |
+  Company profile: South Africa, 40 employees, hospitality (hotel chain).
+
+expected_questions:
+  - "sectoral determination"
+  - "SD 14"
+  - "BCEA earnings threshold"
+  - "CCMA"
+
+must_not_ask:
+  - "US states"
+  - "FMLA"
+  - "which states"
+
+notes: |
+  A 40-employee hotel chain in South Africa falls under Sectoral
+  Determination 14 (Hospitality Sector), which sets minimum wages and
+  conditions that supplement the BCEA.  The cold-start interview should
+  determine: (1) whether the employer is aware of and complying with
+  SD 14, which prescribes minimum wages, meal intervals, transport
+  allowances, and other sector-specific conditions; (2) the BCEA
+  earnings threshold and how many employees fall below it; (3) the CCMA
+  as the dispute resolution forum (unless a bargaining council has
+  jurisdiction, which is uncommon in hospitality).  The company is below
+  the 50-employee designated employer threshold, so EE plan questions
+  are not relevant.  The interview must not reference US-specific
+  concepts.

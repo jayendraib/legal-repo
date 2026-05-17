@@ -1,0 +1,32 @@
+name: "Cold start for designated employer in financial services"
+skill: cold-start-interview
+input: |
+  Company profile: South Africa, 120 employees, financial services sector.
+
+expected_questions:
+  - "BCEA earnings threshold"
+  - "bargaining council"
+  - "designated employer"
+  - "EE plan"
+  - "CCMA"
+  - "recognised unions"
+
+must_not_ask:
+  - "US states"
+  - "which states"
+  - "FMLA"
+  - "state supplements"
+
+notes: |
+  A 120-employee financial services company in South Africa is a
+  designated employer under the EEA (50+ employees).  The cold-start
+  interview should determine: (1) whether the company is above or below
+  the BCEA earnings threshold for its employees, as this affects which
+  BCEA protections apply; (2) whether a bargaining council has
+  jurisdiction (e.g. the financial services sector may fall under a
+  bargaining council); (3) designated employer status and whether an EE
+  plan is in place (mandatory for designated employers); (4) the
+  company's relationship with the CCMA for dispute resolution; (5) whether
+  there are recognised unions or a workplace forum.  The interview must
+  not ask about US-specific concepts like state employment law variations,
+  FMLA eligibility, or state supplement requirements.

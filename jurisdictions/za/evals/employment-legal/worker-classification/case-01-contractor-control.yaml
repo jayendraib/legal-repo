@@ -1,0 +1,35 @@
+name: "Contractor with high employer control indicators"
+skill: worker-classification
+input: |
+  A marketing consultant has been engaged for 6 months in Cape Town.  She
+  works from the employer's office 3 days per week, uses the employer's
+  laptop, attends weekly team meetings, reports to the CMO, and works
+  exclusively for this employer.  She is paid R180,000 for the 6-month
+  engagement.
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s213"
+  - "BCEA s200A"
+
+must_not_contain:
+  - "ABC test"
+  - "IRS"
+  - "1099"
+  - "W-2"
+
+notes: |
+  BCEA s200A creates a rebuttable presumption of employment if one or more
+  of the listed factors are present and the person earns below the BCEA
+  threshold.  The factors include: manner and hours of work subject to
+  control, being part of the employer's organisation, working for one
+  person only, using employer's tools and equipment.  This scenario
+  triggers multiple s200A factors — employer's office, employer's laptop,
+  team meetings, reports to CMO, exclusivity.  BCEA s213 defines
+  "employee" and is the starting point for classification.  The dominant
+  impression test (from case law, including Smit v Workmen's Compensation
+  Commissioner) looks at the totality of the relationship.  The analysis
+  should conclude that this person is likely an employee despite the
+  "consultant" label, and the employer faces risk of BCEA and LRA
+  obligations applying retrospectively.

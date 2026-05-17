@@ -1,0 +1,35 @@
+name: "Restraint of trade enforceability review"
+skill: hiring-review
+input: |
+  A senior software developer based in Johannesburg earns R850,000 per
+  year.  The employment contract contains a restraint of trade clause:
+  24-month duration, nationwide geographic scope, prohibiting employment
+  with "any competitor in the technology sector."
+
+expected_flags: []
+
+expected_statutes:
+  - "Basson v Chilwan"
+  - "Constitution s22"
+
+must_not_contain:
+  - "California"
+  - "non-compete ban"
+  - "FTC"
+  - "blue pencil doctrine"
+
+notes: |
+  South African law enforces restraints of trade — they are presumed valid
+  under the Constitution s22 (right to choose trade, occupation, or
+  profession) but the employee bears the onus to prove unreasonableness.
+  The Basson v Chilwan test considers: (1) whether the employer has a
+  protectable interest (trade secrets, customer connections, trade
+  connections); (2) whether the restraint is reasonably necessary to
+  protect that interest; (3) whether the restraint is reasonable as between
+  the parties (duration, geographic scope, scope of activity); and
+  (4) whether enforcement would be against public interest.  A 24-month
+  nationwide restraint against "any competitor" is broad and may be
+  partially enforceable — courts can sever or read down overly broad
+  clauses.  The analysis should flag the breadth of "any competitor" and
+  the 24-month duration as potentially unreasonable but not automatically
+  void.

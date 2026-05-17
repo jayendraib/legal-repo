@@ -1,0 +1,35 @@
+name: "Disciplinary code for retail employer"
+skill: policy-drafting
+input: |
+  A retail company with 80 employees currently has no formal disciplinary
+  code or procedure.  Draft a disciplinary code and procedure that
+  complies with South African labour law.
+
+expected_flags: []
+
+expected_statutes:
+  - "LRA Schedule 8"
+
+must_not_contain:
+  - "state supplements"
+  - "at-will"
+  - "employment-at-will"
+  - "right-to-work"
+
+notes: |
+  LRA Schedule 8 (Code of Good Practice: Dismissal) provides the
+  framework for disciplinary codes and procedures.  The code should
+  include: (1) a schedule of offences graded by severity with
+  corresponding sanctions (verbal warning, written warning, final written
+  warning, dismissal); (2) a disciplinary procedure that ensures
+  procedural fairness — notification of allegations, opportunity to
+  prepare, right to representation (fellow employee or union
+  representative), hearing before an impartial chairperson, right to
+  appeal; (3) progressive discipline for less serious offences;
+  (4) recognition that dismissal for a first offence is appropriate only
+  for serious misconduct (e.g. gross dishonesty, assault, gross
+  insubordination); (5) consistency in application.  The code should be
+  communicated to all employees and ideally negotiated with any
+  recognised union.  For a retail environment, common offences include
+  cash shortages, stock losses, absenteeism, late-coming, and
+  insubordination.

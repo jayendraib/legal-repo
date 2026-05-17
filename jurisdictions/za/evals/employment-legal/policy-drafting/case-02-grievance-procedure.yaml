@@ -1,0 +1,34 @@
+name: "Formal grievance procedure"
+skill: policy-drafting
+input: |
+  A company currently handles employee grievances informally.  Management
+  wants to implement a formal grievance procedure that complies with South
+  African labour law requirements.
+
+expected_flags: []
+
+expected_statutes:
+  - "LRA"
+
+must_not_contain:
+  - "EEOC"
+  - "Title VII"
+  - "NLRB"
+  - "filing a charge"
+
+notes: |
+  While the LRA does not prescribe a specific grievance procedure, it
+  provides the framework within which grievances operate.  A compliant
+  grievance procedure should include: (1) a clear definition of what
+  constitutes a grievance; (2) a multi-step internal process — Step 1:
+  raise with immediate supervisor; Step 2: escalate to next level of
+  management; Step 3: refer to HR or a grievance committee;
+  (3) reasonable timeframes for each step (typically 5-10 working days);
+  (4) the right to representation (union representative or fellow
+  employee) at any stage; (5) written records at each step; (6) a final
+  internal appeal; (7) referral to the CCMA or bargaining council if
+  unresolved internally and the matter is one that falls within their
+  jurisdiction (e.g. unfair labour practice under s186(2)).  The procedure
+  should also address collective grievances.  If a bargaining council has
+  jurisdiction, the procedure should reference the council's dispute
+  resolution processes.

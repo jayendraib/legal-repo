@@ -1,0 +1,34 @@
+name: "Senior IT contractor via consulting firm"
+skill: worker-classification
+input: |
+  A senior DevOps engineer has been placed by an IT consulting firm at a
+  fintech company for 8 months.  He earns R65,000 per month, uses the
+  employer's systems and infrastructure, attends daily standups, but sets
+  his own technical approach and methodology.
+
+expected_flags: []
+
+expected_statutes:
+  - "LRA s198A"
+  - "BCEA s213"
+
+must_not_contain:
+  - "ABC test"
+  - "1099"
+  - "W-2"
+  - "IRS"
+
+notes: |
+  At R65,000 per month (R780,000 per year), this worker likely earns above
+  the BCEA earnings threshold, which means the s198A deemed employment
+  provision does not apply automatically.  The classification analysis
+  falls back to the common-law dominant impression test and BCEA s213.
+  Factors pointing toward employment: uses employer's systems, integrated
+  into team (daily standups), 8-month duration.  Factors pointing toward
+  independent contracting: sets own technical approach, placed via
+  consulting firm, senior specialist role.  The analysis should note that
+  above-threshold TES employees are not deemed employees of the client
+  under s198A but may still qualify as employees under the general
+  definition if the dominant impression of the relationship is one of
+  employment.  The consulting firm remains the employer of record unless
+  the relationship is found to be a sham.

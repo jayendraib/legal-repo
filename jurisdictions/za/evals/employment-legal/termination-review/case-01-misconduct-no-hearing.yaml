@@ -1,0 +1,31 @@
+name: "Misconduct dismissal without hearing"
+skill: termination-review
+input: |
+  Employee dismissed for theft. No disciplinary hearing was held before
+  dismissal.  The employee earns R180,000 per year (below the BCEA earnings
+  threshold) and has 3 years of service.
+
+expected_flags:
+  - "No hearing held"
+  - "Earnings below BCEA threshold"
+
+expected_statutes:
+  - "LRA s188"
+  - "LRA Schedule 8"
+  - "BCEA"
+
+must_not_contain:
+  - "FMLA"
+  - "FLSA"
+  - "at-will"
+
+notes: |
+  The dismissal is procedurally unfair because no hearing was held.
+  Schedule 8 of the LRA requires a fair procedure before dismissal for
+  misconduct — the employee must be notified of the allegations, given an
+  opportunity to state a case, and have the right to representation.
+  Because the employee earns below the BCEA threshold, additional BCEA
+  protections apply (e.g. notice periods, severance).  The substantive
+  fairness of the dismissal (theft) is a separate question; even if the
+  employer can prove theft, the lack of a hearing makes the dismissal
+  unfair.

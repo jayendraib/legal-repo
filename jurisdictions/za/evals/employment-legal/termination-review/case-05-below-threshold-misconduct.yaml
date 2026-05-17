@@ -1,0 +1,38 @@
+name: "Below-threshold misconduct with proportionality concerns"
+skill: termination-review
+input: |
+  An admin assistant earning R150,000 per year falsified timesheets for
+  3 months.  The employer held a full disciplinary hearing with proper
+  notice, the employee was represented by a union representative, and an
+  independent chairperson found the employee guilty of dishonesty.  The
+  employee has 5 years of service and no prior disciplinary warnings.
+
+expected_flags:
+  - "Earnings below BCEA threshold"
+  - "Comparator problem / inconsistent discipline"
+  - "Thin documentation"
+
+expected_statutes:
+  - "LRA s188"
+  - "LRA Schedule 8"
+  - "BCEA"
+
+must_not_contain:
+  - "at-will"
+  - "FMLA"
+  - "FLSA"
+
+notes: |
+  The procedural fairness appears sound — proper notice, representation,
+  independent chairperson.  The substantive question is whether dismissal
+  is the appropriate sanction given the circumstances.  Schedule 8
+  requires consideration of the nature and seriousness of the misconduct,
+  the employee's circumstances (5 years' service, clean record), and
+  whether the employer has been consistent in its treatment of similar
+  offences (comparator problem).  Dishonesty can justify dismissal even
+  for a first offence, but arbitrators have reinstated employees where
+  dismissal was disproportionate — long service and a clean record are
+  strong mitigating factors.  The employer should document how it has
+  treated similar cases in the past to defend consistency.  The employee
+  earns below the BCEA threshold so has the option of referring the
+  dispute to the CCMA.

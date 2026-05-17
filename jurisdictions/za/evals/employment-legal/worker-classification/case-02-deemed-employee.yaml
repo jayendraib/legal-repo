@@ -1,0 +1,33 @@
+name: "Deemed employee via labour broker provision"
+skill: worker-classification
+input: |
+  Three warehouse workers have been placed by a staffing agency at a
+  logistics company for over 12 months.  Each earns R10,000 per month.
+  They perform the same work as the logistics company's own permanent
+  warehouse staff.
+
+expected_flags: []
+
+expected_statutes:
+  - "LRA s198A"
+  - "BCEA"
+
+must_not_contain:
+  - "co-employment"
+  - "joint employer"
+  - "FLSA"
+  - "staffing agency liability"
+
+notes: |
+  LRA s198A (introduced by the 2014 amendments) provides that a temporary
+  employment service (TES / labour broker) employee earning below the BCEA
+  threshold who has been placed with a client for longer than 3 months is
+  deemed to be the employee of the client for purposes of the LRA.  At
+  R10,000 per month (R120,000 per year), these workers are well below the
+  BCEA threshold.  After 12 months of placement, they are deemed employees
+  of the logistics company, not the staffing agency, and are entitled to
+  the same terms and conditions as comparable permanent employees
+  (s198A(5)).  The logistics company cannot avoid this by cycling workers
+  through different agencies.  The analysis should flag the deemed
+  employment status and the obligation to provide terms no less favourable
+  than those of permanent comparators.

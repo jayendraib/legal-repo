@@ -1,0 +1,37 @@
+name: "Sexual harassment policy per Code of Good Practice"
+skill: policy-drafting
+input: |
+  Draft a sexual harassment policy in compliance with the Code of Good
+  Practice on the Handling of Sexual Harassment Cases in the Workplace.
+
+expected_flags: []
+
+expected_statutes:
+  - "EEA"
+  - "Code of Good Practice on the Handling of Sexual Harassment"
+
+must_not_contain:
+  - "Title VII"
+  - "EEOC"
+  - "Title IX"
+  - "hostile work environment"
+
+notes: |
+  The Code of Good Practice on the Handling of Sexual Harassment Cases
+  in the Workplace (issued under the EEA) provides detailed guidance.
+  The policy should include: (1) a definition of sexual harassment
+  (unwanted conduct of a sexual nature — physical, verbal, or
+  non-verbal — that impairs dignity, is unwelcome, and creates a hostile
+  environment); (2) a clear statement that sexual harassment is a form
+  of unfair discrimination under the EEA; (3) a complaint procedure that
+  offers both informal resolution (where appropriate) and formal
+  disciplinary proceedings; (4) confidentiality protections; (5) protection
+  against victimisation or retaliation for reporting; (6) the employer's
+  obligation to take reasonable steps to prevent harassment and to act
+  immediately when harassment is reported; (7) the role of the employer
+  as vicariously liable if it fails to take steps to eliminate harassment
+  (Ntsabo v Real Security); (8) education and awareness obligations.
+  The policy must be communicated to all employees and displayed in the
+  workplace.  If the complainant is not satisfied with the outcome, they
+  may refer the matter to the CCMA as an unfair discrimination dispute
+  under the EEA.

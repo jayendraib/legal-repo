@@ -1,0 +1,35 @@
+name: "Designated employer hiring with testing obligations"
+skill: hiring-review
+input: |
+  A designated employer (120 employees, financial services sector) is
+  hiring a Head of Compliance.  The company wants to administer a
+  psychometric assessment and a medical examination that includes an HIV
+  test as part of the recruitment process.
+
+expected_flags: []
+
+expected_statutes:
+  - "EEA s7"
+  - "EEA s8"
+
+must_not_contain:
+  - "ADA"
+  - "Title VII"
+  - "EEOC"
+  - "reasonable accommodation"
+
+notes: |
+  The Employment Equity Act regulates pre-employment testing.  EEA s7
+  prohibits medical testing unless legislation requires it or the test is
+  justified.  An HIV test is specifically prohibited under s7(2) unless
+  authorised by the Labour Court.  A blanket HIV test during recruitment
+  is unlawful.  EEA s8 permits psychometric testing only if the test has
+  been scientifically shown to be valid and reliable, can be applied fairly
+  to all employees, and is not biased against any group.  For a Head of
+  Compliance role, psychometric assessment may be justifiable if it is
+  relevant to the inherent requirements of the job.  The employer must
+  ensure the assessment instrument is validated for the South African
+  context and certified by the Health Professions Council of South Africa
+  (HPCSA).  As a designated employer, the company must also comply with
+  its Employment Equity Plan and affirmative action obligations under
+  Chapter III of the EEA.

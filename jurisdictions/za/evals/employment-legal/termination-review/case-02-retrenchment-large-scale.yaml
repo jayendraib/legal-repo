@@ -1,0 +1,34 @@
+name: "Large-scale retrenchment without s189 process"
+skill: termination-review
+input: |
+  A manufacturing company with 250 employees plans to retrench 30 workers
+  from its production division due to declining orders.  Management started
+  individual meetings with affected employees but has not issued a formal
+  s189 notice, has not engaged a facilitator from the CCMA, and has not
+  consulted with the recognised union or workplace forum.
+
+expected_flags:
+  - "Operational requirements without s189 process"
+
+expected_statutes:
+  - "LRA s189"
+  - "LRA s189A"
+  - "LRA s41(2)"
+
+must_not_contain:
+  - "WARN Act"
+  - "FMLA"
+  - "at-will"
+  - "FLSA"
+
+notes: |
+  Because the employer has more than 50 employees and is retrenching 10 or
+  more, s189A (large-scale retrenchment) applies.  This triggers a
+  mandatory 60-day facilitation process at the CCMA before any dismissals
+  may take effect.  The employer must issue a written s189(3) notice to the
+  consulting parties (recognised union, workplace forum, or employees
+  directly) disclosing the reasons, alternatives considered, number
+  affected, selection criteria, severance pay, timing, and any other
+  relevant information.  Individual meetings do not substitute for
+  collective consultation.  s41(2) deals with the obligation to consult
+  with workplace forums where they exist.

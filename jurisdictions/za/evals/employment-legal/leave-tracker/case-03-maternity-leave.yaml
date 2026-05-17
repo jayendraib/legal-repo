@@ -1,0 +1,36 @@
+name: "Maternity leave entitlement and UIF"
+skill: leave-tracker
+input: |
+  An employee is expecting and wants to start maternity leave in 6 weeks.
+  She earns R200,000 per year.  She wants to know her maternity leave
+  entitlement, whether the leave is paid, and what benefits she can claim.
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s25"
+  - "UIF"
+
+must_not_contain:
+  - "FMLA"
+  - "short-term disability"
+  - "PFL"
+  - "paid family leave"
+
+notes: |
+  BCEA s25 entitles an employee to at least 4 consecutive months of
+  maternity leave.  The employee may start maternity leave at any time
+  from 4 weeks before the expected date of birth (or earlier if a medical
+  practitioner or midwife certifies it is necessary), and may not work
+  for 6 weeks after the birth unless certified fit.  Critically, the BCEA
+  does not require the employer to pay the employee during maternity leave
+  — the leave is unpaid unless the employment contract or collective
+  agreement provides otherwise.  The employee can claim maternity benefits
+  from the Unemployment Insurance Fund (UIF) under the Unemployment
+  Insurance Act.  UIF maternity benefits are calculated based on the
+  employee's earnings and the UIF sliding scale (up to a maximum of 60%
+  of earnings, subject to the UIF ceiling).  The employee must have been
+  contributing to UIF.  At R200,000 per year, the employee earns below
+  the BCEA threshold and UIF earnings ceiling.  The analysis should
+  explain the timeline (when leave can start), the unpaid nature, and the
+  UIF claims process.

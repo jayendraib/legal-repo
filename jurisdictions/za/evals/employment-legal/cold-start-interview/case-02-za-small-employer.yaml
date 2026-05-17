@@ -1,0 +1,27 @@
+name: "Cold start for small professional services employer"
+skill: cold-start-interview
+input: |
+  Company profile: South Africa, 25 employees, professional services.
+
+expected_questions:
+  - "BCEA earnings threshold"
+  - "bargaining council"
+  - "CCMA"
+
+must_not_ask:
+  - "US states"
+  - "FMLA"
+  - "EE plan"
+
+notes: |
+  A 25-employee professional services company in South Africa is below
+  the designated employer threshold (50 employees) under the EEA, so
+  questions about EE plans and affirmative action obligations are not
+  relevant.  The cold-start interview should focus on: (1) the BCEA
+  earnings threshold — how many employees earn above vs below, as this
+  determines which BCEA protections apply; (2) whether a bargaining
+  council covers the sector (professional services may or may not fall
+  under one); (3) CCMA as the default dispute resolution forum.  The
+  interview should not ask about US-specific concepts (state variations,
+  FMLA) or about EE plans (since the company is not a designated
+  employer).

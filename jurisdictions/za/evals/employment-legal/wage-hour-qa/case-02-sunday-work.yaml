@@ -1,0 +1,33 @@
+name: "Public holiday and Sunday work obligations"
+skill: wage-hour-qa
+input: |
+  A warehouse team needs to work on Youth Day (16 June, a public holiday)
+  and the following Sunday.  The employer wants to know the pay obligations
+  and whether employees can be required to work.
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s16"
+  - "BCEA s18"
+  - "Public Holidays Act"
+
+must_not_contain:
+  - "FLSA"
+  - "federal holiday"
+  - "time-and-a-half"
+  - "Fair Labor Standards Act"
+
+notes: |
+  BCEA s18 governs work on public holidays.  Youth Day (16 June) is a
+  public holiday under the Public Holidays Act 36 of 1994.  An employee
+  may only be required to work on a public holiday by agreement.  If the
+  employee works on a public holiday, they must be paid at double their
+  normal daily wage (or, if the day falls on a day they would not normally
+  work, their normal daily wage plus the amount for actual hours worked).
+  BCEA s16 governs Sunday work: an employee who does not ordinarily work
+  on a Sunday must be paid at double the normal wage; an employee who
+  ordinarily works on Sundays must be paid at 1.5 times the normal wage.
+  The analysis should distinguish between employees who ordinarily work
+  Sundays and those who do not, and note that work on both days requires
+  agreement.

@@ -1,0 +1,31 @@
+name: "Night shift setup for call centre"
+skill: wage-hour-qa
+input: |
+  A company is setting up a night shift for its call centre, running from
+  22:00 to 06:00.  The employer wants to know the legal requirements for
+  implementing night work.
+
+expected_flags: []
+
+expected_statutes:
+  - "BCEA s17"
+
+must_not_contain:
+  - "FLSA"
+  - "shift differential"
+  - "Fair Labor Standards Act"
+
+notes: |
+  BCEA s17 regulates night work (work performed between 18:00 and 06:00).
+  The employer may only require or permit night work if: (a) the employee
+  has agreed to it; (b) the employee is compensated by an allowance or by
+  a reduction of working hours (the BCEA does not prescribe a specific
+  percentage but collective agreements or sectoral determinations may);
+  and (c) transportation is available between the employee's residence and
+  the workplace at the start and end of the shift.  Additionally, the
+  employer must inform the employee in writing of any health and safety
+  hazards associated with night work, and the employee is entitled to a
+  medical examination at the employer's cost — both before starting night
+  work and at regular intervals thereafter (s17(3)).  If a medical
+  practitioner certifies that night work poses a health risk, the employer
+  must transfer the employee to suitable day work if available.
