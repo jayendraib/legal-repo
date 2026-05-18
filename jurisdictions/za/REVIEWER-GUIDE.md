@@ -4,15 +4,100 @@
 
 ---
 
-## What is this?
+## What is this system?
 
-This is an AI assistant for legal professionals, built as a set of plugins for different practice areas (employment law, commercial law, privacy law, etc.). The base system was designed for **US law**. We've added a **South African layer** on top — so when a South African lawyer uses it, the system applies SA statutes, procedures, and risk frameworks instead of US ones.
+**Claude for Legal** is an AI assistant built by Anthropic for legal professionals. It works inside Claude (Anthropic's AI) as a set of **plugins** — one per practice area. Think of each plugin as a specialist colleague who knows your practice area's frameworks, checklists, and risk flags. A lawyer installs the plugin for their practice area, runs a short setup interview to teach it about their organisation, and then uses it day-to-day for reviews, drafting, triage, and tracking.
 
-**Your job as reviewer:** Check that the SA legal content is accurate, current, and complete. You don't need to understand the technology — just read the legal content in the files described below and flag anything that's wrong, outdated, or missing.
+The system is not a chatbot that gives generic legal answers. It's a **structured assistant** that:
+- Knows your organisation's playbook (escalation rules, risk appetite, review triggers)
+- Runs checklists before concluding any review (so nothing gets missed)
+- Cites its sources and flags when it's uncertain (every citation is tagged with where it came from)
+- Produces draft work product for attorney review (it never files, sends, or acts on anything without a lawyer's sign-off)
+
+**Every output is a draft for attorney review — not legal advice.** The system makes review faster; it does not replace it.
 
 ---
 
-## How the system is organised
+## The original system — built for US law
+
+The base system has **12 practice-area plugins**, each with its own skills (specific tasks the assistant can do):
+
+| Plugin | Practice area | Example tasks |
+|---|---|---|
+| **employment-legal** | Employment / labour law | Termination review, hiring review, worker classification, leave tracking, policy drafting, wage & hour Q&A |
+| **commercial-legal** | Commercial contracts | Vendor agreement review, NDA triage, renewal tracking, SaaS MSA review, amendment tracing |
+| **privacy-legal** | Privacy / data protection | DPA review, DSAR response, privacy impact assessments, regulatory gap analysis |
+| **corporate-legal** | Corporate / M&A | Diligence review, disclosure schedules, board consents, entity compliance, closing checklists |
+| **litigation-legal** | Litigation / disputes | Claim charts, chronologies, deposition prep, privilege logs, brief drafting |
+| **product-legal** | Product counsel | Launch review, marketing claims checking, risk calibration |
+| **regulatory-legal** | Regulatory compliance | Regulatory feed monitoring, policy diff, gap tracking |
+| **ai-governance-legal** | AI governance | AI use-case triage, impact assessments, vendor AI review |
+| **ip-legal** | Intellectual property | Trademark clearance, cease & desist, DMCA, OSS compliance |
+| **employment-legal** | Employment law | Termination review, hiring review, worker classification |
+| **law-student** | Legal education | Case briefing, Socratic drilling, bar prep, IRAC practice |
+| **legal-clinic** | Legal clinics | Intake workflow, case assignment, deadline tracking |
+
+All of these plugins were written with **US law** as the default — US statutes, US procedures, US risk flags, US terminology. When a plugin checks whether a termination is risky, it checks for FMLA retaliation, FLSA misclassification, and state-specific rules. When it reviews a contract, it thinks about UCC, Delaware law, and FRCP discovery rules.
+
+**This is a problem for South African lawyers.** US defaults don't just fail to help — they actively mislead. At-will employment doesn't exist in SA. FMLA leave doesn't exist. The ABC test for worker classification doesn't apply. A South African lawyer following US-default guidance could face CCMA referrals, Labour Court claims, or regulatory penalties.
+
+---
+
+## What we've built — the South African layer
+
+Instead of rewriting the entire system for SA, we've added a **South African overlay**. When a South African lawyer sets up a plugin, the system detects the SA jurisdiction and loads SA-specific content:
+
+- **SA statutes** instead of US statutes (BCEA instead of FLSA, LRA instead of NLRA, POPIA instead of state privacy laws)
+- **SA procedures** instead of US procedures (CCMA conciliation instead of EEOC charges, s189 consultation instead of WARN Act notice)
+- **SA risk flags** instead of US risk flags (procedural fairness hearing instead of at-will termination, Schedule 8 compliance instead of FMLA interference)
+- **SA privilege headers** instead of US headers ("legal professional privilege" instead of "attorney work product")
+
+The US content stays intact underneath — it's not deleted or broken. The SA layer sits on top and activates when the user's jurisdiction is South Africa.
+
+**Currently adapted for SA:**
+- Employment law (complete — 7 skills adapted, 11 high-risk dismissal flags, 6 practice guides)
+- Commercial law (complete — 5 skills adapted, 12 high-risk flags, 6 practice guides)
+- Privacy law / POPIA (placeholder — not yet built)
+
+---
+
+## How a lawyer actually uses this
+
+Here's what the day-to-day experience looks like for an SA employment lawyer using the system:
+
+**First-time setup (10 minutes):**
+1. Install the employment-legal plugin
+2. Run the setup interview — it asks about your organisation: BCEA earnings threshold coverage, bargaining council membership, designated employer status, CCMA vs. external consultant for disputes, whether your leave is at BCEA minimums or above
+3. Upload your disciplinary code and standard employment contract — the system learns your actual framework
+4. Done — your practice profile is saved and every skill reads from it
+
+**Daily use — example: reviewing a proposed termination:**
+1. The lawyer tells the system: "We want to dismiss an employee for misconduct. She's been with us 3 years, earns R180,000, no hearing has been held yet."
+2. The system runs its **11 high-risk flag checklist** against the facts:
+   - Flag 1 fires: **No hearing held** — "Schedule 8 requires notice of allegations, time to prepare, right to representation, and an opportunity to respond before dismissal"
+   - Flag 9 fires: **Earnings below BCEA threshold** — "This employee has full BCEA working-time and overtime protections; adverse changes face higher scrutiny"
+3. The system produces a draft review memo with the flags, the applicable LRA sections, the CCMA referral risk, and a decision tree: "Hold the hearing first. Here's a checklist for procedural fairness."
+4. The lawyer reviews, adjusts, and sends to HR
+
+**The system never acts on its own.** It produces drafts, flags risks, and offers options. The lawyer decides.
+
+**Other common tasks:**
+- "Review this employment contract" → checks restraint of trade (Basson v Chilwan test), probation clause (Schedule 8 Item 8), EEA obligations
+- "Can we classify this person as a contractor?" → runs BCEA s213, s200A presumption, dominant impression test
+- "Draft a disciplinary code" → produces a code aligned to Schedule 8 with the company's specific offence categories
+- "How much annual leave does this employee have?" → calculates from BCEA s20 entitlements and the company's leave cycle
+
+---
+
+## What you're reviewing
+
+**Your job as reviewer:** Check that the SA legal content is accurate, current, and complete. You don't need to understand the technology — just read the legal content in the files described below and flag anything that's wrong, outdated, or missing.
+
+The SA layer is made up of files in the `jurisdictions/za/` directory. These files contain all the South African legal knowledge the system uses. If something is wrong in these files, the system will give wrong advice to every SA lawyer who uses it.
+
+---
+
+## How the SA layer is organised
 
 Think of it like a law firm's knowledge management system with three layers:
 
