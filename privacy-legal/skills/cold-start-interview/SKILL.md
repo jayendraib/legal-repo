@@ -197,6 +197,117 @@ Then report findings in this form:
 
 Write `## Who's using this` and `## Available integrations` sections immediately after `## Who we are`, and update `## Outputs` so the work-product header is conditional on role (see the practice profile template below).
 
+### Jurisdiction check — South African overlay
+
+After writing the Part 0 sections, check the company profile for jurisdiction:
+
+- Read `~/.claude/plugins/config/claude-for-legal/company-profile.md` → `Primary jurisdiction`
+- If the primary jurisdiction is **South Africa** (or ZA, or the user's company is SA-based based on the company profile answers):
+
+**Fork to the SA interview path.** The rest of this interview (Parts 1-3) uses SA-specific questions. The output writes to the ZA practice profile template at `${CLAUDE_PLUGIN_ROOT}/../../../jurisdictions/za/privacy-legal/practice-profile-template.md` instead of the US template at `${CLAUDE_PLUGIN_ROOT}/CLAUDE.md`.
+
+If the primary jurisdiction is NOT South Africa, continue with the US interview path below (Parts 1-3 as written).
+
+---
+
+#### SA Part 1: Privacy practice configuration (3-5 min)
+
+> POPIA is national — unlike US state privacy laws, there are no per-state variations. But there are several dimensions that shape how POPIA applies to your organisation: your responsible party/operator orientation, your Information Officer registration status, your cross-border transfer posture, and your direct marketing approach.
+
+**Responsible party / operator orientation:**
+
+> 1. **Are you primarily a responsible party, an operator, or both?**
+>    - Primarily responsible party (you determine the purpose and means of processing PI — typical for most businesses)
+>    - Primarily operator (you process PI on a responsible party's instructions — typical for outsourced service providers, cloud platforms, BPOs)
+>    - Both — we're a responsible party for our own data and operator for client data
+
+**Information Officer:**
+
+> 2. **Has your Information Officer been registered with the Information Regulator?**
+>    - Yes — IO name: _____, Deputy IO: _____
+>    - Registration in progress
+>    - Not yet — we need to do this
+>
+> *(POPIA s55-56 requires IO registration before they can take up duties. The CEO is the default IO for private bodies.)*
+
+**POPIA compliance framework:**
+
+> 3. **Do you have a documented POPIA compliance framework?**
+>    - Yes — last reviewed: _____
+>    - In development
+>    - No
+>
+> *(POPIA s8 accountability condition. The April 2025 amended regulations require the framework to be "continuously improved.")*
+
+**Cross-border transfers:**
+
+> 4. **Does your organisation transfer personal information outside South Africa?**
+>    - Yes — to which countries, and what mechanism? (binding agreement / BCRs / consent / adequate protection law / not sure)
+>    - No — all processing stays in SA
+>    - Not sure
+>
+> *(POPIA s72 restricts cross-border transfers. No adequacy list has been published by the Information Regulator.)*
+
+**Breach response:**
+
+> 5. **Two questions on breach preparedness:**
+>    1. Do you have a documented breach response plan?
+>    2. Are you registered on the Information Regulator's eServices portal? (Mandatory for breach reporting since 1 April 2025.)
+
+**Direct marketing:**
+
+> 6. **Does your organisation do direct marketing by electronic communication (email, SMS, automated calls, WhatsApp)?**
+>    - Yes — we have explicit consent mechanisms in place
+>    - Yes — we rely on the existing customer exception (s69(4))
+>    - Yes — but our consent process may need updating
+>    - No — we don't do electronic direct marketing
+>
+> *(April 2025 POPIA regulations: opt-out ≠ consent, telemarketing must be recorded, multi-channel objection must be offered.)*
+
+**Prior authorization:**
+
+> 7. **Does your organisation do any of the following (each requires prior authorization from the Information Regulator under POPIA s57)?**
+>    - Process unique identifiers to cross-link data across responsible parties (for a purpose other than originally intended at collection)
+>    - Process information on criminal behaviour on behalf of third parties
+>    - Process personal information for credit reporting purposes
+>    - Transfer special personal information or children's PI to a foreign country without adequate protection
+>    - None of the above
+
+#### SA Part 2: Seed documents
+
+> The documents that make the biggest difference for SA privacy practice:
+>
+> **Must-have:**
+> 1. **Privacy notice/policy** (URL or file) — I'll extract your published commitments for the policy-monitor skill. Paste the URL, share a file path, or say 'skip for now.'
+>
+> 2. **Operator agreement template** (file) — I'll extract your standard positions for the operator agreement playbook. If you don't have one, I'll set defaults.
+>
+> 3. **Reference PIA** (file) — I'll learn your house format, section structure, and risk scoring approach.
+
+> **Nice-to-have (skip if you don't have them handy):**
+> 4. **IO registration certificate** — confirms registration status and IO details
+> 5. **Breach response plan** — I'll extract your response team, procedures, and timelines
+> 6. **POPIA compliance framework document** — I'll extract your current framework status
+
+If they skip seed documents: flag every section built without seed documents with `[NO SEED — defaults used; accuracy improves with your privacy notice, operator agreement template, and reference PIA]`.
+
+#### SA Part 3: Build the configuration
+
+Use the ZA practice profile template. Populate all sections from the interview answers and seed documents. Write to `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`, creating parent directories as needed.
+
+After writing, show the tailored capability list:
+
+> **Here's what I can help with in SA privacy law:**
+>
+> - **Operator agreement review with POPIA s21 framework** — term-by-term review, responsible party/operator analysis, cross-border transfer check. Try: `/privacy-legal:dpa-review`
+> - **Data subject request handling** — s23 access, s24 correction/deletion, s11(3) objection, April 2025 multi-channel requirements. Try: `/privacy-legal:dsar-response`
+> - **Privacy impact assessment** — POPIA 8-conditions framework, s57 prior authorization analysis, special PI and children's PI checks. Try: `/privacy-legal:pia-generation`
+> - **Processing activity triage** — PROCEED/PIA REQUIRED/PRIOR AUTHORIZATION REQUIRED/STOP classification. Try: `/privacy-legal:use-case-triage`
+> - **Privacy policy drift monitoring** — sweep outputs against POPIA notice commitments, flag gaps. Try: `/privacy-legal:policy-monitor`
+> - **Regulatory gap analysis** — diff new regulations against current POPIA compliance posture. Try: `/privacy-legal:reg-gap-analysis`
+
+---
+
 ### Part 1: What kind of privacy shop is this? (2-3 min)
 
 **The business model question (this determines everything):**
