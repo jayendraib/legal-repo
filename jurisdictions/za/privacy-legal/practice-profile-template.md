@@ -186,7 +186,7 @@ POPIA does not include an explicit data portability right. If a data subject req
 - Transfer necessary for performance of contract (s72(1)(c))
 - Transfer in the interest of the data subject, impracticable to obtain consent (s72(1)(d))
 
-**No adequacy list:** Unlike GDPR, the Information Regulator has not published a list of countries with adequate data protection. Each transfer requires individual assessment.
+**No adequacy list:** The Information Regulator has not published a list of countries with adequate data protection (unlike some international frameworks). Each transfer requires individual assessment.
 **Data location register:** [PLACEHOLDER — countries where PI is stored or processed, mechanism relied on for each]
 **IR guidance note:** Cross-border transfer guidance note expected from the Information Regulator in 2025/26. Monitor for publication and update this section when issued.
 **Prior authorisation:** Transfer of special PI or children's PI to a country without adequate protection triggers s57(1)(d) prior authorisation.

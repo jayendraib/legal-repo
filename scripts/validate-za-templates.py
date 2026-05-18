@@ -50,6 +50,32 @@ TEMPLATE_CONFIG = {
             (r"\bpreliminary injunction\b", "preliminary injunction"),
         ],
     },
+    "privacy-legal": {
+        "path": ROOT / "jurisdictions" / "za" / "privacy-legal" / "practice-profile-template.md",
+        "required_sections": [
+            "Who we are", "Who's using this", "Information Officer",
+            "POPIA compliance framework", "Operator agreement playbook",
+            "Privacy notice commitments", "PIA house style",
+            "Data subject request process", "Cross-border transfers",
+            "Breach response", "Direct marketing compliance",
+            "Escalation", "Outputs", "Seed documents",
+        ],
+        "sa_required_terms": [
+            "POPIA", "Information Regulator", "responsible party", "operator",
+            "Information Officer", "admitted attorney", "s21", "s72", "s57",
+        ],
+        "us_forbidden": [
+            (r"\bdata controller\b", "data controller"),
+            (r"\bdata processor\b", "data processor"),
+            (r"\bGDPR\b", "GDPR"),
+            (r"\bCCPA\b", "CCPA"),
+            (r"\bCPRA\b", "CPRA"),
+            (r"\bHIPAA\b", "HIPAA"),
+            (r"\bFERPA\b", "FERPA"),
+            (r"\bCOPPA\b", "COPPA"),
+            (r"\bDPIA\b", "DPIA"),
+        ],
+    },
 }
 
 
