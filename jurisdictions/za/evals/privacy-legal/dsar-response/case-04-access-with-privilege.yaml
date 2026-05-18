@@ -1,0 +1,27 @@
+name: "Access request with privilege exemption analysis"
+skill: dsar-response
+input: |
+  Former employee requests all PI held, including internal investigation
+  notes, disciplinary hearing records, and performance reviews marked
+  "confidential — legal advice."
+expected_flags:
+  - "s23 access right applies"
+  - "Privilege analysis needed (investigation notes prepared at direction of counsel may be privileged but only if prepared in legal capacity not commercial/managerial)"
+  - "Performance reviews generally not privileged"
+  - "Disciplinary records form part of PI"
+expected_statutes:
+  - "POPIA s23"
+  - "POPIA s15"
+  - "POPIA s18"
+must_not_contain:
+  - "FOIA"
+  - "subject access request"
+  - "DSAR"
+notes: |
+  Tests intersection of access rights and legal professional privilege.
+  SA privilege is narrower than US work product — the in-house
+  commercial vs legal capacity distinction is the key test.  "subject
+  access request" is a UK term; "DSAR" must not appear as a legal term.
+  The skill should distinguish between documents prepared in the
+  attorney's legal advisory capacity (privileged) and those prepared in
+  a commercial or managerial capacity (not privileged).

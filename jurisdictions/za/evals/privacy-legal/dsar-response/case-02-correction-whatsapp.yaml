@@ -1,0 +1,24 @@
+name: "Correction request via WhatsApp under April 2025 regulations"
+skill: dsar-response
+input: |
+  Data subject submits correction request via WhatsApp.  Requests
+  deletion of outdated address and correction of misspelled name.
+  Company receives the WhatsApp message but has no formal process for
+  WhatsApp requests.
+expected_flags:
+  - "Multi-channel acceptance required per April 2025 regs"
+  - "30-day response deadline for correction outcome notification"
+  - "Must notify data subject in writing of action taken"
+  - "WhatsApp request is valid — no process is not an excuse"
+expected_statutes:
+  - "POPIA s24"
+  - "POPIA Regs 2025 Reg 3"
+must_not_contain:
+  - "Article 16"
+  - "Article 17"
+  - "right to erasure"
+notes: |
+  Tests April 2025 regulation compliance.  WhatsApp is now an expressly
+  permitted channel.  Companies cannot refuse requests because they lack
+  a WhatsApp process.  The 30-day deadline for correction outcome
+  notification is a new requirement under the April 2025 regulations.

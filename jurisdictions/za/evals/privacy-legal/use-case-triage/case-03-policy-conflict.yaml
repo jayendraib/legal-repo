@@ -1,0 +1,26 @@
+name: "Processing conflicts with published privacy notice"
+skill: use-case-triage
+input: |
+  Company's privacy notice says "we do not sell or share your personal
+  information with third parties for marketing purposes."  Marketing
+  team wants to share customer email list with a co-marketing partner.
+expected_flags:
+  - "STOP — direct conflict with published privacy notice commitments"
+  - "s69 direct marketing restrictions"
+  - "Sharing for co-marketing equals processing for third-party marketing purposes"
+  - "Must either update privacy notice and obtain fresh consent or abandon the initiative"
+expected_statutes:
+  - "POPIA s69"
+  - "POPIA s18"
+  - "POPIA s11"
+must_not_contain:
+  - "CCPA"
+  - "do not sell"
+  - "CalOPPA"
+notes: |
+  Tests STOP classification.  The privacy notice is a binding commitment
+  under POPIA s18 openness condition — processing that contradicts it
+  is unlawful unless the notice is updated and fresh consent obtained.
+  "do not sell" must not appear as a reference to CCPA's Do Not Sell
+  right — the issue here is breach of the company's own published
+  commitments under POPIA.

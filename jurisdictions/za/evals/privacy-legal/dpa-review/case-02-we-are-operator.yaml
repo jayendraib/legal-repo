@@ -1,0 +1,25 @@
+name: "BPO reviews client operator agreement"
+skill: dpa-review
+input: |
+  BPO company receives client's operator agreement.  Client requires
+  24-hour breach notification, unlimited audit rights, data deletion
+  within 7 days of termination, no subprocessors without prior written
+  consent.
+expected_flags:
+  - "Assess each term against operator playbook positions"
+  - "Flag any 'Never' terms"
+  - "Check cross-border implications if BPO has offshore operations"
+expected_statutes:
+  - "POPIA s21"
+  - "POPIA s22"
+  - "POPIA s19"
+must_not_contain:
+  - "at-will"
+  - "FMLA"
+  - "FLSA"
+notes: |
+  Tests the skill's ability to review from the operator perspective
+  (defending operational flexibility).  The BPO receives the agreement
+  — it needs to assess which terms are commercially acceptable, which
+  are negotiable, and which are "Never" terms that would expose the BPO
+  to unacceptable risk.

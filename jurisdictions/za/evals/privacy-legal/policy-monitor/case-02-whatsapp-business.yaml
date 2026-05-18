@@ -1,0 +1,24 @@
+name: "New WhatsApp Business communication channel"
+skill: policy-monitor
+input: |
+  We want to start using WhatsApp Business API to send order updates
+  and promotional messages to customers.
+expected_flags:
+  - "REQUIRED for promotional messages (s69 direct marketing — need explicit consent not opt-out)"
+  - "ADVISABLE for order updates (may be covered under existing customer exception or contract performance but privacy notice should disclose WhatsApp as a communication channel)"
+  - "April 2025 regs apply — recorded consent and multi-channel objection"
+expected_statutes:
+  - "POPIA s69"
+  - "POPIA s18"
+  - "POPIA Regs 2025 Reg 6"
+must_not_contain:
+  - "CAN-SPAM"
+  - "TCPA"
+  - "implied consent"
+notes: |
+  Tests split classification — promotional messages trigger REQUIRED
+  (s69 compliance), transactional messages trigger ADVISABLE (disclosure
+  best practice).  The skill must distinguish between promotional and
+  transactional use of WhatsApp Business and classify each separately.
+  "implied consent" must not appear — POPIA s69 requires express
+  consent for direct marketing.

@@ -1,0 +1,28 @@
+name: "Alternative credit scoring using automated decisions"
+skill: pia-generation
+input: |
+  Fintech wants to use mobile phone usage patterns, social media
+  activity, and purchase history to generate credit scores for unbanked
+  consumers.  Will share scores with lenders.
+expected_flags:
+  - "s57(1)(c) credit reporting requires prior authorization"
+  - "Unique identifier cross-linking (s57(1)(a)) if linking across data sources"
+  - "Automated decision-making (s71) — credit scoring produces legal effects"
+  - "Special PI risk if social media reveals race/religion/political views"
+  - "Direct marketing restrictions if scores trigger loan offers"
+expected_statutes:
+  - "POPIA s57(1)(a)"
+  - "POPIA s57(1)(c)"
+  - "POPIA s71"
+  - "POPIA s26"
+  - "POPIA s69"
+must_not_contain:
+  - "FCRA"
+  - "Article 22 GDPR"
+  - "credit bureau"
+notes: |
+  Tests multiple overlapping prior authorization triggers.  Credit
+  reporting + unique identifier cross-linking + automated decision-
+  making + potential special PI = high-complexity assessment.  "credit
+  bureau" must not appear without NCA (National Credit Act) context —
+  the NCA regulates credit bureaus in SA, not POPIA alone.

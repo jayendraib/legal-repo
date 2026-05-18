@@ -1,0 +1,26 @@
+name: "Standard access request under POPIA s23"
+skill: dsar-response
+input: |
+  Individual emails company requesting access to all personal information
+  held about them.  Identity verified.  Company has data in CRM, email,
+  HR system, and backup tapes.
+expected_flags:
+  - "s23 access right applies"
+  - "Reasonable fee may be charged"
+  - "Must provide description of PI and categories of recipients and purpose and right to request correction/deletion"
+  - "Backup tapes require proportionality assessment"
+expected_statutes:
+  - "POPIA s23"
+  - "POPIA s18"
+must_not_contain:
+  - "right to portability"
+  - "Article 15 GDPR"
+  - "45-day deadline"
+  - "free of charge"
+notes: |
+  Tests basic access request handling.  Key SA differences: reasonable
+  fee permitted (unlike GDPR free default), no specific statutory
+  deadline (POPIA says "within a reasonable time"), no explicit
+  portability right.  Backup tapes present a proportionality question —
+  the cost and effort of restoring backup tapes to extract PI may be
+  disproportionate.

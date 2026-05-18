@@ -1,0 +1,28 @@
+name: "Operator agreement missing POPIA s21 essentials"
+skill: dpa-review
+input: |
+  SaaS company (responsible party) receives a vendor's standard "data
+  processing addendum" modeled on GDPR Art 28.  No mention of POPIA, uses
+  "controller/processor" terminology, references SCCs for international
+  transfers.
+expected_flags:
+  - "Terminology mismatch (controller/processor -> responsible party/operator)"
+  - "No s21(1) compliance"
+  - "Cross-border transfer mechanism needs s72 assessment"
+  - "Security safeguards clause must reference s19"
+expected_statutes:
+  - "POPIA s21"
+  - "POPIA s19"
+  - "POPIA s72"
+must_not_contain:
+  - "data controller"
+  - "data processor"
+  - "GDPR Article 28"
+  - "Standard Contractual Clauses"
+  - "supervisory authority"
+notes: |
+  Tests that the skill identifies GDPR-modeled DPAs and flags POPIA
+  compliance gaps.  The DPA uses wrong terminology and wrong legal
+  framework — the review should flag every mismatch.  "data controller"
+  and "data processor" must not appear as correct legal terms; the skill
+  must use "responsible party" and "operator" throughout.

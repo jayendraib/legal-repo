@@ -1,0 +1,25 @@
+name: "Cross-border transfer to US without binding agreement"
+skill: dpa-review
+input: |
+  SA fintech transferring customer data (including ID numbers) to AWS
+  servers in the US.  No binding agreement in place.  Relying on AWS's
+  standard terms.
+expected_flags:
+  - "s72 — no adequacy finding for US, need binding agreement"
+  - "Possible s57(1)(d) prior authorization if special PI"
+  - "AWS standard terms are not a binding agreement per s72(1)(a)"
+expected_statutes:
+  - "POPIA s72"
+  - "POPIA s57(1)(d)"
+  - "POPIA s19"
+must_not_contain:
+  - "adequacy decision"
+  - "Article 46"
+  - "CCPA"
+  - "HIPAA"
+notes: |
+  Tests cross-border transfer analysis.  AWS standard terms do not
+  satisfy s72(1)(a).  ID numbers may constitute unique identifiers —
+  assess whether prior authorization is needed.  The skill must not
+  reference "adequacy decision" (EU term) — POPIA s72 uses "adequate
+  level of protection" without an EU-style adequacy list from the IR.

@@ -1,0 +1,29 @@
+name: "Educational platform processing children's personal information"
+skill: pia-generation
+input: |
+  EdTech company building a learning platform for SA schools.  Will
+  collect names, grades, learning progress, and behavioral analytics of
+  learners aged 10-17.  Platform hosted on Azure South Africa.
+expected_flags:
+  - "Children's PI (s34-35) — all learners under 18"
+  - "Competent person (parent/guardian) consent required"
+  - "If transferring to Azure regions outside SA then s72 plus s57(1)(d) prior authorization"
+  - "Behavioral analytics may constitute profiling — s57(1)(a) unique identifier cross-linking"
+  - "DBE matric results precedent — IR actively protective of children's PI"
+expected_statutes:
+  - "POPIA s34"
+  - "POPIA s35"
+  - "POPIA s57"
+  - "POPIA s72"
+  - "POPIA s19"
+must_not_contain:
+  - "COPPA"
+  - "FERPA"
+  - "parental consent"
+notes: |
+  Tests children's PI assessment.  Key SA issues: "competent person"
+  not "parent" (broader — includes guardians and others exercising
+  parental responsibilities), DBE precedent shows IR willingness to
+  fine for children's data mishandling, Azure SA hosting may still
+  involve cross-border if data replicates to other regions.  The skill
+  must use "competent person" throughout, never "parental consent."

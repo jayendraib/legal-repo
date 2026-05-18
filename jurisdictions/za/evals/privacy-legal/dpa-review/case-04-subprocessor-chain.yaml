@@ -1,0 +1,25 @@
+name: "Multi-jurisdiction subprocessor chain"
+skill: dpa-review
+input: |
+  SA company engages a primary operator who uses 3 subprocessors, one in
+  Nigeria, one in India, one in the UK.  Primary operator's agreement
+  permits subprocessor changes with 30-day notice.
+expected_flags:
+  - "Each subprocessor jurisdiction needs s72 assessment"
+  - "Nigeria and India — likely no adequate protection law"
+  - "UK post-Brexit data protection — arguable adequacy for natural persons but POPIA also covers juristic persons"
+  - "Subprocessor chain creates layered s21 obligations"
+expected_statutes:
+  - "POPIA s72"
+  - "POPIA s21"
+  - "POPIA s19"
+must_not_contain:
+  - "adequacy decision"
+  - "Article 46 safeguards"
+  - "GDPR"
+notes: |
+  Tests multi-level operator chain analysis.  Unique SA issue: POPIA
+  applies to juristic persons but UK GDPR does not, creating a coverage
+  gap even if the UK is considered "adequate" for natural person data.
+  The skill must assess each subprocessor jurisdiction independently
+  and flag the juristic person gap for the UK.

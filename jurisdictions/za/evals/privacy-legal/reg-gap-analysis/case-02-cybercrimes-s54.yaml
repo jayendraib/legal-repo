@@ -1,0 +1,25 @@
+name: "Cybercrimes Act ESP reporting obligation"
+skill: reg-gap-analysis
+input: |
+  We're an electronic communications service provider.  What do we need
+  to do when the Cybercrimes Act s54 reporting obligation kicks in?
+expected_flags:
+  - "Parallel 72-hour SAPS reporting obligation alongside POPIA s22 IR notification"
+  - "Need incident response plan update"
+  - "SAPS reporting channel"
+  - "Evidence preservation procedures under s41"
+expected_statutes:
+  - "Cybercrimes Act s54"
+  - "POPIA s22"
+  - "Cybercrimes Act s41"
+must_not_contain:
+  - "data breach notification rule"
+  - "HIPAA"
+  - "state AG notification"
+notes: |
+  Tests gap analysis for a not-yet-in-force obligation.  The skill
+  should distinguish between POPIA s22 (in force — "as soon as
+  reasonably possible" to IR) and Cybercrimes Act s54 (not yet in
+  force — 72 hours to SAPS).  The two obligations run in parallel
+  when s54 commences — different timelines, different recipients,
+  different reporting channels.

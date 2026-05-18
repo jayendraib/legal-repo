@@ -1,0 +1,24 @@
+name: "Loyalty card cross-linking across subsidiaries"
+skill: use-case-triage
+input: |
+  Retail group wants to link customer loyalty card numbers across 5
+  subsidiary brands to build unified customer profiles for personalized
+  marketing.
+expected_flags:
+  - "PRIOR AUTHORIZATION REQUIRED — s57(1)(a) unique identifiers used for purpose other than original collection"
+  - "Each subsidiary is a separate responsible party"
+  - "Cross-linking across responsible parties triggers s57(1)(a)"
+  - "Direct marketing implications under s69"
+expected_statutes:
+  - "POPIA s57(1)(a)"
+  - "POPIA s69"
+must_not_contain:
+  - "DPIA mandatory"
+  - "Article 35 high-risk list"
+  - "legitimate interest assessment"
+notes: |
+  Tests PRIOR AUTHORIZATION REQUIRED classification.  Each subsidiary
+  is a separate responsible party — cross-linking loyalty data across
+  them triggers s57(1)(a).  The skill must not use "legitimate interest
+  assessment" (GDPR framing) — POPIA does not have an equivalent
+  balancing test mechanism.

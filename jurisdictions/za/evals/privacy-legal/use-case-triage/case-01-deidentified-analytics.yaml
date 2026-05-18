@@ -1,0 +1,21 @@
+name: "De-identified internal analytics dashboard"
+skill: use-case-triage
+input: |
+  Company wants to build an internal dashboard showing aggregated,
+  de-identified sales data by region.  No individual PI visible.  Data
+  sourced from existing CRM.
+expected_flags:
+  - "PROCEED — de-identified data (s6(1)(b)) not subject to POPIA if cannot be re-identified"
+  - "Confirm de-identification meets the standard where data cannot be re-identified again"
+  - "Standard safeguards apply"
+expected_statutes:
+  - "POPIA s6(1)(b)"
+must_not_contain:
+  - "DPIA"
+  - "Article 35"
+  - "CCPA"
+notes: |
+  Tests the PROCEED classification.  De-identification must be verified
+  as irreversible per s6(1)(b) — "cannot be re-identified again" is a
+  high bar.  If there is any possibility of re-identification (e.g.
+  small region with few data points), POPIA still applies.

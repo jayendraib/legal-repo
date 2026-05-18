@@ -1,0 +1,23 @@
+name: "Retention period gap in privacy notice"
+skill: policy-monitor
+input: |
+  PIA approved a 3-year data retention period for customer support
+  tickets, but the privacy notice says "we retain data only as long as
+  necessary for the purpose for which it was collected" with no specific
+  retention period.
+expected_flags:
+  - "ADVISABLE — privacy notice is not technically wrong (3 years may be as long as necessary)"
+  - "Lack of specificity creates a gap"
+  - "Recommend adding retention schedule reference to the privacy notice for s14 compliance"
+expected_statutes:
+  - "POPIA s14"
+  - "POPIA s18"
+must_not_contain:
+  - "right to erasure"
+  - "GDPR Article 17"
+notes: |
+  Tests ADVISABLE classification.  The privacy notice is not misleading
+  but could be more specific.  POPIA s14 requires retention limitation
+  — documenting specific periods strengthens compliance posture.  The
+  skill should recommend adding a retention schedule or reference to
+  specific retention periods without classifying this as a REQUIRED gap.

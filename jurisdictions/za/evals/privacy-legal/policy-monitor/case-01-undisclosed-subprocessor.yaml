@@ -1,0 +1,22 @@
+name: "Sweep finds undisclosed analytics subprocessor"
+skill: policy-monitor
+input: |
+  Policy-monitor sweep detects a DPA review output approving a new
+  analytics subprocessor (Mixpanel) not listed in the privacy notice's
+  "third parties" section.
+expected_flags:
+  - "REQUIRED gap — privacy notice misrepresents current practice"
+  - "Must add Mixpanel or generic analytics provider category to third-party disclosures"
+  - "Check s72 for Mixpanel's data hosting location"
+expected_statutes:
+  - "POPIA s18"
+  - "POPIA s21"
+  - "POPIA s72"
+must_not_contain:
+  - "CCPA"
+  - "service provider"
+notes: |
+  Tests REQUIRED gap classification.  The privacy notice's third-party
+  disclosures are a POPIA s18 openness obligation — an undisclosed
+  subprocessor is a direct compliance gap.  "service provider" is a
+  US/CCPA term for processor; the skill must use "operator."

@@ -1,0 +1,29 @@
+name: "April 2025 POPIA regulation amendments gap analysis"
+skill: reg-gap-analysis
+input: |
+  The POPIA regulations were just amended — gap analysis please.
+expected_flags:
+  - "Multi-channel objection mechanism (WhatsApp/SMS)"
+  - "Recorded telemarketing consent"
+  - "30-day correction response timeline"
+  - "Expanded complaint standing"
+  - "IO duty updates"
+  - "Instalment fine provisions"
+  - "Check each against current practice"
+expected_statutes:
+  - "POPIA Regs 2025 Reg 2"
+  - "POPIA Regs 2025 Reg 3"
+  - "POPIA Regs 2025 Reg 4"
+  - "POPIA Regs 2025 Reg 6"
+  - "POPIA Regs 2025 Reg 7"
+  - "POPIA Regs 2025 Reg 13"
+must_not_contain:
+  - "GDPR"
+  - "CCPA"
+  - "state privacy law"
+notes: |
+  Tests regulation gap analysis against the April 2025 POPIA regulation
+  amendments.  These amendments came into immediate effect and affect
+  objection handling, correction processing, direct marketing, complaint
+  procedures, and IO duties.  The skill should systematically check
+  each regulation amendment against the organization's current practices.

@@ -1,0 +1,26 @@
+name: "Telephonic objection to direct marketing"
+skill: dsar-response
+input: |
+  Data subject phones the company to object to receiving marketing SMS
+  messages.  Company has no recording mechanism for telephonic
+  objections.
+expected_flags:
+  - "Telephonic objection is valid per April 2025 regs"
+  - "Must be electronically recorded and made available to data subject on request free of charge"
+  - "Company must inform data subject of right to object at collection"
+  - "Failure to record is a compliance gap"
+expected_statutes:
+  - "POPIA s11(3)"
+  - "POPIA s69"
+  - "POPIA Regs 2025 Reg 2"
+must_not_contain:
+  - "right to erasure"
+  - "Article 21 GDPR"
+  - "opt-out mechanism"
+notes: |
+  Tests direct marketing objection handling under April 2025 regs.
+  Opt-out does not constitute consent.  Telephonic objections must be
+  recorded.  The must_not_contain entry for "opt-out mechanism" checks
+  that the skill does not frame an opt-out as sufficient — POPIA
+  requires affirmative consent for direct marketing, not mere failure
+  to opt out.

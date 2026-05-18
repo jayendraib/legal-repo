@@ -1,0 +1,29 @@
+name: "Facial recognition for office access control"
+skill: pia-generation
+input: |
+  Company wants to implement facial recognition for office access
+  control.  Will process biometric templates of employees.  200
+  employees, all in Gauteng.
+expected_flags:
+  - "Special PI (biometrics s26)"
+  - "s57(1) prior authorization likely required if cross-linking with other systems"
+  - "s27 exception analysis needed (employment law exception under s27(1)(e) may apply if necessary for employment relationship)"
+  - "s19 security for biometric data"
+  - "High-risk processing"
+expected_statutes:
+  - "POPIA s26"
+  - "POPIA s27"
+  - "POPIA s33"
+  - "POPIA s57"
+  - "POPIA s19"
+must_not_contain:
+  - "DPIA"
+  - "legitimate interest balancing test"
+  - "Data Protection Officer"
+notes: |
+  Tests special PI assessment for biometrics.  Prior authorization
+  depends on whether biometric templates are cross-linked with other
+  systems or used for a purpose other than access control.  The skill
+  must not use "DPIA" (GDPR term) — POPIA uses s57 prior authorization
+  instead.  "Data Protection Officer" is incorrect; POPIA uses
+  "Information Officer."

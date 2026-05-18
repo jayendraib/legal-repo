@@ -1,0 +1,27 @@
+name: "Information Regulator cross-border transfer guidance note"
+skill: reg-gap-analysis
+input: |
+  The Information Regulator just published its cross-border transfer
+  guidance note — assess impact on our transfer practices.
+expected_flags:
+  - "Adequacy assessment methodology"
+  - "Binding agreement requirements"
+  - "s72 compliance documentation"
+  - "Register of cross-border transfers"
+  - "Assess current transfers against new guidance criteria"
+expected_statutes:
+  - "POPIA s72"
+  - "POPIA s57(1)(d)"
+must_not_contain:
+  - "adequacy decision"
+  - "SCCs"
+  - "Article 45"
+  - "Article 46"
+notes: |
+  Tests gap analysis for a hypothetical IR guidance note.  The skill
+  should framework the assessment even without specific guidance
+  content — asking the user for the guidance text to extract
+  requirements.  "SCCs" must not appear; POPIA uses "binding agreement"
+  under s72.  "adequacy decision" is an EU term — POPIA uses "adequate
+  level of protection" assessed by the responsible party, not a
+  regulator-issued decision.

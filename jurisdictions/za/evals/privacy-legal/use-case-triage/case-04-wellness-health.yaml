@@ -1,0 +1,29 @@
+name: "Employee wellness program with health data"
+skill: use-case-triage
+input: |
+  Company wants to offer a voluntary wellness program tracking employee
+  health metrics (steps, sleep, heart rate) via a wearable device.
+  Data shared with a third-party wellness platform hosted in the US.
+expected_flags:
+  - "PIA REQUIRED — special PI (health data s26)"
+  - "Cross-border transfer (s72 US — no adequate protection)"
+  - "Voluntary does not equal consent in employment context (power imbalance)"
+  - "Prior authorization may apply (s57(1)(d) — special PI transfer to inadequate country)"
+  - "High-risk combination"
+expected_statutes:
+  - "POPIA s26"
+  - "POPIA s27"
+  - "POPIA s72"
+  - "POPIA s57(1)(d)"
+  - "POPIA s19"
+must_not_contain:
+  - "HIPAA"
+  - "wellness program exemption"
+  - "ADA"
+notes: |
+  Tests PIA REQUIRED classification with multiple risk factors.  Health
+  data + cross-border + employment context power imbalance + prior
+  authorization trigger = comprehensive assessment needed.  The
+  voluntary nature of the program does not cure the consent issue in an
+  employment context — the power imbalance between employer and employee
+  means consent is not freely given.
