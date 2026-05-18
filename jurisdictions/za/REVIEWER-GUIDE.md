@@ -1,0 +1,201 @@
+# Reviewer Guide — South African Legal Overlay
+
+*For SA legal practitioners reviewing this system's South African content. No technical background required.*
+
+---
+
+## What is this?
+
+This is an AI assistant for legal professionals, built as a set of plugins for different practice areas (employment law, commercial law, privacy law, etc.). The base system was designed for **US law**. We've added a **South African layer** on top — so when a South African lawyer uses it, the system applies SA statutes, procedures, and risk frameworks instead of US ones.
+
+**Your job as reviewer:** Check that the SA legal content is accurate, current, and complete. You don't need to understand the technology — just read the legal content in the files described below and flag anything that's wrong, outdated, or missing.
+
+---
+
+## How the system is organised
+
+Think of it like a law firm's knowledge management system with three layers:
+
+### Layer 1: Statute reference files ("the law library")
+
+**Where:** `jurisdictions/za/statutes/`
+
+These are structured reference files — one per Act — that store **thresholds, deadlines, and key provisions** the system looks up when advising. Each entry has:
+
+- **The section reference** (e.g., "BCEA s9(1)")
+- **The value** (e.g., 45 hours per week)
+- **When it took effect** and whether it's still current
+- **A plain-English explanation** of what the provision does
+
+**Currently there are 12 statute files:**
+
+| File | Act | What to check |
+|---|---|---|
+| `bcea.yaml` | Basic Conditions of Employment Act 75 of 1997 | Earnings threshold (R254,371.67 — current?), hours, leave entitlements, notice periods |
+| `lra.yaml` | Labour Relations Act 66 of 1995 | Fair dismissal requirements, CCMA timelines (30-day referral, 30-day conciliation), compensation caps, retrenchment thresholds, severance |
+| `eea.yaml` | Employment Equity Act 55 of 1998 | Designated employer threshold (50 employees — still correct after amendments?), protected grounds, EE reporting requirements |
+| `sectoral-determinations.yaml` | Sectoral Determinations under BCEA s55 | National minimum wage (R27.58/hr — current?), sector-specific rates |
+| `cpa.yaml` | Consumer Protection Act 68 of 2008 | Juristic person threshold, fixed-term limits, cooling-off periods, penalties |
+| `ecta.yaml` | Electronic Communications and Transactions Act 25 of 2002 | E-signature recognition, data message rules, contract formation |
+| `popia.yaml` | Protection of Personal Information Act 4 of 2013 | Operator agreement requirements, breach notification (72 hours?), cross-border transfer rules, penalties |
+| `conventional-penalties.yaml` | Conventional Penalties Act 15 of 1962 | Enforceability rules, cumulation bar, judicial reduction power |
+| `competition.yaml` | Competition Act 89 of 1998 | Prohibited practices, restrictive horizontal/vertical agreements, penalties |
+| `bbbee.yaml` | Broad-Based Black Economic Empowerment Act 53 of 2003 | Organs of state procurement requirements, EME/QSE thresholds, fronting prohibition |
+| `prescription.yaml` | Prescription Act 68 of 1969 | Debt prescription periods (3 years for debts, 6 years for certain claims) |
+| `copyright.yaml` | Copyright Act 98 of 1978 | Employer ownership rules, assignment requirements |
+
+**What to look for:**
+- Are the monetary thresholds current? (These change annually via Government Gazette)
+- Are the section references correct? (e.g., does BCEA s9(1) actually say 45 hours?)
+- Are the effective dates right?
+- Is anything missing that a practitioner would expect to see?
+
+**How to read these files:** Open them in any text editor. Ignore the formatting (the colons, dashes, and indentation are for the computer). Focus on the values, section references, and plain-English explanations.
+
+---
+
+### Layer 2: Practice guides ("the know-how")
+
+**Where:** `jurisdictions/za/employment-legal/topics/` and `jurisdictions/za/commercial-legal/topics/`
+
+These are **narrative guides** — the equivalent of a firm's internal know-how notes. Each file covers one legal topic and is shared across multiple tasks. They contain:
+
+- The statutory framework (which Acts apply, key sections)
+- Step-by-step procedures (e.g., how to run a s189 retrenchment consultation)
+- Checklists (e.g., what to check before concluding a dismissal is fair)
+- **High-risk flag tables** — the most important content for review
+
+#### Employment law guides (6 files)
+
+| File | Topic | Key content to review |
+|---|---|---|
+| `dismissal.md` | Termination / dismissal | **11 high-risk flags** (the checklist the system runs before concluding a dismissal review). LRA s188 framework, types of dismissal (misconduct, incapacity, operational requirements), CCMA process, notice periods, severance |
+| `hiring.md` | Hiring and onboarding | Restraint of trade (Basson v Chilwan test), probation (Schedule 8 Item 8), EEA obligations at hire (psychometric testing, medical/HIV testing restrictions), employment contract requirements (BCEA s29) |
+| `classification.md` | Worker classification | BCEA s213 employee definition, s200A presumption of employment (7 factors), common law "dominant impression" test, deemed employees under s198A (TES/labour broker rules) |
+| `leave-and-conditions.md` | Leave and working conditions | BCEA leave entitlements (annual, sick, family responsibility, maternity, parental), working time rules, overtime, Sunday/public holiday pay, notice periods, deductions |
+| `policy-and-handbook.md` | Workplace policies | Disciplinary code requirements (Schedule 8 alignment), grievance procedure, sexual harassment policy (Code of Good Practice), other recommended policies |
+| `investigation-privilege.md` | Investigations and privilege | SA legal professional privilege (narrower than US), in-house counsel distinction (legal adviser vs. management role), Protected Disclosures Act, POPIA considerations for investigations |
+
+#### Commercial law guides (6 files)
+
+| File | Topic | Key content to review |
+|---|---|---|
+| `contract-fundamentals.md` | SA contract law basics | Common law principles, Shifren clause, ECTA (electronic contracts), CPA (consumer protection), exchange control, VAT |
+| `liability-and-penalties.md` | Liability, damages, penalties | Conventional Penalties Act (cumulation bar, judicial reduction), SA damages framework, Prescription Act |
+| `data-protection.md` | POPIA in commercial contracts | Operator agreements (s21), cross-border transfers (s72), breach notification, Information Regulator enforcement |
+| `competition-and-bbbee.md` | Competition Act and B-BBEE | Restrictive practices, B-BBEE procurement requirements, fronting prohibition |
+| `confidentiality-and-restraint.md` | NDAs and restraint of trade | NDA enforceability in SA, restraint of trade doctrine (Basson v Chilwan), interdicts |
+| `dispute-resolution.md` | Dispute resolution | SA governing law, AFSA arbitration, High Court divisions, prescription periods |
+
+**What to look for:**
+- Is the legal analysis correct? (e.g., does the Basson v Chilwan test have the right factors?)
+- Are the procedures current? (e.g., has the CCMA process changed?)
+- Are the high-risk flag tables complete? Would you add any flags?
+- Is anything stated too absolutely that should have a caveat?
+- Are the case law references correct? (e.g., is *Shifren* cited for the right principle?)
+
+---
+
+### Layer 3: High-risk flag tables ("the red flags")
+
+These are embedded within the practice guides (Layer 2) and are **the most critical content for review**. They're the checklists the system runs before concluding any review.
+
+#### Employment law: 11 dismissal flags (in `dismissal.md`)
+
+| # | Flag | What the system checks |
+|---|---|---|
+| 1 | No hearing held | Was a disciplinary hearing held with proper notice, time to prepare, and right to representation? |
+| 2 | Automatically unfair ground | Is the dismissal connected to pregnancy, union activity, protected disclosure, or exercise of rights? |
+| 3 | Discrimination / EEA ground | Is there any connection to race, gender, disability, age, religion, HIV status, or other EEA grounds? |
+| 4 | Protected disclosure | Has the employee made a whistleblowing disclosure? |
+| 5 | Recent CCMA/union activity | Has the employee recently referred a dispute, participated in union activity, or been a shop steward? |
+| 6 | Operational requirements without s189 | Has the consultation process been followed? Sub-check: does s189A (large-scale) apply? |
+| 7 | Probation without Code compliance | Was evaluation, guidance, and counselling provided during probation? |
+| 8 | Fixed-term — reasonable expectation | Has a reasonable expectation of renewal been created? |
+| 9 | Earnings below BCEA threshold | Does the employee earn below R254,371.67/year? (Full BCEA protections apply) |
+| 10 | Thin documentation | Is there a progressive discipline record? |
+| 11 | Comparator / inconsistent discipline | Has the disciplinary code been applied consistently? |
+
+#### Commercial law: 12 flags (distributed across topic files)
+
+The commercial law flags cover: POPIA operator agreement gaps, cross-border data transfer without safeguards, CPA-covered counterparty issues, Conventional Penalties Act cumulation traps, B-BBEE procurement non-compliance, restraint of trade enforceability concerns, governing law / jurisdiction mismatches, exchange control exposure, prescription period risks, and competition law restrictive practice risks.
+
+**What to look for:** Are these the right red flags? Would you add any? Would you remove any? Is the "what to check" column accurate?
+
+---
+
+### Layer 4: Practice profiles ("the firm's playbook")
+
+**Where:** `jurisdictions/za/employment-legal/practice-profile-template.md` and `jurisdictions/za/commercial-legal/practice-profile-template.md`
+
+These are **templates** that get filled in when a lawyer first sets up the system. They capture:
+
+- The organisation's statutory baseline (earnings threshold coverage, sectoral determinations, bargaining council membership)
+- Compliance posture (designated employer status, B-BBEE level, POPIA role)
+- Dispute resolution preferences (CCMA vs. bargaining council, external consultants, recognised unions)
+- Review triggers (when does legal see a termination? a contract? an NDA?)
+- Escalation rules (who gets called when a high-risk flag fires?)
+- The **privilege header** — what goes at the top of every document the system produces
+
+**What to look for:**
+- Does the privilege header use the correct SA formulation? (It should say "PRIVILEGED & CONFIDENTIAL — PREPARED BY/AT THE DIRECTION OF LEGAL COUNSEL FOR THE PURPOSE OF PROVIDING LEGAL ADVICE" for lawyers, not the US "ATTORNEY WORK PRODUCT" formulation)
+- Does the template include the caveat about in-house counsel acting in a commercial vs. legal advisory capacity?
+- Are the right questions being asked during setup? Would you add any?
+
+---
+
+## How to do your review
+
+### Step 1: Start with the high-risk flag tables
+These have the highest impact — they determine what the system flags as dangerous. Read the 11 employment flags in `dismissal.md` and the 12 commercial flags across the commercial topic files. Ask: would I flag these? Am I missing any?
+
+### Step 2: Check the statute reference files
+Open each `.yaml` file in `jurisdictions/za/statutes/`. Check that:
+- Monetary values are current (especially the BCEA earnings threshold and minimum wage — these change annually)
+- Section references are accurate
+- The plain-English explanations are correct
+
+### Step 3: Read the practice guides
+Skim each topic file in the `topics/` directories. You don't need to read every word — focus on:
+- Legal accuracy of the frameworks described
+- Whether the procedures match current practice
+- Whether the case law references are correct
+- Whether anything important is missing
+
+### Step 4: Check the privilege headers
+In each `practice-profile-template.md`, read the "Outputs" section. Confirm the privilege header formulations are appropriate for SA law.
+
+### Step 5: Flag issues
+For anything that's wrong, outdated, or missing, note:
+- **Which file** (e.g., `bcea.yaml`)
+- **Which section** (e.g., `earnings_threshold`)
+- **What's wrong** (e.g., "threshold increased to R261,748.45 effective 1 March 2025")
+- **The correct information** with a source if possible
+
+---
+
+## What you can ignore
+
+- File formatting (`.yaml`, `.md` extensions, indentation, colons) — that's for the computer
+- The `evals/` directories — those are test scenarios for the development team
+- `router.md` files — those are wiring instructions for the system
+- `ARCHITECTURE.md` — that's a technical manual
+- Anything under `scripts/`, `project/`, or `docs/` — technical infrastructure
+
+**Focus on:** statute values, legal procedures, risk flags, privilege headers, and practice guides. That's where your expertise matters.
+
+---
+
+## Quick reference: where to find what
+
+| "I want to check..." | Look in... |
+|---|---|
+| Whether a statutory threshold is current | `jurisdictions/za/statutes/{act-name}.yaml` |
+| Whether a legal procedure is described correctly | `jurisdictions/za/{practice-area}/topics/{topic}.md` |
+| Whether the right risk flags are being checked | The flag tables inside the topic files (especially `dismissal.md` for employment, and `contract-fundamentals.md` / `data-protection.md` for commercial) |
+| Whether the privilege header is correct | `jurisdictions/za/{practice-area}/practice-profile-template.md` → "Outputs" section |
+| Whether the setup questions are right | `jurisdictions/za/{practice-area}/practice-profile-template.md` → the `[PLACEHOLDER]` sections show what gets asked |
+
+---
+
+*Questions about this guide? Ask the development team. Questions about the law? That's why we need you.*
