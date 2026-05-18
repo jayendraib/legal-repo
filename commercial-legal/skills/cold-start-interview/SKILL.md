@@ -239,6 +239,43 @@ Record this on a `**Practice setting:**` line in `## Who we are` in the practice
 
 Write `## Who's using this` and `## Available integrations` sections immediately after the `## Who we are` section in the plugin config, and update `## Outputs` so the work-product header is conditional on role (see the practice profile template below).
 
+### Part 0.5 — South African commercial contracts (ZA fork)
+
+**Trigger:** If the company profile's `jurisdiction` field is `ZA`, or the user indicates South African jurisdiction during Part 0, run Part 0.5 before proceeding to Part 1.
+
+**Purpose:** Capture SA-specific configuration that the commercial-legal overlay needs. The overlay lives in `jurisdictions/za/commercial-legal/` and the practice profile template at `jurisdictions/za/commercial-legal/practice-profile-template.md` requires these fields populated.
+
+**Questions (must-have — ask all 7):**
+
+1. "What is your company's current B-BBEE status level? (Level 1-8 / EME / QSE / not verified / exempt)"
+   → Writes to: `## B-BBEE compliance posture`
+
+2. "Are your typical counterparties natural persons, below-threshold juristic persons (under R2m turnover/assets), or above-threshold juristic persons?"
+   → Writes to: `## CPA applicability`
+
+3. "What is your standard governing law and dispute resolution position? (SA law + High Court / SA law + AFSA arbitration / other)"
+   → Writes to: `## Playbook → Governing law`
+
+4. "Do you have a POPIA operator agreement template, or do you typically sign the vendor's data processing terms? When vendors host data outside SA, what's your position on cross-border transfers?"
+   → Writes to: `## Playbook → Data protection`
+
+5. "Do you contract with government or public sector entities? If yes, are B-BBEE scorecard requirements part of your tender responses?"
+   → Writes to: `## B-BBEE compliance posture` + `## Escalation`
+
+6. "Do you regularly contract with foreign (non-SA) vendors or pay fees/royalties/license fees to non-resident parties?"
+   → Writes to: `## SA contract fundamentals` (exchange control awareness)
+
+7. "Is your company VAT-registered? Do your foreign SaaS/service providers charge SA VAT, or do you account for imported services VAT under reverse charge?"
+   → Writes to: `## SA contract fundamentals` (VAT posture)
+
+**After Part 0.5:** Use `jurisdictions/za/commercial-legal/practice-profile-template.md` instead of the US template when writing `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`. Proceed to Part 1 (practice setting, role, integrations) as normal.
+
+**Nice-to-have questions** are folded into Part 2 (playbook interview) where they fit naturally:
+- Q8 (penalty clause posture) during liability discussion
+- Q9 (contract term preference) during term & termination
+- Q10 (dispute history) during governing law
+- Q11 (sector restrictions) during escalation
+
 ### Part 1: The team (2-3 minutes)
 
 Ask conversationally, one cluster at a time. Don't interrogate — listen for what they volunteer beyond the question.
