@@ -1,0 +1,36 @@
+statute: "Promotion of Access to Information Act 2 of 2000"
+authority: "Information Regulator"
+last_confirmed: "2026-05-18"
+source_url: "https://www.gov.za/documents/promotion-access-information-act"
+
+sections:
+  paia_manual_private_body:
+    ref: "PAIA s51"
+    value: true
+    effective_from: "2001-03-09"
+    effective_until: null
+    effect: "The head of a private body must compile a manual containing: a description of its structure, contact details of the information officer, a description of the subjects on which records are available, and the categories of records held."
+    note: "PAIA manual compliance rates are extremely low — only 2% of private bodies submitted annual reports in 2023/24. The Information Regulator is actively assessing compliance."
+
+  paia_manual_public_body:
+    ref: "PAIA s14"
+    value: true
+    effective_from: "2001-03-09"
+    effective_until: null
+    effect: "The information officer of a public body must compile a manual containing: a description of its structure, functions, contact details, guidance on requesting information, and a description of categories of records held."
+
+  information_officer_duties_paia:
+    ref: "PAIA s17"
+    value: true
+    effective_from: "2001-03-09"
+    effective_until: null
+    effect: "The information officer of a public body may designate deputy information officers to whom powers and duties are delegated. This extends to private bodies via POPIA s56."
+    note: "The IO registered under POPIA has dual duties under both POPIA and PAIA. April 2025 POPIA regulation amendments removed the POPIA Reg 4 duty to maintain a PAIA manual, but the obligation remains under PAIA itself."
+
+  annual_reporting:
+    ref: "PAIA s32, s83(4)"
+    value: true
+    effective_from: "2001-03-09"
+    effective_until: null
+    effect: "Both public and private bodies must submit annual PAIA reports to the Information Regulator showing how they handle requests for information."
+    note: "Compliance is extremely low: 33% of public bodies and less than 2% of private bodies submitted reports in 2023/24. The IR is increasing monitoring and enforcement."
