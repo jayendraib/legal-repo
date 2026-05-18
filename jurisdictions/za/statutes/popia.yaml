@@ -1,6 +1,6 @@
 statute: "Protection of Personal Information Act 4 of 2013"
 authority: "Information Regulator"
-last_confirmed: "2025-05-01"
+last_confirmed: "2026-05-18"
 source_url: "https://www.gov.za/documents/protection-personal-information-act"
 
 sections:
@@ -50,3 +50,134 @@ sections:
     effective_until: null
     effect: "Processing of personal information for direct marketing by electronic communication is prohibited unless the data subject has given consent or is an existing customer (and the marketing relates to similar products/services)."
     note: "Amended POPIA regulations (April 2025) introduce stricter requirements for direct marketing, telemarketing call recordings, and managing objections."
+
+  conditions_lawful_processing:
+    ref: "POPIA s8-s12"
+    value: 8
+    unit: "conditions"
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Personal information must be processed in accordance with 8 conditions: accountability, processing limitation, purpose specification, further processing limitation, information quality, openness, security safeguards, data subject participation."
+
+  consent:
+    ref: "POPIA s11(1)(a)"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Personal information may only be processed if the data subject consents to the processing."
+    note: "Consent is one of several lawful bases under s11. Unlike GDPR, POPIA does not elevate consent above other bases — legitimate interest (s11(1)(f)) is equally valid."
+
+  purpose_specification:
+    ref: "POPIA s13"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Personal information must be collected for a specific, explicitly defined and lawful purpose related to a function or activity of the responsible party."
+
+  data_retention:
+    ref: "POPIA s14"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Records of personal information must not be retained any longer than is necessary for achieving the purpose for which the information was collected or subsequently processed, unless retention is required or authorised by law, reasonably necessary for a lawful purpose, or the responsible party requires it for contractual purposes."
+
+  openness_notification:
+    ref: "POPIA s18"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A responsible party must, when collecting personal information, take reasonably practicable steps to ensure the data subject is aware of: the information being collected, the name and address of the responsible party, the purpose of collection, whether the supply is voluntary or mandatory, and the consequences of failure to provide the information."
+
+  data_subject_access:
+    ref: "POPIA s23"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A data subject may request a responsible party to confirm whether it holds personal information about them and request access to that information. The responsible party may charge a reasonable fee."
+    note: "Unlike GDPR Article 15 where access is generally free, POPIA permits a reasonable fee for access requests."
+
+  data_subject_correction_deletion:
+    ref: "POPIA s24"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A data subject may request correction or deletion of personal information that is inaccurate, irrelevant, excessive, out of date, incomplete, misleading, or obtained unlawfully."
+    note: "April 2025 amended regulations require the responsible party to notify the data subject of action taken within 30 days and allow multi-channel requests (WhatsApp, SMS, email, telephonic with recording)."
+
+  data_subject_objection:
+    ref: "POPIA s11(3)(a)"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A data subject may object to the processing of personal information on reasonable grounds relating to his, her or its particular situation, unless legislation provides for such processing."
+    note: "April 2025 amended regulations expand objection channels to include WhatsApp, SMS, email, and telephonic (must be recorded). Responsible party must inform data subject of right to object at collection."
+
+  special_personal_information:
+    ref: "POPIA s26-s33"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Processing of special personal information is prohibited unless a s27 exception applies. Special PI includes: religious or philosophical beliefs, race or ethnic origin, trade union membership, political persuasion, health, sex life, biometric information, and criminal behaviour."
+
+  children_personal_information:
+    ref: "POPIA s34-s35"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Processing of personal information of a child (under 18) is prohibited unless a competent person (parent or guardian) has consented on behalf of the child, or unless a s35 exception applies."
+    note: "Child is defined as a natural person under the age of 18 who is not legally competent without the assistance of a competent person."
+
+  prior_authorization:
+    ref: "POPIA s57"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A responsible party must obtain prior authorisation from the Information Regulator before processing if it plans to: (a) process unique identifiers for a purpose other than collection and with aim of cross-linking across responsible parties; (b) process criminal behaviour data on behalf of third parties; (c) process information for credit reporting; (d) transfer special PI or children's PI to a foreign country without adequate protection."
+    note: "Prior authorisation is required only once per processing type (s57(4)). Not required if a code of conduct has been issued for the sector (s57(3)). Failure to notify is an offence — fine up to R10M or 12 months imprisonment (s59)."
+
+  information_officer_registration:
+    ref: "POPIA s55-s56"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Every responsible party must register an Information Officer with the Information Regulator. The IO may only take up duties after registration (s55(2)). The IO has duties under both POPIA and PAIA including: encouraging compliance, dealing with requests, working with the IR on investigations, ensuring a compliance framework is developed and maintained."
+    note: "CEO is the default IO for private bodies. Deputy IOs may be designated under s56 and must also be registered. IO must be based in South Africa per IR guidance. Not registering is not a criminal offence but the head of the organisation is personally liable."
+
+  automated_decision_making:
+    ref: "POPIA s71"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A data subject may not be subject to a decision which results in legal consequences for him, her or it, or which affects him, her or it to a substantial degree, which is based solely on the basis of the automated processing of personal information intended to provide a profile of such person."
+    note: "Information Regulator flagged AI and automated decision-making as a focus area for 2025/26."
+
+  unique_identifiers:
+    ref: "POPIA s57(1)(a)"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A unique identifier is any identifier assigned to a data subject and used by a responsible party for purposes of its operations that uniquely identifies the data subject. Processing unique identifiers for a purpose other than intended at collection, with aim of linking across responsible parties, requires prior authorisation."
+
+  direct_marketing_2025_regs:
+    ref: "POPIA Regs 2025 Reg 6"
+    value: true
+    effective_from: "2025-04-17"
+    effective_until: null
+    effect: "Consent for direct marketing through unsolicited electronic communication must be obtained on a form substantially similar to Form 4, free of charge and reasonably accessible including by email, telephone, SMS, WhatsApp, fax, or automated calling machine. Opt-out does not constitute consent. Telephonic or automated consent requests must be electronically recorded and made available to the data subject on request."
+    note: "These regulations came into immediate effect on 17 April 2025. The IR is actively pursuing test cases on whether live telemarketing constitutes 'electronic communication' under s69."
+
+  complaint_procedures_2025_regs:
+    ref: "POPIA Regs 2025 Reg 7"
+    value: true
+    effective_from: "2025-04-17"
+    effective_until: null
+    effect: "Complaints may be lodged by: the data subject, a person acting on behalf of the data subject, any person with sufficient personal interest, a responsible party or data subject aggrieved by an adjudicator determination, or any person acting in the public interest. The Regulator must provide a reference number within 14 days of receipt."
+    note: "Assistance must be provided to complainants in languages other than English. Confidentiality protections aligned with the Protected Disclosures Act."
+
+  eservices_portal_breach_reporting:
+    ref: "IR operational directive"
+    value: true
+    effective_from: "2025-04-01"
+    effective_until: null
+    effect: "All security compromise notifications must be submitted via the Information Regulator's eServices portal. Email submissions are no longer accepted for breach reporting."
+    note: "Mandatory since 1 April 2025. Portal URL: https://eservices.inforegulator.org.za"
