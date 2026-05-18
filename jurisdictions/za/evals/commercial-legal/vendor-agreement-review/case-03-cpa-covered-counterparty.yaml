@@ -1,0 +1,33 @@
+name: "CPA-covered counterparty — sole proprietor vendor"
+skill: vendor-agreement-review
+input: |
+  Review a vendor agreement with Sipho Nkosi t/a Nkosi Digital, a sole
+  proprietor providing website development services.  The agreement has a
+  36-month fixed term with automatic renewal, is drafted in dense legal
+  language with no plain-language summary, excludes liability for gross
+  negligence, and does not include a s49 notice drawing attention to the
+  limitation and indemnity clauses.
+
+expected_flags:
+  - "CPA-covered agreement with non-compliant terms"
+  - "Auto-renewal without proper notice mechanics"
+
+expected_statutes:
+  - "CPA s14"
+  - "CPA s22"
+  - "CPA s48"
+  - "CPA s49"
+  - "CPA s51"
+
+must_not_contain:
+  - "UCC"
+  - "consideration"
+  - "state consumer protection"
+
+notes: |
+  The counterparty is a natural person (sole proprietor), so the CPA applies
+  in full.  The 36-month term exceeds the CPA s14 maximum of 24 months.  The
+  complex language violates s22 plain-language requirements.  The gross
+  negligence exclusion is void under s51.  The missing s49 notice means the
+  limitation and indemnity clauses may not be enforceable.  Auto-renewal
+  without the required 40-80 business days' notice window violates s14.

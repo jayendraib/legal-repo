@@ -1,0 +1,32 @@
+name: "SLA penalty clause — cumulation trap"
+skill: saas-msa-review
+input: |
+  Review an SLA addendum to a SaaS MSA.  The SLA provides service credits
+  equal to 5% of monthly fees for each hour of unscheduled downtime exceeding
+  the 99.9% uptime commitment, described as a "penalty for non-performance."
+  A separate clause in the MSA entitles the customer to claim direct damages
+  for data loss arising from the same downtime event.  There is no express
+  clause permitting cumulation of the service credit penalty with the damages
+  claim.
+
+expected_flags:
+  - "Penalty-damages cumulation trap"
+
+expected_statutes:
+  - "Conventional Penalties Act s1"
+  - "Conventional Penalties Act s2"
+  - "Conventional Penalties Act s3"
+
+must_not_contain:
+  - "liquidated damages"
+
+notes: |
+  The service credits are labelled as a "penalty" and function as a penalty
+  stipulation under the Conventional Penalties Act.  Section 2 provides that
+  a creditor cannot claim both the penalty and damages for the same breach
+  unless the contract expressly permits cumulation.  Without express
+  cumulation language, the customer must elect between service credits and
+  damages — they cannot claim both.  Section 3 gives courts discretion to
+  reduce a penalty that is disproportionate.  The US concept of "liquidated
+  damages" must not appear — SA law enforces penalty clauses (opposite of
+  the US approach).

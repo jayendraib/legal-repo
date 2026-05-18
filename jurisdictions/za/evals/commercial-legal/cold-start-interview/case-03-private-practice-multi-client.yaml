@@ -1,0 +1,28 @@
+name: "Cold-start — private practice with multiple clients"
+skill: cold-start-interview
+input: |
+  I'm an admitted attorney at Moyo & Partners, a 12-person SA commercial law
+  firm.  I need the plugin set up for our practice — we advise multiple clients
+  on vendor agreements, SaaS contracts, and NDAs.  Each client needs a separate
+  workspace with its own playbook and escalation matrix.  We act as external
+  legal counsel, so the privilege regime differs from in-house.
+
+expected_flags:
+  - "ZA fork activates"
+  - "Matter workspaces enabled"
+  - "7 must-have questions asked"
+  - "SA privilege header for external counsel"
+
+must_not_contain:
+  - "ATTORNEY WORK PRODUCT"
+  - "single-client"
+
+notes: |
+  The ZA fork activates for a SA law firm.  Matter workspaces must be enabled
+  to support multiple clients with separate configurations.  All 7 must-have
+  SA cold-start questions should be asked at the firm level, with per-client
+  overrides available in matter workspaces.  The SA privilege header for
+  external counsel applies (legal professional privilege is broader for
+  admitted attorneys acting in advisory capacity than for in-house counsel).
+  US "ATTORNEY WORK PRODUCT" formulation must not appear.  The plugin should
+  not assume a single-client setup.

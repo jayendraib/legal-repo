@@ -1,0 +1,35 @@
+name: "SA vendor agreement happy path — no flags"
+skill: vendor-agreement-review
+input: |
+  Review a vendor agreement between TechServe (Pty) Ltd (annual turnover R85m)
+  and DataCo Holdings Ltd (annual turnover R220m) for managed IT services.
+  Both are SA-registered juristic persons well above the CPA threshold.  The
+  agreement is governed by South African law with AFSA arbitration in
+  Johannesburg, liability is capped at 12 months' fees, and the penalty clause
+  expressly permits cumulation with a damages claim.  A signed POPIA operator
+  agreement is attached as Annexure B, and a Shifren non-variation clause
+  appears in clause 28.
+
+expected_flags: []
+
+expected_statutes:
+  - "Conventional Penalties Act"
+  - "POPIA s21"
+
+must_not_contain:
+  - "FMLA"
+  - "FLSA"
+  - "at-will"
+  - "EEOC"
+  - "UCC"
+  - "FRCP 26(b)(3)"
+  - "data controller"
+  - "data processor"
+  - "attorney work product"
+
+notes: |
+  Both parties exceed the CPA R2m juristic-person threshold, so the CPA does
+  not apply.  The penalty clause with express cumulation is valid under the
+  Conventional Penalties Act.  POPIA operator agreement is in place.  Shifren
+  clause is self-entrenching.  No flags should fire — this is the golden-path
+  baseline for SA vendor agreements.

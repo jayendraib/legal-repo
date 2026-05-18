@@ -1,0 +1,31 @@
+name: "CPA threshold boundary — startup below R2m"
+skill: saas-msa-review
+input: |
+  Review a SaaS agreement for a project management tool provided to Bloom
+  Startup (Pty) Ltd, which has annual turnover of R1.8m and total assets below
+  R2m.  The agreement has a 30-month fixed term, includes an uncapped annual
+  price escalation clause, and reserves the vendor's right to unilaterally
+  amend service features and terms on 10 days' email notice.
+
+expected_flags:
+  - "CPA-covered agreement with non-compliant terms"
+  - "Auto-renewal without proper notice mechanics"
+
+expected_statutes:
+  - "CPA s14"
+  - "CPA s22"
+  - "CPA s48"
+  - "CPA s51"
+
+must_not_contain:
+  - "state auto-renewal statute"
+  - "unconscionability"
+
+notes: |
+  The startup's turnover of R1.8m is below the CPA R2m juristic-person
+  threshold, so the CPA applies to this B2B agreement.  The 30-month term
+  exceeds the s14 maximum of 24 months.  Uncapped price escalation and
+  unilateral amendment clauses are likely unfair under s48.  The review should
+  flag CPA non-compliance and the inadequate auto-renewal notice mechanics.
+  US concepts of unconscionability and state auto-renewal statutes must not
+  appear.

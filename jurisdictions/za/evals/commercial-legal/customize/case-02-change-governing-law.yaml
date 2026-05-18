@@ -1,0 +1,27 @@
+name: "Customize — change governing law to English law"
+skill: customize
+input: |
+  We're expanding into cross-border transactions and want to change our default
+  governing law from South African law to English law for international deals.
+  Please update the practice profile accordingly and flag any issues with this
+  change.
+
+expected_flags:
+  - "Exchange control still applies"
+  - "SA mandatory law applies regardless"
+
+must_not_contain:
+  - "Delaware"
+  - "New York"
+  - "California"
+
+notes: |
+  The customize skill should update the governing law default but must flag
+  two critical SA-specific issues.  First, exchange control regulations apply
+  to any cross-border payment by an SA entity regardless of the governing law
+  of the contract — SARB Financial Surveillance requirements cannot be
+  contracted out of.  Second, SA mandatory law (CPA for CPA-covered
+  transactions, POPIA for processing of SA personal information, Competition
+  Act for SA market effects) applies regardless of the contractual choice of
+  law for SA-connected transactions.  US state law defaults (Delaware, New
+  York, California) must not appear as suggested alternatives.

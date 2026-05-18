@@ -1,0 +1,33 @@
+name: "B-BBEE procurement — organ of state supply agreement"
+skill: vendor-agreement-review
+input: |
+  Review a supply agreement for the provision of office furniture to the
+  Gauteng Department of Infrastructure Development (an organ of state).  The
+  tender requires a minimum B-BBEE Level 4 contributor status.  The vendor,
+  Furnish Africa (Pty) Ltd, submits a Level 3 certificate but the beneficial
+  ownership structure shows a recently-appointed BEE partner with minimal
+  operational involvement.  The agreement also contains an exclusivity clause
+  preventing the vendor from supplying competing government departments.
+
+expected_flags:
+  - "B-BBEE fronting indicators"
+  - "Competition Act s5 restrictive vertical practice"
+
+expected_statutes:
+  - "B-BBEE Act s10"
+  - "B-BBEE Act s13F"
+  - "Competition Act s5"
+
+must_not_contain:
+  - "FAR"
+  - "DFARS"
+  - "federal acquisition"
+
+notes: |
+  The vendor meets the B-BBEE level requirement (Level 3 exceeds the Level 4
+  minimum), but the ownership structure raises fronting concerns under s13F
+  of the B-BBEE Act — fronting is a criminal offence.  The organ of state must
+  apply the B-BBEE codes under s10.  The exclusivity clause restricting the
+  vendor from supplying other government departments is a potential restrictive
+  vertical practice under Competition Act s5.  US federal acquisition
+  terminology (FAR/DFARS) must not appear.

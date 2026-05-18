@@ -1,0 +1,38 @@
+name: "Foreign vendor agreement — multiple SA-specific flags"
+skill: vendor-agreement-review
+input: |
+  Review a vendor agreement with CloudStack Inc., a Delaware-incorporated SaaS
+  vendor.  The agreement is governed by Delaware law, fees are payable in USD,
+  and no POPIA operator agreement is included.  Liability is uncapped, and the
+  contract contains both a penalty clause for late delivery and a general
+  damages clause for the same breach without express cumulation language.  All
+  data is hosted in AWS us-east-1.
+
+expected_flags:
+  - "No POPIA operator agreement"
+  - "Cross-border data transfer without safeguards"
+  - "Penalty-damages cumulation trap"
+  - "Foreign governing law + exchange control blind spot"
+  - "Uncapped liability + specific performance exposure"
+  - "VAT on imported services misconfigured"
+
+expected_statutes:
+  - "POPIA s21"
+  - "POPIA s72"
+  - "Conventional Penalties Act s2"
+  - "Exchange Control Regulations"
+  - "VAT Act"
+
+must_not_contain:
+  - "data processor"
+  - "attorney work product"
+  - "Hadley v Baxendale"
+
+notes: |
+  This scenario is designed to fire the maximum number of SA-specific flags.
+  The US vendor template ignores POPIA operator requirements, cross-border
+  transfer safeguards, the Conventional Penalties Act cumulation bar, exchange
+  control regulations for USD payments, specific performance as SA's primary
+  remedy (making uncapped liability more dangerous), and VAT on imported
+  electronic services.  The review must surface all six flags and reference the
+  correct SA statutes, not US equivalents.

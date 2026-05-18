@@ -1,0 +1,37 @@
+name: "Foreign SaaS vendor — cross-border data and VAT issues"
+skill: saas-msa-review
+input: |
+  Review a SaaS MSA with Acme Analytics Inc., a US-incorporated vendor.  Data
+  is hosted in AWS eu-west-1 (Ireland).  No POPIA operator agreement is
+  included.  The agreement auto-renews with only 30 calendar days' notice,
+  fees are in USD, and the vendor claims a B2B VAT exclusion.  However, our SA
+  company's non-VAT-registered subsidiary also uses the platform.  The
+  agreement is governed by New York law.
+
+expected_flags:
+  - "No POPIA operator agreement"
+  - "Cross-border data transfer without safeguards"
+  - "Foreign governing law + exchange control blind spot"
+  - "Auto-renewal without proper notice mechanics"
+  - "VAT on imported services misconfigured"
+
+expected_statutes:
+  - "POPIA s21"
+  - "POPIA s72"
+  - "Exchange Control Regulations"
+  - "VAT Act Electronic Services Regulations"
+
+must_not_contain:
+  - "GDPR Article 46"
+  - "Standard Contractual Clauses"
+  - "data processor"
+
+notes: |
+  Multiple SA-specific issues arise.  The absence of a POPIA operator agreement
+  violates s21.  Data in Ireland triggers s72 cross-border transfer concerns.
+  USD payments require Authorised Dealer routing under exchange control
+  regulations.  The 30-day auto-renewal notice is insufficient — SA courts are
+  increasingly hostile to silent auto-renewals, and if any CPA-covered entity
+  is involved, 40-80 business days' notice is required.  The B2B VAT exclusion
+  fails because the non-registered subsidiary's use of the platform means the
+  vendor does not supply solely to VAT-registered recipients.

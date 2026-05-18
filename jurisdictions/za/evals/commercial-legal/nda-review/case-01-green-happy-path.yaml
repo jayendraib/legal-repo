@@ -1,0 +1,30 @@
+name: "Mutual NDA happy path — GREEN"
+skill: nda-review
+input: |
+  Review a mutual non-disclosure agreement between Innovate Labs (Pty) Ltd
+  and FinBridge Holdings (Pty) Ltd, both SA-registered companies.  The NDA
+  has a 2-year term with a 2-year post-termination survival period, standard
+  carve-outs for publicly available information and independently developed
+  information, is governed by South African law, contains no embedded
+  restrictive covenants, and was signed using qualified electronic signatures
+  under ECTA.
+
+expected_flags: []
+
+expected_statutes:
+  - "Common law"
+  - "ECTA s13"
+
+must_not_contain:
+  - "preliminary injunction"
+  - "consideration"
+  - "attorney work product"
+
+notes: |
+  This is a clean mutual NDA between two SA companies.  No restrictive
+  covenants are embedded, so no restraint-of-trade analysis is needed.
+  Electronic signatures are valid under ECTA s13.  SA common law governs
+  confidentiality obligations.  The review should note the use of "interdict"
+  (not "preliminary injunction") as the available remedy for breach.  No
+  "consideration" is required for contract formation under SA law.  The
+  privilege header should use SA formulation, not "attorney work product."

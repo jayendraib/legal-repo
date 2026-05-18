@@ -1,0 +1,26 @@
+name: "SA SaaS MSA happy path — no flags"
+skill: saas-msa-review
+input: |
+  Review a SaaS master services agreement with PayGate Solutions (Pty) Ltd, a
+  South African payment gateway provider.  The agreement has a 12-month initial
+  term with 60 business days' written notice for cancellation, includes a
+  signed POPIA operator agreement, all data is hosted in Azure South Africa
+  North (Johannesburg), governed by South African law with AFSA arbitration,
+  and price escalation is capped at CPI plus 2%.
+
+expected_flags: []
+
+expected_statutes:
+  - "POPIA s21"
+  - "ECTA s22"
+
+must_not_contain:
+  - "California auto-renewal statute"
+  - "GDPR"
+  - "data controller"
+
+notes: |
+  This is the clean SA SaaS agreement baseline.  POPIA operator agreement is
+  in place, data stays in SA, governing law is SA with AFSA arbitration, term
+  and notice are reasonable, and price escalation is CPI-capped.  ECTA s22
+  applies to electronic contract formation.  No flags should fire.

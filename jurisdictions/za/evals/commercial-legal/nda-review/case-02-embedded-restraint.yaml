@@ -1,0 +1,33 @@
+name: "Embedded restraint of trade — overbroad non-compete"
+skill: nda-review
+input: |
+  Review a one-way NDA from MegaCorp International requiring the receiving
+  party, a 15-person SA technology consultancy, to agree to a 2-year worldwide
+  non-compete and non-solicit of MegaCorp's clients and employees.  The NDA
+  does not identify any specific protectable interest justifying the restraint.
+  The receiving party's entire business involves providing technology
+  consulting services that overlap with MegaCorp's market.
+
+expected_flags:
+  - "Overbroad restraint of trade"
+
+expected_statutes:
+  - "Basson v Chilwan"
+  - "Magna Alloys v Ellis"
+  - "Kwik Kopy v van Haarlem"
+
+must_not_contain:
+  - "non-compete per se invalid"
+  - "blue pencil doctrine"
+
+notes: |
+  The embedded non-compete is presumed valid under SA law (Magna Alloys v
+  Ellis), but the onus shifts to the party seeking to enforce it to show
+  reasonableness.  The Basson v Chilwan 5-part test applies: (1) protectable
+  interest — none identified; (2) prejudice to the restrained party — the
+  15-person firm's entire business is at risk; (3) proportionality — 2-year
+  worldwide scope is excessive (courts typically uphold 3-4 months);
+  (4) public policy — restricting a small firm's livelihood; (5) necessity
+  (Kwik Kopy v van Haarlem 5th limb).  SA law does not treat non-competes
+  as per se invalid (unlike some US jurisdictions), and the "blue pencil
+  doctrine" is a US concept — SA uses severability.

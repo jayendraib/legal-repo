@@ -1,0 +1,23 @@
+name: "Customize — update B-BBEE level"
+skill: customize
+input: |
+  Our company's B-BBEE verification has been updated.  We were previously a
+  Level 4 contributor and have now been verified as Level 2.  Please update
+  the practice profile to reflect our new B-BBEE status and flag any
+  downstream impacts on our vendor agreement review settings.
+
+expected_flags:
+  - "Shows SA-specific B-BBEE section"
+  - "Notes procurement scoring impact"
+
+must_not_contain:
+  - "US-only sections"
+
+notes: |
+  The customize skill should locate and display the SA-specific B-BBEE
+  compliance posture section in the practice profile.  Updating from Level 4
+  to Level 2 improves the company's procurement scoring — Level 2 has a
+  higher recognition level (125% under the 80/20 preferential procurement
+  system).  The skill should note this procurement scoring impact.  The
+  response should not expose US-only configuration sections as a full map
+  of available settings.

@@ -1,0 +1,27 @@
+name: "Cold-start — mixed foreign vendors and small business customers"
+skill: cold-start-interview
+input: |
+  Setting up the commercial-legal plugin for Orbit Digital (Pty) Ltd.  We're a
+  SA digital agency that contracts with several US and EU SaaS vendors (paying
+  in USD and EUR) and also provides services to small business clients, many of
+  whom have turnover below R2m.  We need the plugin configured for both our
+  vendor relationships and our customer-facing agreements.
+
+expected_flags:
+  - "ZA fork activates"
+  - "Exchange control applicable"
+  - "CPA applicable for small business customers"
+  - "VAT on imported services flagged"
+
+must_not_contain:
+  - "state-by-state"
+  - "data processor"
+
+notes: |
+  The ZA fork activates.  Foreign vendor relationships in USD/EUR trigger
+  exchange control awareness — payments require Authorised Dealer routing.
+  Below-threshold small business customers mean the CPA applies to
+  customer-facing agreements.  Foreign SaaS vendor payments trigger VAT on
+  imported electronic services considerations.  The interview should not
+  reference US state-by-state jurisdiction analysis or GDPR "data processor"
+  terminology.

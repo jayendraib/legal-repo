@@ -1,0 +1,34 @@
+name: "NDA covering personal data — POPIA gap"
+skill: nda-review
+input: |
+  Review an NDA entered into for purposes of a due diligence investigation
+  where the disclosing party will share employee records including ID numbers,
+  salary information, disciplinary records, and medical fitness certificates.
+  The NDA contains standard confidentiality obligations but no POPIA compliance
+  clause, no operator agreement provisions, and no reference to the parties'
+  respective roles as responsible party and operator.
+
+expected_flags:
+  - "No POPIA operator agreement"
+
+expected_statutes:
+  - "POPIA s21"
+  - "POPIA s19"
+  - "POPIA s22"
+
+must_not_contain:
+  - "HIPAA"
+  - "PII"
+  - "PHI"
+
+notes: |
+  The disclosed information includes personal information as defined in POPIA
+  (ID numbers, salary, medical records).  The receiving party will process
+  personal information on behalf of the disclosing party, making it an
+  "operator" under POPIA.  Section 21 requires a written operator agreement
+  specifying processing instructions, security measures, and sub-operator
+  restrictions.  Section 19 requires appropriate security safeguards.
+  Section 22 requires breach notification to the Information Regulator and
+  affected data subjects.  None of these are addressed in the NDA.  US
+  health-data terminology (HIPAA, PHI) and the generic "PII" must not
+  appear — POPIA uses "personal information."

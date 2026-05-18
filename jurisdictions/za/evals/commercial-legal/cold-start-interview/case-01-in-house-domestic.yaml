@@ -1,0 +1,29 @@
+name: "Cold-start — in-house team, domestic only"
+skill: cold-start-interview
+input: |
+  I'm setting up the commercial-legal plugin for our in-house legal team at
+  Regal Properties (Pty) Ltd, a SA property development company.  We deal
+  exclusively with above-threshold SA counterparties, use South African
+  governing law in all contracts, hold a B-BBEE Level 4 certificate, are
+  VAT-registered, and do not contract with any foreign vendors.
+
+expected_flags:
+  - "ZA fork activates"
+  - "7 must-have questions asked"
+  - "CPA mostly-inapplicable"
+  - "SA privilege header used"
+
+must_not_contain:
+  - "ATTORNEY WORK PRODUCT"
+  - "state jurisdiction"
+
+notes: |
+  The ZA fork should activate based on the SA company context.  All 7
+  must-have questions from the SA cold-start interview should be asked
+  (B-BBEE level, counterparty threshold, governing law, POPIA posture,
+  public sector contracting, foreign vendors, VAT status).  Because all
+  counterparties are above-threshold juristic persons, the CPA is mostly
+  inapplicable.  Exchange control questions can be skipped given no foreign
+  vendors.  The SA privilege header ("PRIVILEGED & CONFIDENTIAL — LEGAL
+  PROFESSIONAL PRIVILEGE") should be used, not the US "ATTORNEY WORK
+  PRODUCT" formulation.
