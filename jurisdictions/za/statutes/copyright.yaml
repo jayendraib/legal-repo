@@ -1,0 +1,26 @@
+statute: "Copyright Act 98 of 1978"
+authority: "Companies and Intellectual Property Commission (CIPC)"
+last_confirmed: "2025-05-01"
+source_url: "https://www.gov.za/documents/copyright-act"
+
+sections:
+  employer_ownership:
+    ref: "Copyright Act s21(1)(d)"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "Where a work is made in the course of employment under a contract of service, the employer is the owner of any copyright subsisting in the work, subject to any agreement to the contrary."
+
+  assignment_must_be_in_writing:
+    ref: "Copyright Act s22(3)"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "No assignment of copyright and no exclusive licence to do an act which is subject to copyright shall have effect unless it is in writing signed by or on behalf of the assignor or licensor."
+
+  computer_generated_works:
+    ref: "Copyright Act s1, s21(1)(c)"
+    value: "person who arranged creation is author"
+    effective_from: null
+    effective_until: null
+    effect: "In the case of a computer-generated literary, dramatic, musical or artistic work, the person by whom the arrangements necessary for the creation of the work were undertaken is deemed the author."

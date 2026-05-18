@@ -1,0 +1,52 @@
+statute: "Protection of Personal Information Act 4 of 2013"
+authority: "Information Regulator"
+last_confirmed: "2025-05-01"
+source_url: "https://www.gov.za/documents/protection-personal-information-act"
+
+sections:
+  operator_agreement_required:
+    ref: "POPIA s21(1)"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A responsible party must, in terms of a written contract between it and the operator, ensure that the operator establishes and maintains security measures referred to in s19."
+    note: "POPIA uses 'responsible party' (not 'controller') and 'operator' (not 'processor'). The contract must specify that the operator processes only on the responsible party's instructions."
+
+  security_safeguards:
+    ref: "POPIA s19(1)"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A responsible party must secure the integrity and confidentiality of personal information by taking appropriate, reasonable technical and organisational measures."
+
+  breach_notification:
+    ref: "POPIA s22(1)"
+    value: "as soon as reasonably possible"
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Where there are reasonable grounds to believe that personal information has been accessed or acquired by an unauthorised person, the responsible party must notify the Information Regulator and the data subject as soon as reasonably possible."
+
+  cross_border_transfer:
+    ref: "POPIA s72(1)"
+    value: "prohibited unless safeguards met"
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "A responsible party may not transfer personal information to a third party in a foreign country unless the recipient is subject to a law, binding corporate rules, or binding agreement providing an adequate level of protection substantially similar to POPIA."
+    note: "No adequacy list published by the Information Regulator as of 2025. Practical approach is data transfer agreements adapted from GDPR SCCs."
+
+  administrative_fine_max:
+    ref: "POPIA s107(1)"
+    value: 10000000
+    currency: ZAR
+    unit: "per contravention"
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Any person convicted of an offence under POPIA is liable to a fine not exceeding R10 million or imprisonment for up to 10 years, or both."
+
+  direct_marketing_restrictions:
+    ref: "POPIA s69(1)"
+    value: true
+    effective_from: "2021-07-01"
+    effective_until: null
+    effect: "Processing of personal information for direct marketing by electronic communication is prohibited unless the data subject has given consent or is an existing customer (and the marketing relates to similar products/services)."
+    note: "Amended POPIA regulations (April 2025) introduce stricter requirements for direct marketing, telemarketing call recordings, and managing objections."

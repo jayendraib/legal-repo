@@ -1,0 +1,56 @@
+statute: "Broad-Based Black Economic Empowerment Act 53 of 2003 (as amended by Act 46 of 2013)"
+authority: "Department of Trade, Industry and Competition"
+last_confirmed: "2025-05-01"
+source_url: "https://www.thedtic.gov.za/financial-and-non-financial-support/b-bbee/"
+
+sections:
+  organs_of_state_must_apply:
+    ref: "B-BBEE Act s10(1)(b)"
+    value: true
+    effective_from: "2014-10-24"
+    effective_until: null
+    effect: "Every organ of state and public entity must apply relevant codes of good practice when developing and implementing a preferential procurement policy."
+
+  fronting_prohibition:
+    ref: "B-BBEE Act s13F"
+    value: true
+    effective_from: "2014-10-24"
+    effective_until: null
+    effect: "Fronting practices are prohibited. A B-BBEE initiative in which black persons are discouraged from substantially participating, economic benefits do not flow to black people in the specified ratios, or terms were not negotiated at arm's length, constitutes fronting."
+    note: "Fronting is a criminal offence. Contracts awarded on false B-BBEE information may be cancelled."
+
+  eme_threshold:
+    ref: "B-BBEE Codes of Good Practice, Statement 000"
+    value: 10000000
+    currency: ZAR
+    unit: "annual turnover"
+    effective_from: "2019-05-01"
+    effective_until: null
+    effect: "An Exempted Micro Enterprise (EME) is a business with an annual total revenue of R10 million or less. EMEs are deemed Level 4 contributors (Level 1 if 100% black-owned, Level 2 if 51%+ black-owned)."
+    gazette_date: "2019-05-01"
+
+  qse_threshold:
+    ref: "B-BBEE Codes of Good Practice, Statement 000"
+    value: 50000000
+    currency: ZAR
+    unit: "annual turnover"
+    effective_from: "2019-05-01"
+    effective_until: null
+    effect: "A Qualifying Small Enterprise (QSE) is a business with annual total revenue between R10 million and R50 million. QSEs use the QSE scorecard with all 5 elements of B-BBEE."
+    gazette_date: "2019-05-01"
+
+  preferential_procurement_80_20:
+    ref: "Preferential Procurement Regulations 2017, reg 6(1)"
+    value: 80
+    unit: "points for price, 20 for B-BBEE"
+    effective_from: "2017-04-01"
+    effective_until: null
+    effect: "For procurement of goods and services with a rand value up to R50 million, 80 points are allocated for price and 20 points for the bidder's B-BBEE status level."
+
+  preferential_procurement_90_10:
+    ref: "Preferential Procurement Regulations 2017, reg 7(1)"
+    value: 90
+    unit: "points for price, 10 for B-BBEE"
+    effective_from: "2017-04-01"
+    effective_until: null
+    effect: "For procurement of goods and services with a rand value above R50 million, 90 points are allocated for price and 10 points for the bidder's B-BBEE status level."

@@ -1,0 +1,65 @@
+statute: "Consumer Protection Act 68 of 2008"
+authority: "Department of Trade, Industry and Competition"
+last_confirmed: "2025-05-01"
+source_url: "https://www.gov.za/documents/consumer-protection-act"
+
+sections:
+  juristic_person_threshold:
+    ref: "CPA s5(2)(b), GN R294 GG 34399"
+    value: 2000000
+    currency: ZAR
+    unit: "annual turnover or asset value"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "The CPA does not apply to transactions between juristic persons whose annual turnover or asset value equals or exceeds the threshold. Below-threshold juristic persons are treated as consumers."
+    note: "Threshold set by Ministerial determination. Natural persons are always covered regardless of value."
+
+  fixed_term_max_duration:
+    ref: "CPA s14(1), Regulation 5(1)"
+    value: 24
+    unit: "months"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "Fixed-term consumer agreements must not exceed 24 months from the date of signature, unless a longer period is expressly agreed and the supplier can demonstrate a financial benefit to the consumer."
+    note: "s14 does NOT apply between juristic persons regardless of turnover — only natural persons and sole proprietors."
+
+  cancellation_notice_period:
+    ref: "CPA s14(2)(b)"
+    value: 20
+    unit: "business days"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "A consumer may cancel a fixed-term agreement at any time by giving the supplier 20 business days' written notice. The consumer remains liable for amounts owed up to the date of cancellation, and the supplier may impose a reasonable cancellation penalty."
+
+  supplier_expiry_notice_min:
+    ref: "CPA s14(2)(a)"
+    value: 40
+    unit: "business days before expiry"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "The supplier must give the consumer written notice of the pending expiry of a fixed-term agreement not less than 40 and not more than 80 business days before the expiry date."
+
+  supplier_expiry_notice_max:
+    ref: "CPA s14(2)(a)"
+    value: 80
+    unit: "business days before expiry"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "Upper bound of the supplier notification window for pending expiry of fixed-term agreements."
+
+  cooling_off_period:
+    ref: "CPA s16(3)(a)"
+    value: 5
+    unit: "business days"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "A consumer who entered into a transaction as a result of direct marketing may cancel it within 5 business days after the later of the date on which the agreement was concluded or the goods were delivered."
+
+  cpa_fine_max:
+    ref: "CPA s112(1)"
+    value: 1000000
+    currency: ZAR
+    unit: "per contravention or 10% of annual turnover"
+    effective_from: "2011-04-01"
+    effective_until: null
+    effect: "The National Consumer Tribunal may impose an administrative fine not exceeding the greater of R1,000,000 or 10% of the respondent's annual turnover."

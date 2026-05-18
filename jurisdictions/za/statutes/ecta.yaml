@@ -1,0 +1,55 @@
+statute: "Electronic Communications and Transactions Act 25 of 2002"
+authority: "Department of Communications and Digital Technologies"
+last_confirmed: "2025-05-01"
+source_url: "https://www.gov.za/documents/electronic-communications-and-transactions-act"
+
+sections:
+  data_message_legal_recognition:
+    ref: "ECTA s11(1)"
+    value: true
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "Information is not without legal force and effect merely because it is wholly or partly in the form of a data message."
+
+  writing_requirement:
+    ref: "ECTA s12"
+    value: true
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "A requirement in law that a document or information must be in writing is met if the document is in the form of a data message and accessible for subsequent reference."
+
+  electronic_signature_validity:
+    ref: "ECTA s13(2)"
+    value: true
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "An electronic signature is not without legal force and effect merely on the grounds that it is in electronic form."
+
+  advanced_signature_required_when:
+    ref: "ECTA s13(1)"
+    value: "required by law without specifying type"
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "Where the signature of a person is required by law and such law does not specify the type of signature, that requirement is met only if an advanced electronic signature is used."
+    note: "Advanced e-signatures must be accredited by the SAAA. Required for: suretyships, copyright assignments, notarised documents, sealed documents."
+
+  electronic_contract_formation:
+    ref: "ECTA s22(1)"
+    value: true
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "An agreement is not without legal force and effect merely because it was concluded partly or in whole by means of data messages."
+
+  electronic_contract_conclusion:
+    ref: "ECTA s22(2)"
+    value: "at time and place acceptance received by offeror"
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "An agreement concluded between parties by means of data messages is concluded at the time when and place where the acceptance of the offer was received by the offeror."
+
+  schedule_1_exclusions:
+    ref: "ECTA Schedule 1"
+    value: "alienation of land, long leases >20 years, wills, bills of exchange"
+    effective_from: "2002-08-30"
+    effective_until: null
+    effect: "The provisions of ECTA relating to data messages, electronic signatures, and electronic transactions do not apply to these categories of agreements."

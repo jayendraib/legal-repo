@@ -1,0 +1,36 @@
+statute: "Prescription Act 68 of 1969"
+authority: "Department of Justice and Constitutional Development"
+last_confirmed: "2025-05-01"
+source_url: "https://www.justice.gov.za/legislation/acts/1969-068.pdf"
+
+sections:
+  debt_prescription_period:
+    ref: "Prescription Act s11(d)"
+    value: 3
+    unit: "years"
+    effective_from: null
+    effective_until: null
+    effect: "A debt prescribes (becomes unenforceable) after 3 years, unless a longer period applies under another provision of s11."
+
+  other_debt_prescription:
+    ref: "Prescription Act s11(a)"
+    value: 6
+    unit: "years"
+    effective_from: null
+    effective_until: null
+    effect: "Any debt not falling under another provision of s11 prescribes after 6 years."
+    note: "The 6-year period applies to claims arising from breach of contract where the claim is not for a 'debt' in the narrow sense (e.g. claims for damages for breach)."
+
+  prescription_begins:
+    ref: "Prescription Act s12(1)"
+    value: "when the debt is due"
+    effective_from: null
+    effective_until: null
+    effect: "Prescription begins to run as soon as the debt is due. A debt is due when the creditor has knowledge of the identity of the debtor and the facts from which the debt arises."
+
+  delay_of_prescription:
+    ref: "Prescription Act s13(1)"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "If the creditor is prevented by superior force (including ignorance of facts) from interrupting prescription, the period is extended."

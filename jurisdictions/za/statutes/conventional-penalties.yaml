@@ -1,0 +1,42 @@
+statute: "Conventional Penalties Act 15 of 1962"
+authority: "Department of Justice and Constitutional Development"
+last_confirmed: "2025-05-01"
+source_url: "https://www.justice.gov.za/legislation/acts/1962-015.pdf"
+
+sections:
+  enforceability:
+    ref: "Conventional Penalties Act s1(1)"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "A penalty stipulation providing that a person shall be liable to pay a sum of money or deliver anything for breach of contract, whether by way of penalty or as liquidated damages, is enforceable in any competent court."
+    note: "SA enforces penalty clauses — opposite of the US approach where penalty clauses are generally void. SA treats 'liquidated damages' and 'penalty' identically under this Act."
+
+  no_cumulation:
+    ref: "Conventional Penalties Act s2(1)"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "A creditor shall not recover both the penalty and damages for the same act or omission, unless the contract expressly provides otherwise. A creditor may not recover damages in lieu of the penalty unless the contract expressly so provides."
+    note: "This is the most common trap in US-drafted agreements used in SA. A contract must expressly permit claiming both penalty and damages, or claiming damages instead of the penalty."
+
+  no_penalty_for_defective_performance_accepted:
+    ref: "Conventional Penalties Act s2(2)"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "A person who accepts or is obliged to accept defective or non-timeous performance shall not recover a penalty unless the penalty was expressly stipulated for that defect or delay."
+
+  judicial_reduction:
+    ref: "Conventional Penalties Act s3"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "If a penalty is out of proportion to the prejudice suffered, the court may reduce it to an equitable extent, considering not only the creditor's proprietary interest but every other rightful interest affected."
+
+  forfeiture_as_penalty:
+    ref: "Conventional Penalties Act s4"
+    value: true
+    effective_from: null
+    effective_until: null
+    effect: "A forfeiture clause (upon withdrawal from an agreement, a party forfeits the right to restitution or remains liable for performance) is treated as a penalty stipulation subject to sections 1-3."
