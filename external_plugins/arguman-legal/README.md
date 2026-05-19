@@ -106,5 +106,5 @@ on first connect and runs the standard browser auth flow.
 - **Privacy:** https://arguman.ai/privacy
 - **Terms:** https://arguman.ai/terms
 - **Support:** iletisim@arguman.ai
-- **MCP endpoint:** https://arguman-mcp-915822535803.europe-west3.run.app/mcp
-- **Health probe:** https://arguman-mcp-915822535803.europe-west3.run.app/health
+- **MCP endpoint:** https://mcp.arguman.ai/mcp
+- **Health probe:** https://mcp.arguman.ai/health
