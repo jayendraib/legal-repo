@@ -12,7 +12,7 @@ argument-hint: "[days] — e.g. '14' for two weeks"
 # /eu-legal:reg-watch
 
 1. Load `~/.claude/plugins/config/eu-legal/CLAUDE.md`. If placeholders, stop: "Run `/eu-legal:cold-start-interview` first."
-2. Check Velvoite: if not available, run Fallback.
+2. Check Velvoite: if `VELVOITE_API_KEY` not set, run Fallback.
 3. Run the workflow below.
 
 ---

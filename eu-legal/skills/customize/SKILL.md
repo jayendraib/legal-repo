@@ -48,3 +48,13 @@ Show the current value for each section, grouped:
 Ask exactly one clarifying question if needed. Then update the relevant section in `~/.claude/plugins/config/eu-legal/CLAUDE.md` using Edit (not a full rewrite). Show a one-line diff of what changed. Confirm: "Updated. All skills will use the new value on their next run."
 
 For actor role changes: offer to re-import from Velvoite if the API key is set — call `mcp__velvoite__get_company_profile()` and update the whole actor roles table.
+
+---
+
+## Fallback (VELVOITE_API_KEY not set)
+
+Profile editing works entirely locally — you can update entity type, jurisdictions, practice areas, legal team, and outside counsel without Velvoite.
+
+The only feature unavailable without `VELVOITE_API_KEY` is the actor-role re-import (which auto-fills your regulation roles from your Velvoite workspace). You can still edit actor roles manually in the profile — they are plain text fields in the actor roles table.
+
+To enable re-import: add `VELVOITE_API_KEY` to your `.envrc` and run `direnv allow`, then re-run `/eu-legal:customize` for actor role changes.
