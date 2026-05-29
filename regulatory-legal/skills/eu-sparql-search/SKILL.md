@@ -109,7 +109,7 @@ For the complete list, see `references/resource-types.md`.
 Filter pattern:
 ```sparql
 ?expr cdm:expression_uses_language ?lang .
-?lang dc:identifier "POL" .
+?lang dc:identifier "ENG" .
 ```
 
 ## Output Formats
@@ -194,7 +194,7 @@ WHERE {
   FILTER(STR(?celex) IN ("32016R0679", "32018R1725"))  # ⚠️ always use STR() — direct IN fails
   ?expr cdm:expression_belongs_to_work ?work ;
         cdm:expression_uses_language ?lang .
-  ?lang dc:identifier "POL" .
+  ?lang dc:identifier "ENG" .
   ?manif cdm:manifestation_manifests_expression ?expr ;
          cdm:manifestation_type ?fmt .
   FILTER(STR(?fmt) = "pdfa2a")  # ⚠️ "pdfa1a" does not exist; use "pdfa2a", "fmx4", or "xhtml"
@@ -238,7 +238,7 @@ WHERE {
   FILTER NOT EXISTS { ?work cdm:do_not_index "true"^^xsd:boolean }
   ?expr cdm:expression_belongs_to_work ?work ;
         cdm:expression_uses_language ?lang .
-  ?lang dc:identifier "POL" .
+  ?lang dc:identifier "ENG" .
   ?manif cdm:manifestation_manifests_expression ?expr ;
          cdm:manifestation_type ?fmt .
   FILTER(STR(?fmt) = "pdfa2a")  # ⚠️ use STR() — direct literal fails; "pdfa1a" does not exist
@@ -314,9 +314,9 @@ LIMIT 20
 
 ## How to Execute Queries
 
-### Preferred method: bash_tool + Python (urllib)
+### Preferred method: Python (urllib) from the command line
 
-Use `bash_tool` with Python to run SPARQL queries and fetch document content. This bypasses all `web_fetch` permission restrictions and works unconditionally.
+Use the bash tool with Python to run SPARQL queries and fetch document content. Web-fetch tools generally only accept URLs supplied directly by the user or returned by web search, so Cellar URLs coming out of SPARQL results should be fetched from the command line instead.
 
 ```python
 import urllib.parse, urllib.request, json
@@ -338,18 +338,11 @@ for r in results:
     print(r["celex"]["value"])
 ```
 
-If SSL certificate errors occur (transient), disable verification:
-```python
-import ssl
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
-# pass context=ctx to urlopen
-```
+If a transient SSL or connection error occurs, retry the request once before reporting the failure. Do not disable certificate verification.
 
 ### Fetching document content from Cellar
 
-Once you have an item URL from SPARQL (e.g. `?item cdm:item_belongs_to_manifestation ?manif`), fetch the full document text using `curl` in `bash_tool`:
+Once you have an item URL from SPARQL (e.g. `?item cdm:item_belongs_to_manifestation ?manif`), fetch the full document text using `curl`:
 
 ```bash
 curl -s -L "<item_url>" -H "Accept: text/html" \
@@ -378,7 +371,7 @@ print('\n'.join(p.text)[:20000])
 "
 ```
 
-> ⚠️ **Do NOT use `web_fetch` for Cellar URLs returned by SPARQL** — `web_fetch` in Claude.ai only accepts URLs that were provided directly by the user or appeared in `web_search` results. Cellar item URLs from `bash_tool` SPARQL queries will always be rejected. Use `curl` in `bash_tool` instead.
+> ⚠️ **Do NOT use a web-fetch tool for Cellar URLs returned by SPARQL** — web-fetch tools generally only accept URLs that were provided directly by the user or appeared in web-search results, so Cellar item URLs from SPARQL results will be rejected. Use `curl` from the command line instead.
 
 ### JSON response structure
 
@@ -404,9 +397,9 @@ Access results: `data["results"]["bindings"]` — list of dicts, each key maps t
 
 1. **Identify intent** — what type of document, which filters (date, language, CELEX, format, in-force)?
 2. **Choose query pattern** from the patterns above, or combine them
-3. **Execute via bash_tool** — run SPARQL with Python/urllib, parse JSON bindings
+3. **Execute from the command line** — run SPARQL with Python/urllib, parse JSON bindings
 4. **Parse and present** — extract bindings, display as readable table with CELEX numbers and dates
-5. **Fetch document content if needed** — use `curl` in `bash_tool` with the item URL from SPARQL
+5. **Fetch document content if needed** — use `curl` with the item URL from SPARQL
 6. **Always cite sources** — provide clickable links so the user can verify (see Citations section)
 7. **Offer next steps** — get file download URLs, filter by language, expand date range, etc.
 
@@ -420,11 +413,11 @@ Access results: `data["results"]["bindings"]` — list of dicts, each key maps t
 
 Whenever you answer a question based on a fetched document, always include at the end:
 
-1. **EUR-Lex link** — canonical, stable, human-readable URL for the document:
+1. **EUR-Lex link** — canonical, stable, human-readable URL for the document (swap `EN` for the user's working language):
    ```
-   https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=celex:{CELEX}
+   https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:{CELEX}
    ```
-   e.g. `https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=celex:32022R2554`
+   e.g. `https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32022R2554`
 
 2. **Direct Cellar download link** — the item URL returned by SPARQL (use for one-click access to the actual file):
    ```
@@ -433,19 +426,21 @@ Whenever you answer a question based on a fetched document, always include at th
 
 3. **Article anchor on EUR-Lex** — when citing a specific article, append the anchor to the EUR-Lex URL:
    ```
-   https://eur-lex.europa.eu/legal-content/PL/TXT/HTML/?uri=celex:32022R2554#d1e3456-1-1
+   https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=celex:32022R2554#d1e3456-1-1
    ```
-   EUR-Lex article anchors follow the pattern `#art_{N}` for top-level articles in some acts, but anchors are not always stable. Prefer linking to the full document and mentioning the article number explicitly (e.g. "Art. 30 ust. 2 lit. e)").
+   EUR-Lex article anchors follow the pattern `#art_{N}` for top-level articles in some acts, but anchors are not always stable. Prefer linking to the full document and mentioning the article number explicitly (e.g. "Article 30(2)(e)").
 
 ### Citation format in responses
 
 After providing an answer based on document content, always end with a source block:
 
 ```
-**Źródło:** DORA — Rozporządzenie (UE) 2022/2554
-- EUR-Lex (PL): https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=celex:32022R2554
-- Pobierz plik (PL, xhtml): http://publications.europa.eu/resource/cellar/0caf473a-85bd-11ed-9887-01aa75ed71a1.0018.03/DOC_1
+**Source:** DORA — Regulation (EU) 2022/2554
+- EUR-Lex (EN): https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32022R2554
+- Download ({lang}, {format}): http://publications.europa.eu/resource/cellar/{uuid}.{lang_code}.{fmt_code}/DOC_1
 ```
+
+Write the source block in the user's working language and link the language version they are working in.
 
 ### SPARQL query to retrieve item URLs for citations
 
@@ -458,7 +453,7 @@ WHERE {
   FILTER(STR(?celex) = "32022R2554")
   ?expr cdm:expression_belongs_to_work ?work ;
         cdm:expression_uses_language ?lang .
-  ?lang dc:identifier "POL" .
+  ?lang dc:identifier "ENG" .
   ?manif cdm:manifestation_manifests_expression ?expr ;
          cdm:manifestation_type ?fmt .
   ?item cdm:item_belongs_to_manifestation ?manif .
@@ -493,8 +488,8 @@ http://publications.europa.eu/resource/{ps-name}/{ps-id}?language={iso639-3-code
 
 Examples:
 - `http://publications.europa.eu/resource/cellar/b84f49cd-750f-11e3-8e20-01aa75ed71a1.0006.01/DOC_1`
-- With language: `...?language=POL`
-- With format: `...?language=POL&format=pdfa2a`
+- With language: `...?language=ENG`
+- With format: `...?language=ENG&format=pdfa2a`
 
 The Cellar ID (UUID) comes from the `?work` URI returned by SPARQL queries — extract the UUID from the URI and use it in the REST call.
 
