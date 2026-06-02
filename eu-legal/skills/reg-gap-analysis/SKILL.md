@@ -8,6 +8,9 @@ description: >
   with the AI Act", "DORA gap analysis", "what do we still need to do for
   [regulation]".
 argument-hint: "[regulation or description] — e.g. 'dora' or 'EU AI Act high-risk'"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:reg-gap-analysis
@@ -24,8 +27,8 @@ argument-hint: "[regulation or description] — e.g. 'dora' or 'EU AI Act high-r
 Unlike US federal rulemaking (notice-and-comment under the APA), EU regulations follow a different pipeline. Flag the current status of the regulation being analysed:
 
 - **Commission proposal** → Council and Parliament positions → **trilogue** → **adoption** → publication in Official Journal → **entry into force** (20 days after publication) → **application date** (often 12–24 months after entry into force)
-- **Level 2**: Delegated Regulations, Implementing Acts (Commission)
-- **Level 3**: RTS/ITS (EBA, ESMA, EIOPA), Guidelines, Q&As (soft law, but supervisory expectations)
+- **Level 2**: Delegated Regulations, Implementing Acts (Commission); **RTS and ITS** drafted by EBA/ESMA/EIOPA and adopted by the Commission as binding Delegated/Implementing Regulations
+- **Level 3**: Guidelines, Recommendations, Q&As (EBA, ESMA, EIOPA — soft law, but supervisory expectations; national competent authorities generally expect compliance)
 
 Note: **Regulations** are directly applicable in all member states. **Directives** require national transposition — obligations may vary by member state.
 
@@ -34,6 +37,8 @@ Note: **Regulations** are directly applicable in all member states. **Directives
 Confirm: "You want a gap analysis against [regulation]. Is this the current in-force version, an upcoming application date, or a recent amendment? And are you analysing your full compliance programme or a specific process?"
 
 ## Step 2: Fetch obligations
+
+**Live regulation text:** Before fetching obligations, call `mcp__velvoite__get_eu_regulation_article(regulation_code)` to get the EUR-Lex URL for the regulation being analysed. This allows WebFetch of the actual regulation text to cross-check obligation descriptions against the source. The Velvoite corpus provides obligation intelligence; EUR-Lex provides the verbatim source text.
 
 **If Velvoite available:**
 Call `mcp__velvoite__get_canonical_obligations` with the identified regulation and the actor role from profile. This gives the "what the law requires" input — article-level obligations with enforcement history.
@@ -74,4 +79,4 @@ Offer to export the gap table as a markdown file for the compliance team.
 
 ## Guardrail
 
-This analysis identifies gaps based on your answers and the Velvoite corpus (or public regulation text). It is a working document for attorney review — not a legal opinion, not a compliance certification, and not a substitute for advice from a qualified lawyer familiar with your specific circumstances. Regulatory interpretation varies by competent authority and jurisdiction.
+This analysis identifies gaps based on your answers and the Velvoite corpus (or public regulation text). It is a working document for attorney review — not a legal opinion, not a compliance certification, and not a substitute for advice from a qualified lawyer familiar with your specific circumstances. Regulatory interpretation varies by competent authority and jurisdiction. Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

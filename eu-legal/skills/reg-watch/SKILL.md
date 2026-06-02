@@ -7,6 +7,9 @@ description: >
   updates this week", "what changed in EU reg", "weekly regulatory digest",
   or similar.
 argument-hint: "[days] — e.g. '14' for two weeks"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:reg-watch
@@ -25,7 +28,14 @@ argument-hint: "[days] — e.g. '14' for two weeks"
 
 Call `mcp__velvoite__get_recent_changes` with `days` from args.
 
-Group results by regulation (most-active regulation first). For each item render:
+**Before grouping:** Check urgency. Any item with urgency level 1 or 2 in the corpus results must be surfaced first as a banner:
+
+> 🔴 **CRITICAL — Requires immediate attention:**
+> [list each urgency 1-2 item: title, source, one-line summary, and action deadline if present]
+
+If no urgency 1-2 items: omit the banner entirely.
+
+Group remaining results by regulation (most-active regulation first). For each item render:
 - **Title** (linked if URL available)
 - Source: EBA / ESMA / EIOPA / FIN-FSA / BaFin / EUR-Lex / Commission / other
 - Document type: guideline / Q&A / RTS / ITS / supervisory notice / consultation / decision
@@ -51,3 +61,9 @@ In the meantime, check directly:
 - EIOPA: eiopa.europa.eu/publications
 - FIN-FSA: finanssivalvonta.fi/en/news
 - BaFin: bafin.de/SharedDocs/Veroeffentlichungen/EN"
+
+---
+
+## Disclaimer
+
+Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

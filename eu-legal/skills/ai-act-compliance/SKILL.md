@@ -9,6 +9,9 @@ description: >
   the AI Act", "AI Act risk assessment", "do we need a FRIA", or describing
   an AI system.
 argument-hint: "[describe the AI system and its use case]"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:ai-act-compliance
@@ -22,7 +25,13 @@ argument-hint: "[describe the AI system and its use case]"
 
 ## Purpose
 
-The EU AI Act (Regulation (EU) 2024/1689, applicable from 2 August 2026 for most provisions) creates tiered obligations based on risk. This skill classifies the system, maps the applicable obligations, and flags where GDPR and AI Act requirements overlap and can be addressed jointly.
+The EU AI Act (Regulation (EU) 2024/1689, applicable from 2 August 2026 for most provisions) creates tiered obligations based on risk.
+
+Application dates are phased:
+- **Already in force — 2 February 2025:** Prohibited practices (Art. 5). If you deploy any prohibited AI system, you are already non-compliant.
+- **2 August 2025:** GPAI model obligations
+- **2 August 2026:** High-risk AI systems (Annex III — this is the date relevant for financial institution deployers)
+- **2 August 2027:** Annex I safety component systems This skill classifies the system, maps the applicable obligations, and flags where GDPR and AI Act requirements overlap and can be addressed jointly.
 
 ## Step 1: Actor role
 
@@ -36,6 +45,8 @@ Most financial institutions are **deployers** for third-party AI (fraud detectio
 
 ## Step 2: Risk classification
 
+**Live verification:** Before classifying, call `mcp__velvoite__get_eu_regulation_article("ai_act", "6")` for Annex references and `mcp__velvoite__get_eu_regulation_article("ai_act", "5")` for prohibited practices. Fetch the returned URLs to verify the classification criteria against the current EUR-Lex text. The AI Act application dates and Annex III categories are particularly important to verify against live text.
+
 ### Prohibited (Art. 5) — hard stop
 
 These are prohibited regardless of use case. Check:
@@ -45,8 +56,12 @@ These are prohibited regardless of use case. Check:
 - Exploitation of vulnerabilities of specific groups
 - Emotion recognition in workplace or educational institutions (except for medical/safety purposes)
 - Biometric categorisation based on sensitive characteristics
+- AI systems used by law enforcement for **predictive policing of individuals** based solely on profiling (Art. 5(1)(d))
+- AI systems that **scrape facial images from the internet or CCTV footage** to build or expand facial recognition databases (Art. 5(1)(e))
 
 If any prohibited practice applies: **STOP. This system cannot be deployed. Route to legal immediately.**
+
+**Verify prohibited practices against live text:** Call `mcp__velvoite__get_eu_regulation_article("ai_act", "5")` and fetch the section_url to confirm the current prohibited practice list. The AI Act prohibited practices have been amended — live text takes precedence.
 
 ### High-risk (Art. 6 + Annexes II and III)
 
@@ -57,7 +72,7 @@ If any prohibited practice applies: **STOP. This system cannot be deployed. Rout
 | Use case | High-risk? | Notes |
 |---|---|---|
 | Credit scoring / creditworthiness assessment | Yes | Annex III §5(b) |
-| Fraud detection affecting individuals | Yes | Annex III §5(b) |
+| Fraud detection with individual profiling/scoring | ⚠️ Depends | Annex III §5(b) only if system profiles or scores individuals — generic transaction monitoring without individual scoring is NOT high-risk under Annex III. Assess whether the system produces individual risk scores or decisions. |
 | Insurance underwriting (individual risk pricing) | Yes | Annex III §5(b) |
 | Employment decisions (recruitment, promotion, termination) | Yes | Annex III §4 |
 | Identity verification / biometric authentication | Yes | Annex III §1 |
@@ -129,4 +144,4 @@ Recommendation: "Run `/eu-legal:pia-generation` for the DPIA component — the t
 
 ## Guardrail
 
-This classification is preliminary. High-risk determination under Annex III requires legal review — the criteria involve interpretation and the Commission is issuing guidance. Conformity assessments for certain high-risk AI systems require notified body involvement. This output is a working document for attorney review and should not be used as a compliance certification.
+This classification is preliminary. High-risk determination under Annex III requires legal review — the criteria involve interpretation and the Commission is issuing guidance. Conformity assessments for certain high-risk AI systems require notified body involvement. This output is a working document for attorney review and should not be used as a compliance certification. Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

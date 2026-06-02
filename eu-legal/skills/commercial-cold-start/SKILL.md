@@ -9,6 +9,9 @@ description: >
   playbook positions, or before running contract-review, nda-review, or
   vendor-agreement-review for the first time.
 argument-hint: "[--redo] [--check-integrations]"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:commercial-cold-start
@@ -38,7 +41,7 @@ Ask:
 Present as a numbered list:
 1. Finnish law (Finland — Courts of Helsinki)
 2. German law (Germany — choice of city)
-3. English law (England & Wales)
+3. English law (England & Wales) (Note: England & Wales is outside the EU post-Brexit — selecting English governing law will trigger the "non-EU governing law" escalation flag in escalation-flagger. This is a valid commercial choice but acknowledge the escalation.)
 4. Swedish law (Sweden)
 5. Dutch law (Netherlands)
 6. French law (France)
@@ -114,13 +117,18 @@ Save as `purchasing_side_playbook`.
 
 ### 6. DORA ICT provider status
 
+**DORA ICT third-party register (Art. 28(3)):** DORA requires financial entities to maintain a register of **all contractual arrangements** with ICT third-party service providers — not only "critical" ones. Ask:
+- Has your organisation identified all ICT third-party service providers (any external provider of ICT services)?
+- Is a written register of all such arrangements maintained?
+Note: "Critical ICT third-party service providers" (CTPPs) is a separate designation made by the joint ESA committee under DORA Art. 43 — financial entities do not self-designate providers as critical.
+
 Ask:
-> "Has your organisation identified its critical ICT third-party providers under DORA Article 28? (Relevant if you are a financial entity.)"
+> "Has your organisation set up an ICT third-party register covering all ICT service providers under DORA Art. 28(3)? (Relevant if you are a financial entity.)"
 
 Read entity type from `~/.claude/plugins/config/eu-legal/CLAUDE.md`. If entity type is `other`, note that DORA ICT provider obligations may not apply directly but record the answer for context.
 
 Options:
-1. Yes — we maintain an ICT third-party register
+1. Yes — we maintain a register of all ICT third-party arrangements
 2. Partially — we have an informal list but no formal register
 3. No — we have not yet done this exercise
 4. Not applicable — not a DORA-in-scope entity
@@ -128,7 +136,7 @@ Options:
 Save: `dora_ict_register_status` (one of `formal_register` / `informal_list` / `not_done` / `not_applicable`).
 
 If the answer is 1 or 2, ask:
-> "You can list your critical ICT third-party providers here so the vendor-agreement-review skill can flag concentration risk. Do you want to add any now? (You can always add more later.)"
+> "You can list your ICT third-party providers here so the vendor-agreement-review skill can flag concentration risk. Do you want to add any now? (You can always add more later.)"
 
 Save as `critical_ict_providers` (YAML list of vendor names).
 
@@ -255,3 +263,9 @@ After writing `commercial.md`, show a one-paragraph summary of what was configur
 > 2. **Review an NDA** — run `/eu-legal:nda-review`
 > 3. **Review a vendor agreement** — run `/eu-legal:vendor-agreement-review`
 > 4. **Update a specific playbook section** — run `/eu-legal:playbook-init`"
+
+---
+
+## Disclaimer
+
+Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

@@ -8,6 +8,9 @@ description: >
   consultation?", "collective redundancy procedure", or before any major
   workforce or organisational change.
 argument-hint: "[describe the decision or change — e.g. 'closing the Helsinki office', 'removing 15 roles', 'changing remote work policy']"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:works-council-check
@@ -43,6 +46,8 @@ Also ask:
 If `fi_yt_laki_applies: false` (fewer than 20 employees regularly), YT-laki does not apply. Note: even below 20, employer has good faith consultation obligations under general employment law principles.
 
 If `fi_yt_laki_applies: true`, check the decision type:
+
+Call `mcp__velvoite__get_finnish_statute("YTL", "51")` for cooperation negotiation requirements and `mcp__velvoite__get_finnish_statute("YTL", "16")` for general cooperation scope. Present thresholds from the live statute text.
 
 **Decisions requiring YT-neuvottelut (cooperation procedure):**
 
@@ -118,9 +123,8 @@ EU collective redundancy rules apply where national law implements the Directive
 |---|---|---|
 | 20–99 employees | ≥ 10 redundancies in 30 days | Minimum 30 days advance notice to authority |
 | ≥ 100 employees | ≥ 10% of workforce OR ≥ 30 in 30 days | Minimum 30 days advance notice to authority |
-| ≥ 300 employees | ≥ 30 in 30 days | Minimum 30 days advance notice to authority |
 
-**Finland implementing act:** TSL §6 + YT-laki §51 — notification to TE-toimisto (Employment and Economic Development Office) required when ≥10 redundancies within 90 days.
+**Finland implementing act:** YT-laki §48 + YT-laki §51 — notification to TE-toimisto (Employment and Economic Development Office) required when ≥10 redundancies within 90 days.
 
 **Germany implementing act:** KSchG §§ 17-18 — notification to Bundesagentur für Arbeit required before collective dismissals. Failure: dismissals void.
 
@@ -147,4 +151,4 @@ EU collective redundancy rules apply where national law implements the Directive
 
 ## Guardrail
 
-> **RESEARCH NOTES — NOT LEGAL ADVICE.** Consultation requirements are jurisdiction-specific and fact-sensitive. A void dismissal (Germany) or compensation liability (Finland) can result from procedural failures even when the substantive grounds are sound. Have an employment lawyer confirm the consultation procedure and timing before the decision is communicated to employees.
+> **RESEARCH NOTES — NOT LEGAL ADVICE.** Consultation requirements are jurisdiction-specific and fact-sensitive. A void dismissal (Germany) or compensation liability (Finland) can result from procedural failures even when the substantive grounds are sound. Have an employment lawyer confirm the consultation procedure and timing before the decision is communicated to employees. Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

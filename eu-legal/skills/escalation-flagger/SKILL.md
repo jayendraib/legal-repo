@@ -9,6 +9,9 @@ description: >
   need GC sign-off", "route this for approval", or when another skill finds an issue
   that exceeds the reviewer's authority.
 argument-hint: "[describe the issue, or reference a review memo]"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:escalation-flagger
@@ -47,7 +50,7 @@ These escalate regardless of EUR value. Check each:
 |---|---|
 | Any contract with cross-border data transfers outside the EEA (no adequacy decision, no SCCs, no BCRs) | Legal review required — GDPR Art. 44–49 |
 | Any ICT third-party agreement for a financial entity (DORA in scope) | DORA compliance check required — route to `/eu-legal:vendor-agreement-review` if not yet run |
-| Governing law outside the EU | Flag to legal — enforcement of EU rights (GDPR, DORA, TSD) may be impaired |
+| Governing law outside the EU | Flag to legal — enforcement of EU rights (GDPR, DORA, TSD) may be impaired. Pre-approved exception: if the company's `commercial.md` playbook explicitly lists English law (England & Wales) as an accepted governing law choice, do not trigger this escalation for English-law contracts — the user has made a deliberate post-Brexit commercial choice. Flag only truly unexpected non-EU governing law (e.g., US law, Swiss law on a purely EU deal). |
 | Liability cap below EUR [threshold from commercial.md] | Flag — potential exposure exceeds protected threshold |
 | Any uncapped liability provision | Automatic escalation regardless of EUR value |
 | Any IP assignment to the vendor | Automatic escalation — legal sign-off required |
@@ -134,3 +137,9 @@ If a term appears that `commercial.md` doesn't address, don't guess the threshol
 - It does not decide between the options. The draft includes a recommendation but the approver decides.
 - It does not send the escalation message — it drafts it. The lawyer sends it after reading.
 - It does not apply US-specific thresholds or triggers. All amounts are in EUR.
+
+---
+
+## Disclaimer
+
+Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

@@ -7,6 +7,9 @@ description: >
   person an employee or contractor?", "can we use a freelancer for this?",
   "contractor classification risk", or "platform worker classification".
 argument-hint: "[describe the working arrangement or paste the contract]"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:worker-classification
@@ -45,6 +48,8 @@ Accept answers in free text or as a summary of an existing contract.
 
 **Directive 2024/2831 Art. 4 — applies where platform work is involved.**
 
+> **Transposition status `[last_verified: 2026-06-01]`:** Directive 2024/2831 was adopted November 2024; transposition deadline is December 2026. As of June 2026, neither Finland nor Germany has enacted transposing national legislation. Apply these indicators as leading indicators of expected post-transposition law — they are not yet directly enforceable in FI or DE national courts, but FI and DE courts already apply similar logic through existing case law (see Steps 3–4). Flag this in any written analysis.
+
 Five indicators. Count how many are present:
 
 | Indicator | Present? |
@@ -65,6 +70,8 @@ Note: even if the worker is not on a "platform", courts in FI and DE may apply s
 ---
 
 ## Step 3: Apply Finnish test (TSL §1)
+
+Call `mcp__velvoite__get_finnish_statute("TSL", "1:1")` for the statutory employment relationship definition. Present the three-element test from the live statute text.
 
 **Employment relationship exists under Työsopimuslaki if ALL THREE elements are present:**
 
@@ -137,4 +144,4 @@ Based on risk level:
 
 ## Guardrail
 
-> **RESEARCH NOTES — NOT LEGAL ADVICE.** Worker classification has significant tax, social security, and employment law consequences. This analysis applies legal tests to the facts as described — it is a working document for attorney review, not a classification opinion. A qualified employment lawyer in the relevant jurisdiction must review before you rely on contractor status or convert an existing arrangement. Misclassification can result in back payments of social contributions, income tax liability, and retroactive employment rights.
+> **RESEARCH NOTES — NOT LEGAL ADVICE.** Worker classification has significant tax, social security, and employment law consequences. This analysis applies legal tests to the facts as described — it is a working document for attorney review, not a classification opinion. A qualified employment lawyer in the relevant jurisdiction must review before you rely on contractor status or convert an existing arrangement. Misclassification can result in back payments of social contributions, income tax liability, and retroactive employment rights. Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

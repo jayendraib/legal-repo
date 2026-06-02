@@ -7,6 +7,9 @@ description: >
   saying "write a PIA", "DPIA for this feature", "privacy review this", or
   describing a new data processing activity.
 argument-hint: "[describe the processing activity or system]"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:pia-generation
@@ -19,6 +22,8 @@ argument-hint: "[describe the processing activity or system]"
 ---
 
 ## Step 1: Mandatory DPIA trigger check (GDPR Art. 35)
+
+**Live verification:** Call `mcp__velvoite__get_eu_regulation_article("gdpr", "35")` and fetch the section_url to verify the current Art. 35 mandatory DPIA triggers from EUR-Lex before applying the 9-criterion checklist below.
 
 A DPIA is mandatory if the processing is "likely to result in a high risk." Check:
 
@@ -56,7 +61,7 @@ Gather information through conversation. One topic at a time.
 
 ## Step 3: Draft PIA/DPIA
 
-Structure (based on EDPB Guidelines 09/2022 on DPIA):
+Structure (based on EDPB Guidelines 04/2022 on DPIA (based on WP29 WP248 rev.01)):
 
 **1. Description of processing** — systematic description per Art. 35(7)(a): purposes, nature, scope, context, categories of data, recipients, retention periods.
 
@@ -76,4 +81,4 @@ Structure (based on EDPB Guidelines 09/2022 on DPIA):
 
 ## Guardrail
 
-This draft requires review by the DPO (if appointed) and legal counsel before finalisation. If the residual risk is assessed as high, prior consultation with the supervisory authority is mandatory under GDPR Art. 36 — do not proceed with the processing without completing that consultation.
+This draft requires review by the DPO (if appointed) and legal counsel before finalisation. If the residual risk is assessed as high, prior consultation with the supervisory authority is mandatory under GDPR Art. 36 — do not proceed with the processing without completing that consultation. Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

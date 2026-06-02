@@ -8,6 +8,9 @@ description: >
   obligation", "can I recall someone from parental leave", or any leave
   entitlement question.
 argument-hint: "[leave type] [jurisdiction] [employee tenure and status] — e.g. 'annual leave Finland 3 years' or 'parental leave Germany'"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:leave-review
@@ -43,6 +46,8 @@ Also confirm: jurisdiction (Finland / Germany / other EU) and employee details (
 - Carried forward: national law rules; many member states allow limited carry-forward
 
 ### Finland — Vuosilomalaki (162/2005)
+
+Call `mcp__velvoite__get_finnish_statute("VLL", "5")` for annual holiday accrual rates. Present accrual rates from the live statute text.
 
 **Accrual rate:**
 - First holiday year (April 1–March 31): 2 days per month employed
@@ -192,9 +197,10 @@ No EU minimum sick leave entitlement. National law governs.
 
 ### Finland
 
-**Employer obligation (TSL Ch. 2 §11):**
-- Full salary for up to **9 working days** per illness episode (depending on collective agreement — up to 28 days in many TES)
-- Statutory minimum: full salary for illness duration up to 1 month if employed ≥1 month; shorter periods for shorter tenure
+**Finnish employer sick pay obligation (TSL Ch. 2 §11):**
+- Employment under 1 month: no statutory sick pay obligation
+- Employment 1 month to 3 years: employer pays full salary for the duration of incapacity up to **9 working days** per illness episode
+- Employment over 3 years: employer pays full salary up to **4 weeks** per illness episode (many collective agreements (TES) extend this to 28 days or longer regardless of tenure — check applicable TES)
 
 **After employer sick pay period:**
 - Kela pays sairauspäiväraha (sickness allowance) from day 2 of illness (omavastuu day 1): approximately 70% of income, up to 300 working days
@@ -231,4 +237,4 @@ For each leave type reviewed, output:
 
 ## Guardrail
 
-> **RESEARCH NOTES — NOT LEGAL ADVICE.** Leave entitlements interact with collective agreements, individual contract terms, and Kela/Krankenkasse rules in ways that affect the actual entitlement. This analysis calculates the statutory floor. Verify the applicable TES or Tarifvertrag for enhanced entitlements, and confirm current Kela/Krankenkasse benefit levels before communicating entitlements to employees. [model knowledge — verify current benefit amounts]
+> **RESEARCH NOTES — NOT LEGAL ADVICE.** Leave entitlements interact with collective agreements, individual contract terms, and Kela/Krankenkasse rules in ways that affect the actual entitlement. This analysis calculates the statutory floor. Verify the applicable TES or Tarifvertrag for enhanced entitlements, and confirm current Kela/Krankenkasse benefit levels before communicating entitlements to employees. [model knowledge — verify current benefit amounts] Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.

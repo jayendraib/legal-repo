@@ -8,6 +8,9 @@ description: >
   says "review this NDA", "check this confidentiality agreement", "is this NDA
   okay", or attaches an inbound NDA.
 argument-hint: "[file path | Drive link | paste text]"
+version: 0.1.0
+owner: Silly Pilot Oy
+last_reviewed: 2026-06-01
 ---
 
 # /eu-legal:nda-review
@@ -138,7 +141,7 @@ EU data protection note: if confidential information includes personal data, ret
 
 Compare to `commercial.md` governing law preference.
 - If EU governing law: note the applicable national TSD implementation.
-- If Finnish law: "Liikesalaisuuslaki (Business Secrets Act 595/2018) implements Directive 2016/943 in Finland. Art. 4 of the Act defines trade secrets; §§ 4–7 define unlawful acquisition, use, and disclosure. `[model knowledge — verify]`"
+- If Finnish law: Call `mcp__velvoite__get_finnish_statute("LSL", "2")` for the current Finnish trade secret definition. Present the three-element definition from the live statute text. "Liikesalaisuuslaki (Business Secrets Act 595/2018) implements Directive 2016/943 in Finland. Art. 4 of the Act defines trade secrets; §§ 4–7 define unlawful acquisition, use, and disclosure. `[model knowledge — verify]`"
 - If German law: "GeschGehG (Gesetz zum Schutz von Geschäftsgeheimnissen, 2019) implements Directive 2016/943 in Germany. `[model knowledge — verify]`"
 - If outside EU: 🟠 flag. "Governing law is [jurisdiction]. Your playbook prefers EU law. TSD protections may not apply. `[review]`"
 
@@ -205,3 +208,9 @@ CONFIDENTIAL — INTERNAL LEGAL ANALYSIS — DRAFT FOR ATTORNEY REVIEW
 > 3. **Redline and return** — I'll produce specific redline language for each flagged item
 > 4. **Use our paper instead** — recommend if counterparty is a startup or small vendor
 > 5. **Something else**
+
+---
+
+## Disclaimer
+
+Outputs are legal support tools — not legal advice. No attorney-client relationship or privilege is created by using this skill.
