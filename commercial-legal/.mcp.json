@@ -41,6 +41,12 @@
       "url": "https://drivemcp.googleapis.com/mcp/v1",
       "title": "Google Drive",
       "description": "Search, read, and fetch documents from Google Drive."
+    },
+    "EUR-Lex": {
+      "type": "http",
+      "url": "https://eu-lex-connector.vercel.app/mcp",
+      "title": "EUR-Lex",
+      "description": "Primary EU law from the official EUR-Lex/CELLAR repository — search and fetch regulations (GDPR, AI Act, DORA, MiCA), directives, decisions, and CJEU case law in any of the 24 official EU languages; every result citation-ready (CELEX, source URL, retrieval date)."
     }
   },
   "recommendedCategories": [
