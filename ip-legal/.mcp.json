@@ -8,9 +8,9 @@
     },
     "Patent Connector": {
       "type": "http",
-      "url": "https://patent.dev/mcp/sse",
+      "url": "https://mcp.patent.dev/mcp",
       "title": "Patent Connector",
-      "description": "Authoritative patent and trademark data from primary sources (USPTO, EPO, DPMA, USPTO TSDR). Search, claims, full text, legal status, PTAB, prosecution history, and trademark status."
+      "description": "Authoritative patent and trademark data from first-party office APIs only (USPTO, EPO, DPMA, USPTO TSDR): search, claims, full text, legal status, families, prosecution history, office actions, PTAB, assignments, trademark status. Plus built-in classifications and multi-office examination guidelines with semantic search, no extra credentials."
     },
     "CourtListener": {
       "type": "http",
