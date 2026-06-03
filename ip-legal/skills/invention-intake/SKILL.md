@@ -5,7 +5,7 @@ description: >
   eligibility, bar dates, detectability, and strategic value. Use when an
   invention disclosure comes in and needs triage on whether to pursue a
   prior-art search and patent counsel review, investigate further, or decline.
-argument-hint: "[paste or describe the invention disclosure — or just the title and I'll ask]"
+argument-hint: "[paste or describe the invention disclosure — or just the title and the skill will ask]"
 ---
 
 # /invention-intake
@@ -260,8 +260,14 @@ absolutely, or start a clock that cannot be stopped.
 Categorize the disclosure status:
 
 **🔴 Likely barred:**
-- Publicly disclosed, sold, or offered for sale **more than 12 months ago**
-  in the US — 35 U.S.C. § 102(b) one-year grace period has run
+- Disclosed, sold, or offered for sale **more than 12 months before the
+  (anticipated) filing date** in the US — under post-AIA **35 U.S.C.
+  § 102(a)(1)** this is prior art. The **§ 102(b)(1)** grace period excepts
+  only the **inventor's own** (or inventor-derived) disclosures; a **third
+  party's** independent disclosure is § 102(a)(1) prior art *immediately, with
+  no grace period.* *(Pre-AIA § 102(b) — a true one-year statutory bar —
+  applies only to applications with an effective filing date before
+  March 16, 2013.)*
 - **Any** public disclosure, anywhere, before filing — absolute novelty bar in
   the EU, China, Japan, and most countries outside the US. If the business
   cares about foreign rights, this is potentially fatal even if US is still
@@ -273,11 +279,14 @@ Categorize the disclosure status:
   route to filing immediately.
 
 **✓ Clear:**
-- No public disclosure. Confidential customer demonstrations under NDA, internal
-  use, beta releases to named parties under NDA, draft papers not yet submitted
-  — usually not "public" for § 102 purposes, but depends on the facts. When the
-  disclosure was to a customer or external party, even under NDA, flag the
-  specifics for the prosecution team to assess.
+- No public disclosure AND no sale or offer for sale. Confidential customer
+  demonstrations under NDA, internal use, beta releases to named parties under
+  NDA, draft papers not yet submitted — usually not "public" for § 102
+  purposes, but depends on the facts. When the disclosure was to a customer or
+  external party, even under NDA, flag the specifics for the prosecution team
+  to assess. An NDA matters for disclosures, not for sales — any commercial
+  sale or offer for sale, however confidential, goes to the 🟡/🔴 buckets, not
+  ✓ (*Helsinn v. Teva*).
 
 **Ask specifically about:**
 - Papers submitted to journals or conferences (submission ≠ publication; but
@@ -291,7 +300,9 @@ Categorize the disclosure status:
 
 The **on-sale bar** catches offers for sale of a product embodying the
 invention, not just completed sales. An RFP response describing the invention
-can trigger it.
+can trigger it. A sale or offer for sale triggers the bar even if it is
+confidential or under NDA (*Helsinn v. Teva*, 586 U.S. 123 (2019)) — NDA
+protection neutralizes public-disclosure analysis, not the on-sale bar.
 
 #### Screen 5: Detectability
 
