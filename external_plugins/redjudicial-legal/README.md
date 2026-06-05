@@ -2,12 +2,14 @@
 
 Red Judicial brings the Chilean legal corpus into Claude. It exposes a single MCP tool, `redjudicial_search`, that performs semantic + lexical retrieval across cross-linked sources:
 
-- **Court jurisprudence** — over 1 million decisions: 285,000+ Supreme Court (Corte Suprema, 2005–present) and 750,000+ Courts of Appeals (Cortes de Apelaciones), ingested with full text and indexed daily.
-- **Constitutional Tribunal** — Tribunal Constitucional rulings (11,800+).
+- **Court jurisprudence** — over 2.5 million decisions: 287,000+ Supreme Court (Corte Suprema, 2005–present) and ~1.4M Courts of Appeals (Cortes de Apelaciones, active backfill toward ~2M), ingested with full text and indexed daily.
+- **Constitutional Tribunal** — Tribunal Constitucional rulings (12,000+).
 - **Administrative & specialized case law** — Comptroller General opinions (Contraloría, 90,000+), tax authority and Tax & Customs Courts (SII, TTA), labor authority (Dirección del Trabajo), financial-market regulator (CMF), social-security (SUSESO), competition court (TDLC), consumer protection (SERNAC), environmental courts, the industrial-property court (TDPI) and the national human-rights institute (INDH).
 - **Statutes** — roughly 19,000 in-force norms from BCN / LeyChile (the official Chilean legislative repository), with article-level granularity.
 - **Doctrine** — academic articles from open-access sources (SciELO, university repositories).
-- **First-instance rulings** (civil, labor, criminal, family) — in active incorporation.
+- **First-instance rulings** (civil, labor, criminal, family, debt collection) — labor (~214,000) and debt collection complete; civil, criminal, family in active incorporation.
+
+Total indexed fragments across all sources: over 15 million.
 
 Each result returns a verifiable citation with a link back to the official source (Poder Judicial, BCN, and the issuing authority). The tool is read-only and does not write to user systems.
 
@@ -29,8 +31,8 @@ For Spanish-speaking practitioners and firms in Chile and Latin America. See [RE
 
 ## When Not to Use
 
-- U.S. or other non-Chilean primary law — out of corpus today. See `cocounsel-legal` for U.S. caselaw and Practical Law.
-- First-instance rulings — in active incorporation; coverage is partial while the historical backfill runs.
+- U.S. or other non-Chilean primary law — out of corpus today. Red Judicial does not cover those jurisdictions; for other jurisdictions, use the appropriate plugin from the marketplace.
+- First-instance rulings — labor and debt collection are complete; civil, criminal and family are in active incorporation.
 - Real-time docket monitoring of specific cases — not supported.
 - Drafting Chilean pleadings or contracts — Red Judicial provides primary-source research; drafting is left to the attorney.
 - Outcome predictions for a specific case — the corpus supports research, not prediction.
@@ -45,9 +47,9 @@ End users sign in with their Red Judicial account and grant the connector consen
 
 | Jurisdiction | Source | Status |
 |---|---|---|
-| Chile — Supreme Court (Corte Suprema) | Poder Judicial | ✅ live (285,000+ decisions, 2005-present) |
-| Chile — Courts of Appeals (Cortes de Apelaciones) | Poder Judicial | ✅ live (750,000+, historical backfill in progress) |
-| Chile — Constitutional Tribunal (TC) | Tribunal Constitucional | ✅ live (11,800+) |
+| Chile — Supreme Court (Corte Suprema) | Poder Judicial | ✅ live (287,000+ decisions, 2005-present) |
+| Chile — Courts of Appeals (Cortes de Apelaciones) | Poder Judicial | ✅ live (~1.4M, active backfill toward ~2M) |
+| Chile — Constitutional Tribunal (TC) | Tribunal Constitucional | ✅ live (12,000+) |
 | Chile — Comptroller General (Contraloría) | CGR | ✅ live (90,000+ opinions) |
 | Chile — tax (SII, Tax & Customs Courts) | SII / TTA | ✅ live |
 | Chile — labor (Dirección del Trabajo) | DT | ✅ live |
@@ -55,7 +57,8 @@ End users sign in with their Red Judicial account and grant the connector consen
 | Chile — environmental courts, IP court, human-rights institute | TA / TDPI / INDH | ✅ live |
 | Chile — statutes and decrees | BCN / LeyChile | ✅ live (~19,000 in-force norms) |
 | Chile — open-access doctrine | SciELO, university repositories | ✅ partial (~2,500 articles) |
-| Chile — first-instance (civil, labor, criminal, family) | Poder Judicial | 🚧 in active incorporation |
+| Chile — first-instance: labor + debt collection | Poder Judicial | ✅ live (~245,000) |
+| Chile — first-instance: civil, criminal, family | Poder Judicial | 🚧 in active incorporation |
 | LATAM hispanophone expansion (Colombia, Mexico, Argentina) | Multiple | 🔭 exploratory |
 
 ## Compliance and privacy

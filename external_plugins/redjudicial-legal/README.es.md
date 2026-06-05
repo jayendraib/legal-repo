@@ -2,12 +2,14 @@
 
 Red Judicial integra el corpus legal chileno a Claude. Expone una sola herramienta MCP, `redjudicial_search`, que realiza recuperación semántica y léxica sobre fuentes cruzadas:
 
-- **Jurisprudencia de tribunales** — más de 1 millón de sentencias: 285.000+ de la Corte Suprema (2005 a la fecha) y 750.000+ de Cortes de Apelaciones, con texto completo e indexación diaria.
-- **Tribunal Constitucional** — sentencias del TC (11.800+).
+- **Jurisprudencia de tribunales** — más de 2,5 millones de sentencias: 287.000+ de la Corte Suprema (2005 a la fecha) y ~1,4M de Cortes de Apelaciones (backfill activo hacia ~2M), con texto completo e indexación diaria.
+- **Tribunal Constitucional** — sentencias del TC (12.000+).
 - **Jurisprudencia administrativa y especializada** — dictámenes de Contraloría (90.000+), autoridad tributaria y Tribunales Tributarios y Aduaneros (SII, TTA), Dirección del Trabajo, mercado financiero (CMF), seguridad social (SUSESO), libre competencia (TDLC), consumidor (SERNAC), tribunales ambientales, tribunal de propiedad industrial (TDPI) e Instituto Nacional de Derechos Humanos (INDH).
 - **Legislación** — alrededor de 19.000 normas vigentes de BCN / LeyChile, con granularidad por artículo.
 - **Doctrina** — artículos académicos de acceso abierto (SciELO y repositorios universitarios).
-- **Primera instancia** (civil, laboral, penal, familia) — en incorporación activa.
+- **Primera instancia** (civil, laboral, penal, familia, cobranza) — laboral (~214.000) y cobranza completos; civil, penal y familia en incorporación activa.
+
+Total de fragmentos indexados en todas las fuentes: más de 15 millones.
 
 Cada resultado incluye una cita verificable con enlace a la fuente oficial (Poder Judicial, BCN y el organismo emisor). La herramienta es de solo lectura; no escribe en los sistemas del usuario.
 
@@ -29,8 +31,8 @@ Pensado para abogados y estudios jurídicos en Chile y América Latina hispanoha
 
 ## Cuándo no usarlo
 
-- Derecho primario de Estados Unidos u otras jurisdicciones no chilenas — fuera del corpus actual. Consulta `cocounsel-legal` para jurisprudencia estadounidense y Practical Law.
-- Sentencias de primera instancia — en incorporación activa; cobertura parcial mientras corre el backfill histórico.
+- Derecho primario de Estados Unidos u otras jurisdicciones no chilenas — fuera del corpus actual. Red Judicial no cubre esas jurisdicciones; para otras jurisdicciones, usa el plugin correspondiente del marketplace.
+- Sentencias de primera instancia — laboral y cobranza completas; civil, penal y familia en incorporación activa.
 - Seguimiento en tiempo real del estado procesal de una causa específica — no soportado.
 - Redacción de escritos o contratos chilenos — Red Judicial provee fuentes primarias para investigación; la redacción queda en manos del abogado.
 - Predicción del resultado de un caso concreto — el corpus apoya la investigación, no la predicción.
@@ -45,9 +47,9 @@ El usuario final inicia sesión con su cuenta de Red Judicial y otorga consentim
 
 | Jurisdicción | Fuente | Estado |
 |---|---|---|
-| Chile — Corte Suprema | Poder Judicial | ✅ en vivo (285.000+ sentencias, 2005 a la fecha) |
-| Chile — Cortes de Apelaciones | Poder Judicial | ✅ en vivo (750.000+, backfill histórico en curso) |
-| Chile — Tribunal Constitucional | Tribunal Constitucional | ✅ en vivo (11.800+) |
+| Chile — Corte Suprema | Poder Judicial | ✅ en vivo (287.000+ sentencias, 2005 a la fecha) |
+| Chile — Cortes de Apelaciones | Poder Judicial | ✅ en vivo (~1,4M, backfill activo hacia ~2M) |
+| Chile — Tribunal Constitucional | Tribunal Constitucional | ✅ en vivo (12.000+) |
 | Chile — Contraloría General | CGR | ✅ en vivo (90.000+ dictámenes) |
 | Chile — tributario (SII, Tribunales Tributarios y Aduaneros) | SII / TTA | ✅ en vivo |
 | Chile — laboral (Dirección del Trabajo) | DT | ✅ en vivo |
@@ -55,7 +57,8 @@ El usuario final inicia sesión con su cuenta de Red Judicial y otorga consentim
 | Chile — tribunales ambientales, propiedad industrial, DDHH | TA / TDPI / INDH | ✅ en vivo |
 | Chile — legislación y decretos | BCN / LeyChile | ✅ en vivo (alrededor de 19.000 normas vigentes) |
 | Chile — doctrina de acceso abierto | SciELO, repositorios universitarios | ✅ parcial (alrededor de 2.500 artículos) |
-| Chile — primera instancia (civil, laboral, penal, familia) | Poder Judicial | 🚧 en incorporación activa |
+| Chile — primera instancia: laboral + cobranza | Poder Judicial | ✅ en vivo (~245.000) |
+| Chile — primera instancia: civil, penal, familia | Poder Judicial | 🚧 en incorporación activa |
 | Expansión LATAM hispanohablante (Colombia, México, Argentina) | Múltiples | 🔭 exploratorio |
 
 ## Cumplimiento y privacidad

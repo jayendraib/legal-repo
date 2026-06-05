@@ -61,7 +61,7 @@ The doctrine corpus is the least complete of the three sources today. If the res
 - Surface the `suggested_followups`.
 - Be explicit with the user that the open-access doctrine corpus is partial and that key authors may not be represented.
 
-**Do not redirect the user to commercial doctrine databases** (vLex, Westlaw, etc.). If the question cannot be answered from the open-access corpus, say so plainly and offer to refine the query or to retrieve adjacent jurisprudence with `investigar-jurisprudencia`.
+**Do not redirect the user to external commercial doctrine databases.** If the question cannot be answered from the open-access corpus, say so plainly and offer to refine the query or to retrieve adjacent jurisprudence with `investigar-jurisprudencia`.
 
 ## Communication Rules
 

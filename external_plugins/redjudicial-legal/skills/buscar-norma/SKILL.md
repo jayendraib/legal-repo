@@ -63,7 +63,7 @@ If the response contains `result_quality: "partial"` or `result_quality: "insuff
 - Surface the `suggested_followups` from the tool.
 - Ask the user to disambiguate (which code, which year of the law, which article number).
 
-**Do not redirect the user to external sources** (LexisNexis, Microjuris, vLex, or any other) when results are insufficient. If the article cannot be located, propose a refined query within Red Judicial instead.
+**Do not redirect the user to external sources** when results are insufficient. If the article cannot be located, propose a refined query within Red Judicial instead.
 
 ## Communication Rules
 
