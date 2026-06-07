@@ -39,7 +39,7 @@ The `redjudicial-legal` MCP server must be connected. Verify it is available bef
 - Invoke `redjudicial_search` with:
   - `query` (string, required): the `Rol` and any disambiguating context. Example: `"Rol 12345-2023 Corte Suprema"`.
   - `sources` (array, optional): `["jurisprudencia"]`.
-  - `limit` (integer, optional, 1–30, default 3): typically 3 hits will surface the ruling and surrounding chunks.
+  - `limit` (integer, optional, 1–30, default 3): typically 3 hits will surface the ruling and surrounding excerpts.
 
 ### 3. Present the structured summary
 
@@ -49,25 +49,25 @@ If a hit matches the `Rol`, organize the answer in five sections:
 - **Hechos**: brief factual background drawn from the text.
 - **Considerandos relevantes**: the central legal reasoning, in two to four bullet points.
 - **Decisión**: the holding (acoge / rechaza / revoca / confirma) and the order issued.
-- **Voto disidente o concurrente**: if the chunks surface a separate vote, summarize it; otherwise note "Sin voto disidente surfaceado en el chunk recuperado".
+- **Voto disidente o concurrente**: if the excerpts surface a separate vote, summarize it; otherwise note "Sin voto disidente surfaceado en el extracto recuperado".
 
 Close with the verifiable link to the official Poder Judicial record (`url` field).
 
 ### 4. Handle missing or incomplete data
 
-If the chunks do not cover all five sections (which is common — chunks are excerpts, not full text):
+If the excerpts do not cover all five sections (which is common — they are excerpts of the ruling, not the full text):
 
-- State plainly which sections are not covered by the retrieved chunks.
-- Offer to retrieve additional chunks with a refined query (e.g., narrowing by considerando number).
+- State plainly which sections are not covered by the retrieved excerpts.
+- Offer to retrieve additional excerpts with a refined query (e.g., narrowing by considerando number).
 
-**Do not fabricate any of the five sections.** If the chunks do not contain the holding, say so — do not infer it. If the chunks do not surface a dissenting vote, do not assume there was none.
+**Do not fabricate any of the five sections.** If the excerpts do not contain the holding, say so — do not infer it. If the excerpts do not surface a dissenting vote, do not assume there was none.
 
 **Do not redirect the user to external sources** if the ruling cannot be summarized fully.
 
 ## Communication Rules
 
 - Reply in Spanish, in professional neutral Spanish.
-- Cite directly from the chunks when stating a holding or quoting a considerando. Use quotation marks.
+- Cite directly from the excerpts when stating a holding or quoting a considerando. Use quotation marks.
 - Never invent the names of ministros, the redactor, or a `Rol` number.
 - Always include the verifiable link.
 

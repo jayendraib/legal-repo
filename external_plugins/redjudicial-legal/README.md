@@ -1,6 +1,6 @@
 # Red Judicial — Chile
 
-Red Judicial brings the Chilean legal corpus into Claude. It exposes a single MCP tool, `redjudicial_search`, that performs semantic + lexical retrieval across cross-linked sources:
+Red Judicial brings the Chilean legal corpus into Claude. It exposes a single MCP tool, `redjudicial_search`, that searches across cross-linked sources:
 
 - **Court jurisprudence** — over 2.5 million decisions: 287,000+ Supreme Court (Corte Suprema, 2005–present) and ~1.4M Courts of Appeals (Cortes de Apelaciones, active backfill toward ~2M), ingested with full text and indexed daily.
 - **Constitutional Tribunal** — Tribunal Constitucional rulings (12,000+).
@@ -8,8 +8,6 @@ Red Judicial brings the Chilean legal corpus into Claude. It exposes a single MC
 - **Statutes** — roughly 19,000 in-force norms from BCN / LeyChile (the official Chilean legislative repository), with article-level granularity.
 - **Doctrine** — academic articles from open-access sources (SciELO, university repositories).
 - **First-instance rulings** (civil, labor, criminal, family, debt collection) — labor (~214,000) and debt collection complete; civil, criminal, family in active incorporation.
-
-Total indexed fragments across all sources: over 15 million.
 
 Each result returns a verifiable citation with a link back to the official source (Poder Judicial, BCN, and the issuing authority). The tool is read-only and does not write to user systems.
 
@@ -79,7 +77,7 @@ Red Judicial uses a credit-based model with five subscription tiers. Each call t
 This plugin satisfies the five criteria documented in [`CONNECTORS.md`](../../CONNECTORS.md):
 
 1. **HTTPS + OAuth 2.0** with Dynamic Client Registration and PKCE on the streamable HTTP transport at `/mcp/v1`.
-2. **Read-heavy tools only.** `redjudicial_search` performs retrieval only; no writes to user systems.
+2. **Read-heavy tools only.** `redjudicial_search` is read-only; no writes to user systems.
 3. **Provenance on every result.** Each hit returns `citation`, `url` (link to the official source), `source` (`jurisprudencia` / `ley` / `doctrina`), and the issuing court or authority with the decision/publication date.
 4. **No instructional content in tool results.** Tool responses are data plus structured metadata (`result_quality`, `suggested_followups`, `display_hints`); no embedded directives to the calling model.
 5. **Graceful error degradation.** 401 (unauthenticated), 402 (out of credits), 5xx (upstream) are returned with clean JSON-RPC error codes and human-readable messages, plus `suggested_followups` where applicable.

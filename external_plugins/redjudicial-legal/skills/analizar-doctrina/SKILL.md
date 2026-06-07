@@ -48,7 +48,7 @@ The `redjudicial-legal` MCP server must be connected. Verify it is available bef
 For each relevant article in the top three to five:
 
 - Citation: author(s), year, title of the article, journal or repository.
-- Position: one to two lines summarizing the author's view on the question, **as expressed in the retrieved chunk**.
+- Position: one to two lines summarizing the author's view on the question, **as expressed in the retrieved excerpt**.
 - Quoted excerpt: include the most relevant phrase verbatim, in quotation marks.
 - Verifiable link: include the `url` field from the result.
 

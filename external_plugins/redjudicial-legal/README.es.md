@@ -1,6 +1,6 @@
 # Red Judicial — Chile
 
-Red Judicial integra el corpus legal chileno a Claude. Expone una sola herramienta MCP, `redjudicial_search`, que realiza recuperación semántica y léxica sobre fuentes cruzadas:
+Red Judicial integra el corpus legal chileno a Claude. Expone una sola herramienta MCP, `redjudicial_search`, que busca en fuentes cruzadas:
 
 - **Jurisprudencia de tribunales** — más de 2,5 millones de sentencias: 287.000+ de la Corte Suprema (2005 a la fecha) y ~1,4M de Cortes de Apelaciones (backfill activo hacia ~2M), con texto completo e indexación diaria.
 - **Tribunal Constitucional** — sentencias del TC (12.000+).
@@ -8,8 +8,6 @@ Red Judicial integra el corpus legal chileno a Claude. Expone una sola herramien
 - **Legislación** — alrededor de 19.000 normas vigentes de BCN / LeyChile, con granularidad por artículo.
 - **Doctrina** — artículos académicos de acceso abierto (SciELO y repositorios universitarios).
 - **Primera instancia** (civil, laboral, penal, familia, cobranza) — laboral (~214.000) y cobranza completos; civil, penal y familia en incorporación activa.
-
-Total de fragmentos indexados en todas las fuentes: más de 15 millones.
 
 Cada resultado incluye una cita verificable con enlace a la fuente oficial (Poder Judicial, BCN y el organismo emisor). La herramienta es de solo lectura; no escribe en los sistemas del usuario.
 
