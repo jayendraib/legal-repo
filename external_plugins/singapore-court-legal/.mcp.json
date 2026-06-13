@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "singapore-court-legal": {
+      "type": "http",
+      "url": "https://mcp.reshuffleai.com/mcp",
+      "title": "MikeROS — Singapore Rules of Court 2021",
+      "description": "Singapore civil court procedure (Rules of Court 2021): grounded answers citing governing rules, operator-verified case authorities where they attach, verified reasoning chains. Read-only. API-key auth (CONNECTORS.md-accepted): supply your operator-issued MikeROS API key at connect time as 'Authorization: Bearer <key>'."
+    }
+  }
+}

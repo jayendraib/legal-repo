@@ -122,6 +122,15 @@
       "author": {
         "name": "Thomson Reuters"
       }
+    },
+    {
+      "name": "singapore-court-legal",
+      "displayName": "MikeROS",
+      "source": "./external_plugins/singapore-court-legal",
+      "description": "Grounded answers on Singapore civil court procedure (Rules of Court 2021) via the MikeROS connector — cites governing rules, attaches operator-verified case authorities where they apply, surfaces relevance-gated reasoning chains, abstains honestly out of scope. Single-question, durable multi-turn, and structured guided situation analysis. Not legal advice.",
+      "author": {
+        "name": "Reshuffle.AI Pte. Ltd."
+      }
     }
   ]
 }
