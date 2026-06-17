@@ -2,7 +2,7 @@
 name: redjudicial-legal:investigar-jurisprudencia
 version: 0.1.0
 description: >
-  Use this skill whenever a user asks about Chilean jurisprudence, court rulings, administrative case law, or legal research in Chilean law in Spanish. Covers over 1 million Supreme Court and Courts of Appeals decisions, the Constitutional Tribunal, and administrative case law (Contraloría, tax, labor, financial-market, social-security, competition, consumer and environmental authorities), with verifiable citations to the official source.
+  Use this skill whenever a user asks about Chilean jurisprudence, court rulings, administrative case law, or legal research in Chilean law in Spanish. Covers over 2.5 million Supreme Court and Courts of Appeals decisions, the Constitutional Tribunal, and administrative case law (Contraloría, tax, labor, financial-market, social-security, competition, consumer and environmental authorities), with verifiable citations to the official source.
 allowed-tools:
   - mcp
 ---
