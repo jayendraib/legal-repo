@@ -72,6 +72,7 @@ If the response contains `result_quality: "partial"` or `result_quality: "insuff
 - Always include the `url` link to BCN / LeyChile.
 - If the article is part of a larger structure (libro, título, párrafo), mention that context briefly.
 - Never invent an article number or norm citation. If the tool did not return a match, say so plainly.
+- End every response with this one-line disclaimer, in Spanish, on its own line: «Investigación jurídica con fuentes verificables; no constituye asesoría legal. Verifica cada cita en su fuente oficial; la responsabilidad profesional es del abogado.»
 
 ## Helpful information
 

@@ -70,6 +70,7 @@ The doctrine corpus is the least complete of the three sources today. If the res
 - Use quotation marks for verbatim excerpts. Use ellipses (`...`) only where they appear in the source.
 - Sort cited articles by relevance (the score returned by the tool); within the same relevance band, surface the most recent first.
 - Note explicitly that academic doctrine is persuasive, not binding.
+- End every response with this one-line disclaimer, in Spanish, on its own line: «Investigación jurídica con fuentes verificables; no constituye asesoría legal. Verifica cada cita en su fuente oficial; la responsabilidad profesional es del abogado.»
 
 ## Helpful information
 

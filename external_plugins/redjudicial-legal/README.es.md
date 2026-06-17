@@ -68,6 +68,10 @@ El usuario final inicia sesión con su cuenta de Red Judicial y otorga consentim
 - Política de privacidad: https://ia.redjudicial.cl/legal/privacidad
 - Términos de servicio: https://ia.redjudicial.cl/legal/terminos
 
+## Aviso legal
+
+Red Judicial entrega investigación jurídica con fuentes verificables. No constituye asesoría legal ni reemplaza a un abogado. Cada resultado enlaza a su fuente oficial y debe verificarse ahí antes de usarse; la decisión profesional y la responsabilidad por cualquier escrito o consejo son del abogado.
+
 ## Suscripción y facturación
 
 Red Judicial usa un modelo basado en créditos con cinco planes. Cada llamada a `redjudicial_search` consume un crédito. Hay una franquicia mensual gratuita; los planes pagados amplían el techo y desbloquean herramientas adicionales a medida que se publican (`redjudicial_get_norm`, `redjudicial_get_sentence`, `redjudicial_research_brief` — planificadas). Precios y registro: https://ia.redjudicial.cl/pricing

@@ -68,6 +68,10 @@ End users sign in with their Red Judicial account and grant the connector consen
 - Privacy policy: https://ia.redjudicial.cl/legal/privacidad
 - Terms of service: https://ia.redjudicial.cl/legal/terminos
 
+## Disclaimer
+
+Red Judicial provides primary-source legal research with verifiable citations. It does not provide legal advice and is not a substitute for a qualified attorney. Every result links to its official source and should be verified there before use; professional judgment and responsibility for any filing or advice remain with the lawyer.
+
 ## Subscription and billing
 
 Red Judicial uses a credit-based model with five subscription tiers. Each call to `redjudicial_search` consumes one credit. A monthly free allowance is available; paid tiers extend the cap and unlock additional tools as they roll out (`redjudicial_get_norm`, `redjudicial_get_sentence`, `redjudicial_research_brief` — planned). Pricing and signup: https://ia.redjudicial.cl/pricing
