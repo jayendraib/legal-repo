@@ -41,6 +41,12 @@
       "url": "https://api.solveintelligence.com/mcp/",
       "title": "Solve Intelligence",
       "description": "Patent workflows — search patent and non-patent literature, legal texts, SEP technical standards, prior art, claim analysis."
+    },
+    "PharosLex": {
+      "type": "http",
+      "url": "https://eu-lex-connector.vercel.app/mcp",
+      "title": "PharosLex — EU law",
+      "description": "EU primary law and Court of Justice (CJEU) case law via the official EUR-Lex/CELLAR repository — search and fetch regulations (GDPR, AI Act, DORA, MiCA), directives, decisions, and case law in any of the 24 official EU languages; every result citation-ready (CELEX, source URL, retrieval date)."
     }
   },
   "recommendedCategories": [
