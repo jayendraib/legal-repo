@@ -57,6 +57,7 @@ Your configuration is stored at `~/.claude/plugins/config/claude-for-legal/litig
 | `/litigation-legal:chronology [slug]` | Build or update a chronology from declared doc sources + uploads — tagged by significance per matter theory |
 | `/litigation-legal:oc-status` | Draft weekly OC status-request emails across the portfolio; Gmail drafts if MCP available |
 | `/litigation-legal:claim-chart` | Build or review an element chart — patent claim chart (infringement / invalidity / review) or civil element chart (any cause of action or defense) with gap detection |
+| `/litigation-legal:boolean-search [--build / --from-cases / --refine]` | Build, reverse-engineer, refine, or port a Boolean / Terms-and-Connectors search for Westlaw / Lexis (and Jus Mundi / Kluwer / ITA for international arbitration); returns a primary search plus a wider/narrower alternatives ladder |
 
 ## Skills
 
@@ -76,6 +77,7 @@ Your configuration is stored at `~/.claude/plugins/config/claude-for-legal/litig
 | **chronology** | Extract dated events from declared doc sources + uploads; de-dupe; tag significance per matter theory |
 | **oc-status** | Weekly portfolio-wide OC status-request email drafter; markdown + Gmail drafts |
 | **claim-chart** | Patent claim chart (infringement / invalidity / review) or civil element chart (any cause of action or defense). Element-by-element mapping, every cell pin-cited, gap detection. Ships with a cause-of-action template library. |
+| **boolean-search** | Build / reverse-engineer / refine / port Boolean / Terms-and-Connectors search strings for legal research databases. Governing-law and database gates run first; term-expansion by cognate and synonym; hit/miss matrix when reverse-engineering from known-relevant cases; always returns a primary search plus a wider/narrower alternatives ladder. |
 
 ## Interactive commands vs. scheduled agents
 
@@ -143,6 +145,7 @@ Your practice profile at `~/.claude/plugins/config/claude-for-legal/litigation-l
 - `_log.yaml` is the source of truth for portfolio state. Keep it clean.
 - Matter history is append-only. If something was wrong, note the correction as a new entry — don't edit the past.
 - Closed matters stay in `_log.yaml` (searchable history). `/portfolio-status` filters them out of active rollups by default.
+- **International arbitration:** `boolean-search` carries the arbitration research databases (Jus Mundi, Kluwer Arbitration, ITA Law) and investment-treaty vocabulary alongside the litigation databases, so it serves arbitration research today. A dedicated `arbitration-legal` plugin (Redfern Schedules, IBA Art. 3.3 requests, Art. 9.2 objections) is a possible future addition; for now the Boolean-search capability lives here.
 
 ## Inline marker conventions
 
