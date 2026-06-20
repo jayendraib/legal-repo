@@ -57,7 +57,7 @@ Your configuration is stored at `~/.claude/plugins/config/claude-for-legal/litig
 | `/litigation-legal:chronology [slug]` | Build or update a chronology from declared doc sources + uploads — tagged by significance per matter theory |
 | `/litigation-legal:oc-status` | Draft weekly OC status-request emails across the portfolio; Gmail drafts if MCP available |
 | `/litigation-legal:claim-chart` | Build or review an element chart — patent claim chart (infringement / invalidity / review) or civil element chart (any cause of action or defense) with gap detection |
-| `/litigation-legal:boolean-search [--build / --from-cases / --refine]` | Build, reverse-engineer, refine, or port a Boolean / Terms-and-Connectors search for Westlaw / Lexis (and Jus Mundi / Kluwer / ITA for international arbitration); returns a primary search plus a wider/narrower alternatives ladder |
+| `/litigation-legal:boolean-search [--build / --from-cases / --refine]` | Builds, reverse-engineers, refines, or ports a Boolean (Terms-and-Connectors) search for Westlaw — or the arbitration databases (Jus Mundi, Kluwer, ITA) — and hands back a recommended search with wider and narrower alternatives. |
 
 ## Skills
 
@@ -77,7 +77,7 @@ Your configuration is stored at `~/.claude/plugins/config/claude-for-legal/litig
 | **chronology** | Extract dated events from declared doc sources + uploads; de-dupe; tag significance per matter theory |
 | **oc-status** | Weekly portfolio-wide OC status-request email drafter; markdown + Gmail drafts |
 | **claim-chart** | Patent claim chart (infringement / invalidity / review) or civil element chart (any cause of action or defense). Element-by-element mapping, every cell pin-cited, gap detection. Ships with a cause-of-action template library. |
-| **boolean-search** | Build / reverse-engineer / refine / port Boolean / Terms-and-Connectors search strings for legal research databases. Governing-law and database gates run first; term-expansion by cognate and synonym; hit/miss matrix when reverse-engineering from known-relevant cases; always returns a primary search plus a wider/narrower alternatives ladder. |
+| **boolean-search** | Writes and refines Boolean (Terms-and-Connectors) searches for the legal research databases. It settles the governing law and the target database before writing a single connector — both change what the right terms and syntax are — then expands each concept with the cognates and synonyms that belong to that body of law. Hand it cases you already know are relevant and it works backward to a search that catches them, with a hit/miss table showing how each candidate does. Every run ends with a recommended search plus wider and narrower alternatives, so you can turn recall up or down. |
 
 ## Interactive commands vs. scheduled agents
 

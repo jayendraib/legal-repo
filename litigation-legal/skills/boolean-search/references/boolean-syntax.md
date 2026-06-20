@@ -4,20 +4,22 @@ A reference for the `boolean-search` skill. The controlling authority is **each 
 connector grammars are stable but field/segment names and the specialist databases' operators change. Tag anything
 beyond the core connectors below `[verify against the database's current search guide]`.
 
-The two primary databases have full Terms-and-Connectors grammar. The three specialists have weak or partial Boolean —
-build a tight Boolean for Westlaw/Lexis and a stripped-down keyword/phrase version for the specialists.
+Westlaw has full Terms-and-Connectors grammar. The arbitration specialists have weak or partial Boolean — build a
+tight Boolean for Westlaw and a stripped-down keyword/phrase version for the specialists.
 
 ---
 
-## The one difference that breaks ported searches
+## The differences that break a search
 
-**A space between two words is not the same operator across databases.**
+**1. Proximity does not survive a move to a specialist.** Westlaw runs full Terms-and-Connectors grammar; the
+arbitration specialists (Kluwer Arbitration, Jus Mundi, ITA Law) **silently ignore proximity connectors** and lean on
+phrase and natural-language retrieval. A `/s` or `/p` tie that holds precision on Westlaw is simply dropped on a
+specialist — the string still runs, but looser than you think, and nothing warns you. So: always name the database a
+string is written for, and when porting from Westlaw to a specialist, degrade proximity to phrases + AND/OR
+deliberately and say what you dropped.
 
-- **Westlaw:** a space = **OR**. `breach contract` finds documents with *breach* OR *contract*.
-- **Lexis:** adjacent words with no connector = a **phrase**. `breach contract` finds the phrase "breach contract".
-
-The identical string is a broad OR on one database and a narrow phrase on the other. Always translate the space
-deliberately when porting, and never hand over a string without naming its database.
+**2. On Westlaw, a space is OR — not a phrase.** `breach contract` finds documents with *breach* OR *contract*, not the
+phrase "breach contract". Use quotation marks for an exact phrase: `"breach of contract"`.
 
 ---
 
@@ -43,47 +45,9 @@ Westlaw auto-retrieves regular and irregular plurals and possessives; use `#` to
 
 ---
 
-## Lexis (Lexis+) — Terms and Connectors
-
-| Function | Operator | Example | Notes |
-|---|---|---|---|
-| OR | `or` | `car or automobile` | spelled out — a space is *not* OR here |
-| AND | `and` or `&` | `negligence and damages` | |
-| Phrase | adjacency or `"..."` | `res ipsa loquitur` | consecutive words are read as a phrase |
-| Same paragraph | `w/p` | `landlord w/p repair!` | |
-| Same sentence | `w/s` | `damag! w/s remote!` | |
-| Within n words (either order) | `w/n` | `breach w/5 contract` | |
-| Order-sensitive within n | `pre/n` | `prior pre/3 art` | first term precedes second within n |
-| Not within n | `not w/n` | `bank not w/3 river` | excludes when within n words |
-| AND NOT (exclude) | `and not` | `damages and not punitive` | place last in the query |
-| Same segment | `w/seg` | `name(smith) w/seg ...` | segment-scoped proximity |
-| Root expander (truncation) | `!` | `negligen!` | unlimited trailing characters |
-| Universal character (one char) | `*` | `wom*n` | one `*` per character |
-| Segment restriction | `segment(...)` | `name(hadley)` | e.g. `name()`, `writtenby()`, `headline()` — `[verify segment names]` |
-
-Lexis auto-retrieves plurals and possessives.
-
-### Westlaw ↔ Lexis quick port
-
-| Concept | Westlaw | Lexis |
-|---|---|---|
-| OR | *(space)* | `or` |
-| AND | `&` | `and` |
-| same sentence | `/s` | `w/s` |
-| same paragraph | `/p` | `w/p` |
-| within n | `/n` | `w/n` |
-| ordered within n | `+n` | `pre/n` |
-| exclude | `%` | `and not` |
-| phrase | `"..."` | adjacency or `"..."` |
-
-Lossy spots to flag on every port: Westlaw `+s` (ordered, same sentence) has no clean Lexis equivalent — approximate
-with `pre/n` and flag; Westlaw's space-as-OR silently becomes a Lexis phrase if not rewritten.
-
----
-
 ## Specialist databases — weak / partial Boolean
 
-These cover international, comparative, and investment-treaty material that Westlaw/Lexis cover thinly. Their search
+These cover international, comparative, and investment-treaty material that Westlaw covers thinly. Their search
 engines are built more for browsing and semantic retrieval than for Boolean precision. **Graceful degradation:** drop
 proximity connectors (they are typically ignored), keep phrases and AND/OR, and tell the user what you dropped and why.
 Treat every operator below as `[verify against the database's current search guide]`.
@@ -116,7 +80,8 @@ Treat every operator below as `[verify against the database's current search gui
 2. **Expand each bucket** with cognates (root expander, aimed to avoid over-reach) and alternative expressions
    (enumerated OR-set — synonyms do not share a root).
 3. **Tie related terms with proximity,** not bare AND, where they must relate to each other to be on point — `/s` or
-   `/p` (Westlaw) / `w/s` or `w/p` (Lexis) — to hold precision up without dropping recall to document-level co-occurrence.
+   `/p` on Westlaw — to hold precision up without dropping recall to document-level co-occurrence. (On a weak-Boolean
+   specialist proximity is unavailable; fall back to phrases + AND.)
 4. **Parenthesise** every OR-set before joining with AND, so precedence is explicit.
 5. **Truncate deliberately.** `repudiat!` is safe; `cler!` over-reaches (clerical/clergy/clerk) — prefer an explicit
    OR-list when a root bleeds into unrelated words.
